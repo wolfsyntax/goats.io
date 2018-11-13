@@ -33,5 +33,30 @@ class Welcome extends CI_Controller {
 		$this->load->view('layouts/application',$data);
 
 	}
-	
+
+
+	public function generate_report(){
+
+		// instantiate and use the dompdf class
+		$dompdf = new Dompdf\Dompdf();
+		$data['rows'] = ''; //contains the query results
+
+		$html = $this->load->view('',$data, true); // replace '' with your view that is used in displaying the html for generating PDF
+
+		$dompdf->loadHtml($html);
+
+		// (Optional) Setup the paper size and orientation
+		$dompdf->setPaper('A4', 'landscape'); //Paper Size: legal, letter, a4, etc,.
+
+		// Render the HTML as PDF
+		$dompdf->render();
+
+		// Get the generated PDF file contents
+		$pdf = $dompdf->output();
+
+		// Output the generated PDF to Browser
+		//$dompdf->stream();
+		$dompdf->stream("T".md5(time()).".pdf", array("Attachment" => 0)); //output filename
+
+	}	
 }
