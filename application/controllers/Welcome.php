@@ -25,11 +25,21 @@ class Welcome extends CI_Controller {
 *		$this->load->view('welcome_message');
 *	}
 */
+
+	public function __construct(){
+		parent::__construct();
+
+		//Controller: Plural (AppController)
+		//Model: Singular (ModelName)
+
+	}
+
 	public function index()
 	{
 		
-		$data['title'] = '';
-		$data['body'] = '';
+#		$this->load->view('welcome_message');
+		$data['title'] = 'Home';
+		$data['body'] = 'goats/add_goats';
 		$this->load->view('layouts/application',$data);
 
 	}
