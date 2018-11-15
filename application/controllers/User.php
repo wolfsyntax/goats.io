@@ -39,7 +39,6 @@ class User extends CI_Controller {
 	public function index()
 	{
 		
-#		$this->load->view('welcome_message');
 		$data['title'] = 'Register';
 		$data['body'] = 'users/register';
 		
@@ -50,7 +49,6 @@ class User extends CI_Controller {
 	public function register()
 	{
 		
-#		$this->load->view('welcome_message');
 		$data['title'] = 'Register';
 		$data['body'] = 'users/register';
 		
@@ -70,4 +68,18 @@ class User extends CI_Controller {
 		$this->load->view('layouts/application',$data);
 
 	}	
+
+	public function login()
+	{
+		
+		$data['title'] = 'Register';
+		$data['body'] = 'users/login';
+		
+		$this->load->view('layouts/application',$data);
+
+	}
+
+	public function validate_login(){
+		
+	}
 }

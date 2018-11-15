@@ -21,13 +21,13 @@
 	<script src="<?= base_url()?>public/js/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= base_url()?>public/js/popper.min.js"></script>    
     <script src="<?= base_url()?>public/js/bootstrap.min.js"></script>
-
+   
+    
 	<script type="text/javascript">
 		//$("[data-toggle=popover]").popover();
 		$(function () {
 
 			$('[data-toggle="tooltip"]').tooltip()
-
 
 	  		$('#err_username').popover('show',{
 				container: 'body'
