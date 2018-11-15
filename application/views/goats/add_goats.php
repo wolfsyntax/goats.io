@@ -40,6 +40,13 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="left" id="err_username">Dismissible popover</a>
+						<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Wrong?">Dismissible popover</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
