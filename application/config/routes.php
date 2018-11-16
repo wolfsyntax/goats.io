@@ -56,7 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 //User Defined Routes
 
-$route['register']['GET'] = 'user/register';
-$route['verify']['POST'] = 'user/verify_signup';
-
-$route['login']['GET'] = 'user/login';
+$route['register'] = 'user/register';
+$route['login'] = 'user/login';

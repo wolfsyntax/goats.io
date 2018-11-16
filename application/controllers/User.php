@@ -33,6 +33,7 @@ class User extends CI_Controller {
 		//Model: Singular (ModelName)
 
 		$this->load->library('form_validation');
+		$this->load->model('User_model');
 
 	}
 
@@ -75,16 +76,39 @@ class User extends CI_Controller {
 		$data['title'] = 'Login';
 		$data['body'] = 'users/login';
 		
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 
-		$this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean',array(
+			'required' => '%s is required',
+			'xss_clean' => '%s is not valid'
+			));
+
+		$this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean',array(
+			'required' => '%s is required',
+			'xss_clean' => '%s is not valid'
+			));
+
+		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 		
 		if ($this->form_validation->run() == FALSE){
 
 			$this->load->view('layouts/application',$data);
-			
+
 		}else{
+
+			if($this->User_model->validate_login()){
+
+				redirect('register');
+
+			}else{
+				$this->session->set_flashdata('item', '<span class="fa fa-exclamation-triangle"></span>
+					<strong>Invalid</strong>&emsp;Username or Password');
+//            	echo "<script>alert('Invalid');</script>";
+				$this->load->view('layouts/application',$data);
+
+			}
 			
+
+
 		}
 	}
 

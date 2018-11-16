@@ -10,44 +10,35 @@
 					<div class="col-12 col-sm-12 col-lg-12">
 						<?php echo form_open('',array('class'=>'mt-md-5','style'=>'')); ?>
 							<div class="container">
-								<div class="row">
-									<div class="col-12">
-										
-										<div class="alert alert-success" role="alert" style="height: 50px;">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
-											<div class="row">
-												<p>
-													<span class="fa fa-exclamation-triangle">
-													</span>
-													<strong>Invalid</strong>&emsp;
-												</p>
-											</div>
-										</div>
-
-									</div>									
+								<?php if($this->session->flashdata('item')) { ?>
+								<div class="alert alert-danger" role="alert" style="height: 50px;">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+									
+									<div class="row">
+										<p>
+											<?php echo $this->session->flashdata('item'); ?>
+										</p>
+									</div>
 								</div>
-
+								<?php } ?>
+								
+								
 								<div class="row px-md-auto">
 									<div class="col-12">
 										<div class="form-group">
-								        	<input type="text" class="form-control" id="" name="username" placeholder="Username">
+								        	<input type="text" class="form-control" id="" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
 
-								        	<small class="form-text text-muted">
-												<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>																
-											</small>
-
+											<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>																
+											
 								        </div>
 								    </div>
 
 								    <div class="col-12">
 										<div class="form-group">
 								        
-								        	<input type="text" class="form-control" id="" name="passwd" placeholder="Password">
+								        	<input type="password" class="form-control" id="" name="passwd" placeholder="Password">
 
-								        	<small class="form-text text-muted">
-												<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>									
-											</small>
-							
+											<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>							
 								        </div>
 								    </div>
 
@@ -56,7 +47,9 @@
 								    </div>
 								</div>
 							</div>
+
 						<?php echo form_close(); ?>
+
 					</div>
 				</div>
 			</div>
