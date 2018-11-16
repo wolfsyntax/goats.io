@@ -36,7 +36,7 @@
 								    <div class="col-12">
 										<div class="form-group">
 								        
-								        	<input type="password" class="form-control" id="" name="passwd" placeholder="Password">
+								        	<input type="password" class="form-control" id="" name="passwd" placeholder="Password" value="<?= set_value('passwd'); ?>">
 
 											<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>							
 								        </div>

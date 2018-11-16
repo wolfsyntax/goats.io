@@ -100,9 +100,10 @@ class User extends CI_Controller {
 				redirect('register');
 
 			}else{
+
 				$this->session->set_flashdata('item', '<span class="fa fa-exclamation-triangle"></span>
 					<strong>Invalid</strong>&emsp;Username or Password');
-//            	echo "<script>alert('Invalid');</script>";
+
 				$this->load->view('layouts/application',$data);
 
 			}
