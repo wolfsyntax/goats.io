@@ -92,6 +92,9 @@ class User extends CI_Controller {
 			));
 
 		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
+
+		$data['title'] = 'Login';
+		$data['body'] = 'users/login';	
 		
 		if ($this->form_validation->run() == FALSE){
 
