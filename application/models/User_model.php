@@ -8,9 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$username = $this->input->post('username');
 				$password = hash('sha256',$this->input->post('passwd'));
 				
-				$sql = $this->db->query('SELECT * FROM User_Account where username = "'. $username .'" AND password = "' . $password. '" LIMIT 1;');
-				echo "<script>alert('".$username.'+'.$password.");</script>"	;
-				if($sql->num_rows() == 1){
+//				$sql = $this->db->query('SELECT * FROM User_Account where username = "'. $username .'" AND password = "' . $password. '" LIMIT 1;');
+
+				$this->db->where('Username',$username);
+				$this->db->where('Password',$password);
+				$query = $this->db->get('User_Account');
+				
+				if($query->num_rows() == 1){
 
 					$this->session->unset_userdata('user_id');
 					$this->session->unset_userdata('user_email');
@@ -23,7 +27,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-					foreach($sql->result() as $row){
+					foreach($query->result() as $row){
+						
+						//Case Sensitive: $row->field_name, field_name is case-sensitive
 
 						$this->session->set_userdata('user_email',$row->Email);
 						$this->session->set_userdata('username',$row->Username);
@@ -39,6 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						
 
 			    	return true;
+
 
 			    }else{
 
