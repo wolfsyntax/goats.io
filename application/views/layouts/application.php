@@ -25,26 +25,27 @@
     
 	<script type="text/javascript">
 		//$("[data-toggle=popover]").popover();
-		$(function () {
+		$(document).ready(function(){
+			$(function () {
 
-			$('[data-toggle="tooltip"]').tooltip()
+				$('[data-toggle="tooltip"]').tooltip()
 
-	  		$('#err_username').popover('show',{
-				container: 'body'
-			})
+	  			$('#err_username').popover('show',{
+					container: 'body'
+				})
 
-			$('#myModal').on('shown.bs.modal', function () {
-			  $('#myInput').trigger('focus')
-			})
+				$('#myModal').on('shown.bs.modal', function () {
+					$('#myInput').trigger('focus')
+				})
 
-			$('body').scrollspy({ target: '#navbar-example' })
+				$('body').scrollspy({ target: '#navbar-example' })
 
 
-			$('[data-spy="scroll"]').each(function () {
-				var $spy = $(this).scrollspy('refresh')
-			})
+				$('[data-spy="scroll"]').each(function () {
+					var $spy = $(this).scrollspy('refresh')
+				})
 
-						
+			})			
 		})
 	</script>
 </body>

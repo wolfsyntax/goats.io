@@ -74,8 +74,12 @@ class User extends CI_Controller {
 	{
 		//echo validation_errors('<span class="error">', '</span>');
 		$data['title'] = 'Login';
-		$data['body'] = 'users/login';
-		
+		$data['body'] = 'users/login';	
+
+		$this->load->view('layouts/application',$data);
+	}
+
+	public function validate_login(){
 
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean',array(
 			'required' => '%s is required',
@@ -103,17 +107,14 @@ class User extends CI_Controller {
 
 				$this->session->set_flashdata('item', '<span class="fa fa-exclamation-triangle"></span>
 					<strong>Invalid</strong>&emsp;Username or Password');
-
-				$this->load->view('layouts/application',$data);
+				$this->login();
+				//$this->load->view('layouts/application',$data);
 
 			}
 			
 
 
 		}
-	}
-
-	public function validate_login(){
 
 	}
 }

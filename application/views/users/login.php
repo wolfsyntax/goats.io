@@ -26,7 +26,7 @@
 								<div class="row px-md-auto">
 									<div class="col-12">
 										<div class="form-group">
-								        	<input type="text" class="form-control" id="" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
+								        	<input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= set_value('username'); ?>" >
 
 											<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>																
 											
