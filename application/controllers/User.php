@@ -71,15 +71,24 @@ class User extends CI_Controller {
 
 	public function login()
 	{
-		
-		$data['title'] = 'Register';
+		//echo validation_errors('<span class="error">', '</span>');
+		$data['title'] = 'Login';
 		$data['body'] = 'users/login';
 		
-		$this->load->view('layouts/application',$data);
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 
+		$this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean');
+		
+		if ($this->form_validation->run() == FALSE){
+
+			$this->load->view('layouts/application',$data);
+			
+		}else{
+			
+		}
 	}
 
 	public function validate_login(){
-		
+
 	}
 }
