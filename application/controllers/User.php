@@ -34,7 +34,7 @@ class User extends CI_Controller {
 
 		$this->load->library('form_validation');
 		$this->load->model('User_model');
-
+		$this->load->driver('session');
 	}
 
 	public function index()
@@ -49,11 +49,16 @@ class User extends CI_Controller {
 
 	public function register()
 	{
-		
-		$data['title'] = 'Register';
-		$data['body'] = 'users/register';
-		
-		$this->load->view('layouts/application',$data);
+		if($this->session->userdata() != ''){
+			
+			$data['title'] = 'Register';
+			$data['body'] = 'users/register';
+			$data['user_type'] = '';
+			
+			$this->load->view('layouts/application',$data);
+		}else{
+			redirect('login');
+		}
 
 	}
 

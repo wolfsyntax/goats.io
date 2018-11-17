@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Sitemap extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -38,12 +38,20 @@ class Welcome extends CI_Controller {
 	{
 		
 #		$this->load->view('welcome_message');
-		$data['title'] = 'Home';
-		$data['body'] = 'goats/add_goats';
+		$data['title'] = 'Dashboard';
+		$data['body'] = 'sitemaps/dashboard';
 		$this->load->view('layouts/application',$data);
 
 	}
 
+	public function about()
+	{
+
+		$data['title'] = 'About';
+		$data['body'] = 'sitemaps/about';
+		$this->load->view('layouts/application',$data);
+
+	}
 
 	public function generate_report(){
 

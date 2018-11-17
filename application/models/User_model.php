@@ -3,17 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class User_model extends CI_Model {
 
+		public function __construct(){
+
+			parent::__construct();
+			$this->load->dbforge();
+			
+		}
+
 		public function validate_login(){
 			if(!empty($_POST)){
-				$username = $this->input->post('username');
-				$password = hash('sha256',$this->input->post('passwd'));
+				$username = $this->input->post('username',TRUE);
+				$password = hash('sha256',$this->input->post('passwd',TRUE));
 				
-//				$sql = $this->db->query('SELECT * FROM User_Account where username = "'. $username .'" AND password = "' . $password. '" LIMIT 1;');
-
 				$this->db->where('Username',$username);
 				$this->db->where('Password',$password);
 				$query = $this->db->get('User_Account');
-				
+
 				if($query->num_rows() == 1){
 
 					$this->session->unset_userdata('user_id');
@@ -24,8 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->session->unset_userdata('user_phone');
 					$this->session->unset_userdata('farm_name');
 					$this->session->unset_userdata('user_type');
-
-
 
 					foreach($query->result() as $row){
 						

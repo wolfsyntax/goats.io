@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title ><?= $title; ?></title>
+	<title ><?= $title; ?>&nbsp;&mdash;&nbsp;Goats Organize Application Tracking System</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,10 @@
 
 </head>
 <body>
-	<?php $this->load->view($body); ?>
+	
+	<main role="main">
+		<?php $this->load->view($body); ?>
+	</main>
 
 	<!--Starter Template-->
 	<script src="<?= base_url()?>public/js/jquery-3.3.1.slim.min.js"></script>

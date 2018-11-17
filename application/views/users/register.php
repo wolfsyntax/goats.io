@@ -1,8 +1,9 @@
+
 <div class="container-fluid">
 	<div class="row">
 
 		<div class="col-12 col-md-6 d-none d-sm-block clearfix">
-			&emsp;	
+			&emsp;
 		</div>
 
 		<div class="col-12 col-md-5 offset-md-1 mt-md-5 pr-md-5" >
@@ -106,6 +107,22 @@
 					<div class="col-12">
 						<button type="submit" class="btn btn-success col-12">Sign Up</button>
 					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 col-sm-12 col-lg-12">
+						<div class="container-fluid">
+							<div class="clearfix">&emsp;</div>
+							<div class="row">
+							
+								<div class="col-12 col-sm-12 col-lg-12">
+									<p class="form-inline">Already have an account? <a href="" class="nav-link font-weight-normal text-capitalize text-dark" title="Login" tabindex="0">Log In</a></p>
+								</div>
+							</div>							
+
+						</div>
+					</div>
+				</div>
 				</div>
 			</form>
 		</div>
