@@ -19,7 +19,7 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?= base_url() ?>profile/settings"><span class="fa fa-user"></span>&emsp;Edit Profile</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout"><span class="fa fa-sign-out"></span>&emsp;Logout</a>
+          <a class="dropdown-item" href="<?= base_url() ?>logout"><span class="fa fa-sign-out"></span>&emsp;Logout</a>
         </div>
       </li>
       
