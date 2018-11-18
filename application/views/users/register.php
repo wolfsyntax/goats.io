@@ -11,7 +11,7 @@
 				</div>
 
 				<div class="col-12 col-md-5 offset-md-1 mt-md-5 pr-md-5" >
-					<?php echo form_open('',array('class'=>'mt-md-5','style'=>'')); ?>
+					<?php echo form_open('',array('class'=>'mt-5','style'=>'')); ?>
 						<div class="row mt-md-5">
 							<div class="col-12 col-md-6">
 								<div class="form-group">
