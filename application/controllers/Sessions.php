@@ -34,7 +34,7 @@ class Sessions extends CI_Controller {
 	public function index(){
 		//destroy the whole session
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect(base_url());
 	}
 }
 ?>

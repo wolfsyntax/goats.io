@@ -45,6 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->session->unset_userdata('farm_name');
 					$this->session->unset_userdata('user_type');
 
+					$this->session->unset_userdata('notif');
 					foreach($query->result() as $row){
 						
 						//Case Sensitive: $row->field_name, field_name is case-sensitive
@@ -58,6 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						$this->session->set_userdata('farm_name',$row->FarmName);
 						$this->session->set_userdata('user_type',$row->AccountType);
 
+						$this->session->set_userdata('notif', 1);
 
 			    	}
 						
@@ -104,7 +106,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$first_name = $this->input->post('first_name', TRUE);
 					$last_name = $this->input->post('last_name', TRUE);
 					$phone = $this->input->post('phone',TRUE);
-					
+
 					$data = array(
 
 						'FirstName'		=>	$first_name,

@@ -317,7 +317,7 @@ class User extends CI_Controller {
 		}else{
 
 			if($this->User_model->validate_login()){
-
+				
 				redirect('dashboard');
 
 			}else{
