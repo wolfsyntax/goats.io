@@ -58,6 +58,12 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['register']['GET'] = 'user/register';
 $route['register']['POST'] = 'user/verify_signup';
+
+$route['profile/settings']['GET'] = 'user/edit_account';
+$route['profile/details']['POST'] = 'user/confirm_change_info';
+
+$route['profile/security']['POST'] = 'user/confirm_change_pass';
+
 $route['login']['GET'] = 'user/login';
 $route['login']['POST'] = 'user/validate_login';
 $route['logout'] = 'sessions';

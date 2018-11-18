@@ -96,6 +96,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 		}
 
+		public function confirm_change($option = 0){
+			
+			if(!empty($_POST)){
+
+				if($option == 0){
+					$first_name = $this->input->post('first_name', TRUE);
+					$last_name = $this->input->post('last_name', TRUE);
+					$phone = $this->input->post('phone',TRUE);
+					
+					$data = array(
+
+						'FirstName'		=>	$first_name,
+						'LastName'		=>	$last_name,
+						'Phone'			=>	$phone,
+
+					);
+
+
+					
+					$this->db->where('UserID',$this->session->userdata('user_id'));
+
+					if($this->db->update('user_account',$data)){
+						
+						$this->session->unset_userdata('user_fname');
+						$this->session->unset_userdata('user_lname');
+						$this->session->unset_userdata('user_phone');
+
+						$this->session->set_userdata('user_fname', $first_name);
+						$this->session->set_userdata('user_lname', $last_name);
+						$this->session->set_userdata('user_phone', $phone);
+
+						return true;
+
+					}else{
+
+						return false;
+
+					}
+
+				} else {
+
+					$data = array(
+						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
+					);					
+				
+					$this->db->where('UserID',$this->session->userdata('user_id'));
+					return $this->db->update('user_account',$data); 
+
+				}
+
+			}	
+
+		}
 
 
 	}

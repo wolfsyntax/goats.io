@@ -51,6 +51,118 @@ class User extends CI_Controller {
 
 	}
 
+	public function edit_account(){
+		
+		$data['title'] = 'Account Settings';
+		$data['body'] = 'users/edit_profile';
+		
+		$this->load->view('layouts/application',$data);
+
+	}
+
+	public function confirm_change_info(){
+	
+		echo "<script>alert('Modify Account');</script>";
+
+
+		$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim',
+			array(
+				'required' => 'Mobile number is required',
+			)
+		);
+
+		$this->form_validation->set_rules('last_name','Last name','required|min_length[2]|trim',
+			array(
+				'required' => 'Last name is required',
+				'min_length[2]' => 'Last name must contain at least two (2) letters',
+			)
+		);
+
+
+		$this->form_validation->set_rules('first_name','First name','required|trim',
+			array(
+				'required' => 'First name is required',			)
+		);
+
+
+		if ($this->form_validation->run() == FALSE){
+
+			$this->edit_account();
+
+		}else{
+
+			if($this->User_model->confirm_change()){
+				$this->session->set_flashdata('item', '<div class="alert alert-success col-12" role="alert" style="height: 50px;">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+									
+									<div class="row">
+										<p><span class="fa fa-check-circle"></span>
+					<strong>Success</strong>&emsp;Modified account details.</p>
+									</div>
+								</div>');
+
+				redirect('dashboard');
+
+			}else{
+
+				$this->edit_account();
+		
+			}
+			
+
+
+		}
+	}
+
+
+
+	public function confirm_change_pass(){
+	
+		$this->form_validation->set_rules(
+			'passwd','Password','required|min_length[6]|trim',
+			array(
+				'required' => 'Password is required',
+				'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
+			)
+		);
+
+		$this->form_validation->set_rules(
+			'conf_passwd','Confirm Password','required|matches[passwd]',
+			array(
+				'required' => 'Password is required',
+				'matches["password"]' => 'Confirmation Password does not match',
+			)
+		);	
+
+		if ($this->form_validation->run() == FALSE){
+
+			$this->edit_account();
+
+		}else{
+
+			if($this->User_model->confirm_change(1)){
+				$this->session->set_flashdata('item', '<div class="alert alert-success col-12" role="alert" style="height: 50px;">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+									
+									<div class="row">
+										<p><span class="fa fa-check-circle"></span>
+					<strong>Success</strong>&emsp;Changing Password</p>
+									</div>
+								</div>');
+
+				redirect('dashboard');
+
+			}else{
+
+				$this->edit_account();
+		
+			}
+			
+
+
+		}
+	}
+
 	public function register()
 	{
 		
@@ -58,8 +170,7 @@ class User extends CI_Controller {
 			
 			$data['title'] = 'Register';
 			$data['body'] = 'users/register';
-			$data['user_type'] = '';
-			
+
 			$this->load->view('layouts/application',$data);
 
 		}else{
@@ -69,6 +180,7 @@ class User extends CI_Controller {
 		}
 
 	}
+
 
 	public function verify_signup()
 	{
@@ -88,7 +200,6 @@ class User extends CI_Controller {
 			array(
 				'required' => '%s is required',
 				'is_unique' => '%s is already taken',
-				'valid_email' => '%s is not a valid Email.',
 			)
 		);
 
