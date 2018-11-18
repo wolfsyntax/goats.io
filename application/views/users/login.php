@@ -16,15 +16,9 @@
 						<?php echo form_open('',array('class'=>'mt-md-5','style'=>'')); ?>
 							<div class="container-fluid">
 								<?php if($this->session->flashdata('item')) { ?>
-								<div class="alert alert-danger" role="alert" style="height: 50px;">
-									<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
-									
-									<div class="row">
-										<p>
-											<?php echo $this->session->flashdata('item'); ?>
-										</p>
-									</div>
-								</div>
+								
+									<?php echo $this->session->flashdata('item'); ?>
+										
 								<?php } ?>
 								
 								

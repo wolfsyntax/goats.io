@@ -17,18 +17,22 @@
 								<div class="form-group">
 							
 									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?php echo set_value('first_name');?>">
+									
 									<small class="form-text text-muted">
-										
+										<?php echo (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
 									</small>
+
 								</div>					
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 							
 									<input type="text" class="form-control" name = "last_name" id="" aria-describedby="" placeholder="Last name" value="<?php echo set_value('last_name');?>">
+
 									<small class="form-text text-muted">
-										
+										<?php echo (form_error('last_name')	!= "" ? form_error('last_name') : ''); ?>							
 									</small>
+
 								</div>					
 							</div>
 
@@ -36,9 +40,11 @@
 								<div class="form-group">
 							
 									<input type="text" class="form-control" name = "username" id="" aria-describedby="" placeholder="Username" value="<?php echo set_value('username');?>">
+
 									<small class="form-text text-muted">
-										
+										<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>			
 									</small>
+
 								</div>					
 							</div>
 
@@ -46,8 +52,9 @@
 								<div class="form-group">
 							
 									<input type="email" class="form-control" name = "email" id="" aria-describedby="" placeholder="Email" value="<?php echo set_value('email');?>">
+
 									<small class="form-text text-muted">
-										
+										<?php echo (form_error('email')	!= "" ? form_error('email') : ''); ?>							
 									</small>
 								</div>					
 							</div>
@@ -56,9 +63,11 @@
 								<div class="form-group">
 							
 									<input type="text" class="form-control" name = "phone" id="" aria-describedby="" placeholder="Mobile number" value="<?php echo set_value('phone');?>">
+									
 									<small class="form-text text-muted">
-										
+										<?php echo (form_error('phone')	!= "" ? form_error('phone') : ''); ?>							
 									</small>
+
 								</div>					
 							</div>
 
@@ -77,8 +86,9 @@
 										<option value="employee">Tenant</option>
 										<option value="superuser">Tech Support</option>
 									</select>
+									
 									<small class="form-text text-muted">
-										
+									<?php echo (form_error('account_type')	!= "" ? form_error('account_type') : ''); ?>				
 									</small>
 								</div>					
 							</div>
@@ -87,19 +97,23 @@
 								<div class="form-group">
 							
 									<input type="password" class="form-control" name = "passwd" id="" aria-describedby="" placeholder="New Password" value="<?php echo set_value('passwd');?>">
+
 									<small class="form-text text-muted">
-										
+										<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>		
 									</small>
+
 								</div>					
 							</div>
 
 							<div class="col-12 col-md-6">
-								<div class="form-group">
+								<div class="form-group text-dark">
 							
 									<input type="password" class="form-control" name = "conf_passwd" id="" aria-describedby="" placeholder="Re-Type New Password" value="<?php echo set_value('conf_passwd');?>">
+
 									<small class="form-text text-muted">
-										
-									</small>
+										<?php echo (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>		
+									</small>		
+
 								</div>					
 							</div>
 
@@ -120,7 +134,7 @@
 									<div class="row">
 									
 										<div class="col-12 col-sm-12 col-lg-12">
-											<p class="form-inline text-dark">Already have an account? <a href="" class="nav-link font-weight-normal text-capitalize text-dark" title="Login" tabindex="0">Log In</a></p>
+											<p class="form-inline text-dark">Already have an account? <a href="login" class="nav-link font-weight-normal text-capitalize text-dark" title="Login" tabindex="0">Log In</a></p>
 										</div>
 									</div>							
 

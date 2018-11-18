@@ -36,6 +36,9 @@ class User extends CI_Controller {
 		$this->load->model('User_model');
 //		$this->load->driver('session');
 
+
+
+
 	}
 
 	public function index()
@@ -50,7 +53,8 @@ class User extends CI_Controller {
 
 	public function register()
 	{
-		if($this->session->userdata() == ''){
+		
+		if($this->session->userdata('username') == ''){
 			
 			$data['title'] = 'Register';
 			$data['body'] = 'users/register';
@@ -71,37 +75,93 @@ class User extends CI_Controller {
 		
 
 		$this->form_validation->set_rules(
-			'email','Email Address','required|min_length[12]|valid_email|trim',
+			'email','Email Address','required|valid_email|trim|is_unique[user_account.Email]',
 			array(
-				'required' => 'Email Address is required',
-				'min_length[12]' => 'Email Address must be a valid email address i.e: yahoo.com, gmail.com'
+				'required' => '%s is required',
+				'is_unique' => '%s is already taken',
+				'valid_email' => '%s is not valid',
+			)
+		);
+
+		$this->form_validation->set_rules(
+			'username','Username','required|trim|is_unique[user_account.Username]',
+			array(
+				'required' => '%s is required',
+				'is_unique' => '%s is already taken',
+				'valid_email' => '%s is not a valid Email.',
+			)
+		);
+
+		$this->form_validation->set_rules(
+			'passwd','Password','required|min_length[6]|trim',
+			array(
+				'required' => 'Password is required',
+				'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
+			)
+		);
+
+		$this->form_validation->set_rules('account_type','Account Type','required|account_type|trim',
+			array(
+				'required' => 'Account Type is required',
+				'account_type' => '%s is not a valid Account Type',
+			)
+		);
+
+		$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim',
+			array(
+				'required' => 'Mobile number is required',
+			)
+		);
+
+		$this->form_validation->set_rules('last_name','Last name','required|min_length[2]|trim',
+			array(
+				'required' => 'Last name is required',
+				'min_length[2]' => 'Last name must contain at least two (2) letters',
 			)
 		);
 
 
-			$this->form_validation->set_rules('password','Password','required|min_length[6]',
-				array(
-					'required' => 'Password is required',
-					'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
-				)
-			);
+		$this->form_validation->set_rules('first_name','First name','required|trim',
+			array(
+				'required' => 'First name is required',			)
+		);
 
-			$this->form_validation->set_rules('user_type','Account Type','required|account_type',
-				array(
-					'required' => 'Account Type is required',
-					'account_type' => 'Invalid Account Type: Administrator or Employee only'
-				)
-			);
 
-			$this->form_validation->set_rules('cpassword','Confirm Password','required|matches[password]',
-				array(
-					'required' => 'Password is required',
-					'matches["password"]' => 'Password does not match'
-				)
-			);	
+		$this->form_validation->set_rules(
+			'conf_passwd','Confirm Password','required|matches[passwd]',
+			array(
+				'required' => 'Password is required',
+				'matches["password"]' => 'Confirmation Password does not match',
+			)
+		);	
 
-		$data['title'] = 'Login';
-		$data['body'] = 'users/login';	
+		if ($this->form_validation->run() == FALSE){
+
+			$this->register();
+
+		}else{
+
+			if($this->User_model->process_registration()){
+				$this->session->set_flashdata('item', '<div class="alert alert-success" role="alert" style="height: 50px;">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+									
+									<div class="row">
+										<p><span class="fa fa-check-circle"></span>
+					<strong>Success</strong>&emsp;Account created</p>
+									</div>
+								</div>');
+
+				redirect('login');
+
+			}else{
+
+				$this->register();
+		
+			}
+			
+
+
+		}
 
 	}	
 
@@ -151,8 +211,14 @@ class User extends CI_Controller {
 
 			}else{
 
-				$this->session->set_flashdata('item', '<span class="fa fa-exclamation-triangle"></span>
-					<strong>Invalid</strong>&emsp;Username or Password');
+				$this->session->set_flashdata('item', '<div class="alert alert-danger" role="alert" style="height: 50px;">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+									
+									<div class="row">
+										<p><span class="fa fa-exclamation-triangle"></span>
+					<strong>Invalid</strong>&emsp;Username or Password</p>
+									</div>
+								</div>');
 				$this->login();
 				//$this->load->view('layouts/application',$data);
 

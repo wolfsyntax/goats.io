@@ -149,6 +149,15 @@ class CI_Form_validation {
 		log_message('info', 'Form Validation Class Initialized');
 	}
 
+
+	public function account_type($str){
+		
+		if($str == 'admin' || $str == 'employee' || $str == 'superuser') return true;
+		return false;
+
+	}
+
+
 	// --------------------------------------------------------------------
 
 	/**

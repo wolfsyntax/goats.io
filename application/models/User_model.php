@@ -21,18 +21,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->db->where('Password',$password);
 
 				if($this->input->post('remember')){
-					
+					$this->session->unset_userdata('remember_me');
 					$this->session->set_userdata('remember_me', TRUE);
-
-					//Set browser cookies
-					$this->input->set_cookie("username",$username,time()+ (10 * 365 * 24 * 60 * 60));
-					$this->input->set_cookie ("password",$password,time()+ (10 * 365 * 24 * 60 * 60));
 
 				}else{
 
-					//Delete Cookie if 'remember me' is not checked
-					delete_cookie('username');
-					delete_cookie('password');
+					//Delete Session 'remember_me' if 'remember me' is not checked
+					$this->session->unset_userdata('remember_me');
+					$this->session->set_userdata('remember_me', FALSE);
 
 				}
 
@@ -79,19 +75,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 
 		public function process_registration(){
-			
+
 			if(!empty($_POST)){
 
 				$data = array(
-						'FirstName'		=>	$this->input->post('first_name', TRUE),
-						'LastName'		=>	$this->input->post('last_name', TRUE),
-						'Username'		=>	$this->input->post('username', TRUE),
-						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
-						'Email'			=>	$this->input->post('email', TRUE),
-						'Phone'			=>	$this->input->post('phone',TRUE),
-						'AccountType'	=>	$this->input->post('account_type',TRUE),
-					);
+
+					'FirstName'		=>	$this->input->post('first_name', TRUE),
+					'LastName'		=>	$this->input->post('last_name', TRUE),
+					'Username'		=>	$this->input->post('username', TRUE),
+					'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
+					'Email'			=>	$this->input->post('email', TRUE),
+					'Phone'			=>	$this->input->post('phone',TRUE),
+					'AccountType'	=>	$this->input->post('account_type',TRUE),
+
+				);
 					
+				return $this->db->insert('user_account',$data);
 
 			}
 				
