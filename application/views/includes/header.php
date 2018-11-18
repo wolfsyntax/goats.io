@@ -10,7 +10,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li-->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>dashboard" title="Dashboard"><span class="fa fa-user-circle"></span></a>
+        <a class="nav-link" href="<?= base_url() ?>dashboard" title="Dashboard"><span class="fa fa-user-circle"></span><span class="d-block-inline d-sm-block-inline d-md-block-inline d-lg-none ">&emsp;<?= $this->session->userdata('user_fname'); ?></span></a>
       </li>
 
       <li class="nav-item">
@@ -20,19 +20,19 @@
           <?php } else { ?>
             <span class="fa fa-bell">
           <?php } ?>
-            </span>
+            </span><span class="d-block-inline d-sm-block-inline d-md-block-inline d-lg-none ">&emsp;Notifications</span>
         </a>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="fa fa-cog text-dark"></span>
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-cog text-dark"></span><span class="d-block-inline d-sm-block-inline d-md-block-inline d-lg-none ">&emsp;Settings</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <p class="dropdown-item" href="">Signed in as<br/><strong class="text-dark"><?= $this->session->userdata('username'); ?></strong></p>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="<?= base_url() ?>profile/settings"><span class="fa fa-question-circle"></span>&emsp;Help</a>
-          <a class="dropdown-item" href="<?= base_url() ?>profile/settings"><span class="fa fa-user"></span>&emsp;Settings</a>
+          <a class="dropdown-item" href="<?= base_url() ?>profile/settings"><span class="fa fa-user"></span>&emsp;Your Profile</a>
           
           <a class="dropdown-item" href="<?= base_url() ?>logout"><span class="fa fa-sign-out"></span>&emsp;Sign out</a>
         </div>
