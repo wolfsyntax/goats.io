@@ -62,3 +62,4 @@ $route['login']['POST'] = 'user/validate_login';
 $route['logout'] = 'sessions';
 
 $route['about'] = 'sitemap/about';
+$route['dashboard'] = 'sitemap/dashboard';

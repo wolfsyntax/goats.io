@@ -79,7 +79,7 @@ $autoload['libraries'] = array('database','email','session','form_validation',);
 |	$autoload['drivers'] = array('cache' => 'cch');
 |
 */
-$autoload['drivers'] = array();
+$autoload['drivers'] = array('session',);
 
 /*
 | -------------------------------------------------------------------
@@ -95,7 +95,7 @@ $autoload['drivers'] = array();
 |		'form' = form elements
 |		'security' = xss_clean
 */
-$autoload['helper'] = array('url','html','form','security','captcha',);
+$autoload['helper'] = array('url','html','form','security','captcha','cookie',);
 
 /*
 | -------------------------------------------------------------------

@@ -38,9 +38,28 @@ class Sitemap extends CI_Controller {
 	{
 		
 #		$this->load->view('welcome_message');
-		$data['title'] = 'Dashboard';
-		$data['body'] = 'sitemaps/dashboard';
-		$this->load->view('layouts/application',$data);
+		if($this->session->userdata('username') != ''){
+			
+			redirect('dashboard');
+
+		}else{
+
+			$data['title'] = 'Home';
+			$data['body'] = 'sitemaps/index';
+			$this->load->view('layouts/application',$data);
+
+		}
+
+	}
+
+	public function dashboard(){
+		if($this->session->userdata('username') != ''){
+			$data['title'] = 'Dashboard';
+			$data['body'] = 'sitemaps/dashboard';
+			$this->load->view('layouts/application',$data);
+		}else{
+			redirect('/');
+		}
 
 	}
 

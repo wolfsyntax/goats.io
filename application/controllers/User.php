@@ -32,9 +32,10 @@ class User extends CI_Controller {
 		//Controller: Plural (AppController)
 		//Model: Singular (ModelName)
 
-		$this->load->library('form_validation');
+//		$this->load->library('form_validation');
 		$this->load->model('User_model');
-		$this->load->driver('session');
+//		$this->load->driver('session');
+
 	}
 
 	public function index()
@@ -49,15 +50,18 @@ class User extends CI_Controller {
 
 	public function register()
 	{
-		if($this->session->userdata() != ''){
+		if($this->session->userdata() == ''){
 			
 			$data['title'] = 'Register';
 			$data['body'] = 'users/register';
 			$data['user_type'] = '';
 			
 			$this->load->view('layouts/application',$data);
+
 		}else{
-			redirect('login');
+
+			redirect('dashboard');
+
 		}
 
 	}
@@ -65,23 +69,57 @@ class User extends CI_Controller {
 	public function verify_signup()
 	{
 		
-		echo "<script>alert('Verifying')</script>";
 
-#		$this->load->view('welcome_message');
-		$data['title'] = 'Verify: Registration';
-		$data['body'] = 'users/register';
-		
-		$this->load->view('layouts/application',$data);
+		$this->form_validation->set_rules(
+			'email','Email Address','required|min_length[12]|valid_email|trim',
+			array(
+				'required' => 'Email Address is required',
+				'min_length[12]' => 'Email Address must be a valid email address i.e: yahoo.com, gmail.com'
+			)
+		);
+
+
+			$this->form_validation->set_rules('password','Password','required|min_length[6]',
+				array(
+					'required' => 'Password is required',
+					'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
+				)
+			);
+
+			$this->form_validation->set_rules('user_type','Account Type','required|account_type',
+				array(
+					'required' => 'Account Type is required',
+					'account_type' => 'Invalid Account Type: Administrator or Employee only'
+				)
+			);
+
+			$this->form_validation->set_rules('cpassword','Confirm Password','required|matches[password]',
+				array(
+					'required' => 'Password is required',
+					'matches["password"]' => 'Password does not match'
+				)
+			);	
+
+		$data['title'] = 'Login';
+		$data['body'] = 'users/login';	
 
 	}	
 
 	public function login()
 	{
 		//echo validation_errors('<span class="error">', '</span>');
-		$data['title'] = 'Login';
-		$data['body'] = 'users/login';	
+		if($this->session->userdata('username') == ''){
+			
+			$data['title'] = 'Login';
+			$data['body'] = 'users/login';	
 
-		$this->load->view('layouts/application',$data);
+			$this->load->view('layouts/application',$data);
+
+		}else{
+
+			redirect('dashboard');
+
+		}
 	}
 
 	public function validate_login(){
@@ -109,7 +147,7 @@ class User extends CI_Controller {
 
 			if($this->User_model->validate_login()){
 
-				redirect('register');
+				redirect('dashboard');
 
 			}else{
 
