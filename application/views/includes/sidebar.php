@@ -51,24 +51,24 @@
         </div>         
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck">
-           <span class="fa fa-heartbeat text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Vaccines and Health Check"></span>
-          <span class="fa fa-heartbeat text-sucess d-none d-sm-none d-md-none d-lg-inline-block"></span>
-          &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block ">Health Check</span>
+      <li class="nav-item ">
+        <a class="nav-link text-success" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck">
+           <span class="fa fa-heartbeat text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Health Check"></span>
+          <span class="fa fa-heartbeat text-sucess d-none d-sm-none d-md-none d-lg-inline-block" title="Health Check"></span>
+          &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block text-dark">Health Check</span>
         </a>
 
         <div class="collapse" id="healthCheck">
           <a class="nav-link">
-            <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Vaccination</span>
+            <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Vaccination"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Vaccination</span>
           </a>
 
           <a class="nav-link">
-            <span class="fa fa-medkit d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Supplementation</span>
+            <span class="fas fa-capsules d-inline-block d-lg-none" title="Supplementation"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Supplementation</span>
           </a>
 
           <a class="nav-link">
-            <span class="fa fa-user-md d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Checkup</span>
+            <span class="fa fa-user-md d-inline-block d-lg-none" title="Checkup"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Checkup</span>
           </a>
 
         </div>

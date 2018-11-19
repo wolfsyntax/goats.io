@@ -125,6 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			if(!empty($_POST)){
 
 				if($option == 0){
+					
 					$first_name = $this->input->post('first_name', TRUE);
 					$last_name = $this->input->post('last_name', TRUE);
 					$phone = $this->input->post('phone',TRUE);
@@ -144,11 +145,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					if($this->db->update('user_account',$data)){
 						
 						$this->session->unset_userdata('user_fname');
-						$this->session->unset_userdata('user_lname');
-						$this->session->unset_userdata('user_phone');
-
 						$this->session->set_userdata('user_fname', $first_name);
+
+						$this->session->unset_userdata('user_lname');
 						$this->session->set_userdata('user_lname', $last_name);
+
+						$this->session->unset_userdata('user_phone');
 						$this->session->set_userdata('user_phone', $phone);
 
 						return true;

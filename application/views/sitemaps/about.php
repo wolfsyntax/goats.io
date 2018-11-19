@@ -49,7 +49,7 @@
               <img src="#" alt="Card image cap" style="height: 120px; width: 120px; margin-top: 0.2rem;" class="card-img-top mx-auto img-fluid">
               
               <div class="card-body">
-                <h5 class="card-title text-center">Jayson Alpe</h5>
+                <h5 class="card-title text-center">Paolo Enrico Enciso</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#" class="p-2"><span class="fa fa-facebook text-dark"></span></a>
                 <a href="#" class="p-2"><span class="fa fa-twitter text-dark"></span></a>
@@ -63,7 +63,7 @@
               <img src="#" alt="Card image cap" style="height: 120px; width: 120px; margin-top: 0.2rem;" class="card-img-top mx-auto img-fluid">
               
               <div class="card-body">
-                <h5 class="card-title text-center">Jayson Alpe</h5>
+                <h5 class="card-title text-center">Neil Roan Pajarillo</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#" class="p-2"><span class="fa fa-facebook text-dark"></span></a>
                 <a href="#" class="p-2"><span class="fa fa-twitter text-dark"></span></a>

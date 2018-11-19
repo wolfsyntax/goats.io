@@ -1,8 +1,11 @@
 @import url('style.css');
 /*@import url('font-awesome.min.css');*/
-@import url('all.css');
-@import url('solid.css');
 
+@import url('solid.css');
+@import url('regular.css');
+@import url('brands.css');
+@import url('font-awesome.min.css');
+@import url('fontawesome.css');
 
 @import url('bootstrap.min.css');
 @import url('http://fonts.googleapis.com/css?family=Droid+Sans');

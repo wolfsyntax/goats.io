@@ -37,7 +37,6 @@ class Sitemap extends CI_Controller {
 	public function index()
 	{
 		
-#		$this->load->view('welcome_message');
 		if($this->session->userdata('username') != ''){
 			
 			redirect('dashboard');
@@ -53,12 +52,18 @@ class Sitemap extends CI_Controller {
 	}
 
 	public function dashboard(){
+
 		if($this->session->userdata('username') != ''){
+
 			$data['title'] = 'Dashboard';
 			$data['body'] = 'sitemaps/dashboard';
+
 			$this->load->view('layouts/application',$data);
+
 		}else{
+
 			redirect('/');
+
 		}
 
 	}
@@ -68,8 +73,18 @@ class Sitemap extends CI_Controller {
 
 		$data['title'] = 'About';
 		$data['body'] = 'sitemaps/about';
+
 		$this->load->view('layouts/application',$data);
 
+	}
+
+	public function page_not_found(){
+
+		$data['title'] = 'Error 404 (Not Found)!!';
+		$data['body'] = 'sitemaps/404';
+
+		$this->load->view('layouts/application',$data);	
+		
 	}
 
 	public function generate_report(){
@@ -95,5 +110,7 @@ class Sitemap extends CI_Controller {
 		//$dompdf->stream();
 		$dompdf->stream("T".md5(time()).".pdf", array("Attachment" => 0)); //output filename
 
-	}	
+	}
+
+
 }

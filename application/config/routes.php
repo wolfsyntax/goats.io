@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'sitemap';
-$route['404_override'] = '';
+$route['404_override'] = 'sitemap/page_not_found';
 $route['translate_uri_dashes'] = FALSE;
 
 
@@ -75,4 +75,5 @@ $route['forgot']['GET'] = 'user/forgot_pass';
 $route['forgot/identify']['POST'] = 'user/send_pass';
 $route['forgot/reset']['GET'] = 'user/reset_pass';
 $route['forgot/reset']['POST'] = 'user/change_pass';
+
 $route['cancel']['GET'] = 'user/cancel';
