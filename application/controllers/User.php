@@ -36,7 +36,16 @@ class User extends CI_Controller {
 		$this->load->model('User_model');
 //		$this->load->driver('session');
 
+		$config['protocol'] = 'smtp';
+		$config['smtp_host'] = 'ssl://smtp.googlemail.com';
+		$config['smtp_port'] = 465;
+		$config['smtp_user'] = 'mail.goats@gmail.com';
+		$config['smtp_pass'] = '09365621593';
+		$config['mailtype']	= 'html';
+		$config['charset'] = 'utf-8';
 
+		$this->email->initialize($config);
+		$this->email->set_newline("\r\n");
 
 
 	}
@@ -47,6 +56,7 @@ class User extends CI_Controller {
 		$data['title'] = 'Register';
 		$data['body'] = 'users/register';
 		
+
 		$this->load->view('layouts/application',$data);
 
 	}
@@ -165,7 +175,8 @@ class User extends CI_Controller {
 
 	public function register()
 	{
-		
+
+
 		if($this->session->userdata('username') == ''){
 			
 			$data['title'] = 'Register';
@@ -262,6 +273,20 @@ class User extends CI_Controller {
 									</div>
 								</div>');
 
+
+				$this->email->from('mail.goats@gmail.com','G.O.A.T.S');
+
+				$this->email->to($this->session->userdata('user_email'));
+				$this->email->subject("Your account using this email $(this->session->userdata('user_email')), has been created");
+				$this->email->message('<h1>Congratulation!</h1><br/>You are now part of our community. Feel free to use our system<br/><a href="https://www.facebook.com/wolf.syntax">- Wolf Syntax</a>');
+				
+				if($this->email->send()){
+					echo "<script>alert('Email Sent');</script>";
+				}else{
+					echo "<script>alert('Error: Email Not Sent');</script>";
+				}
+				
+
 				redirect('login');
 
 			}else{
@@ -278,6 +303,7 @@ class User extends CI_Controller {
 
 	public function login()
 	{
+
 		//echo validation_errors('<span class="error">', '</span>');
 		if($this->session->userdata('username') == ''){
 			
@@ -317,7 +343,7 @@ class User extends CI_Controller {
 		}else{
 
 			if($this->User_model->validate_login()){
-				
+
 				redirect('dashboard');
 
 			}else{
@@ -336,6 +362,29 @@ class User extends CI_Controller {
 			}
 			
 
+
+		}
+
+	}
+
+
+	public function send_email(){
+
+		$this->email->from('mail.goats@gmail.com','G.O.A.T.S');
+
+		$this->email->to('jaysonalpe@gmail.com');
+
+		$this->email->subject("Your account using this email ".$this->session->userdata('user_email').", has been created");
+				
+		$this->email->message('<h1>Congratulation!</h1><br/>You are now part of our community. Feel free to use our system<br/><a href="https://www.facebook.com/wolf.syntax">- Wolf Syntax</a>');
+				
+		if($this->email->send()){
+			
+			echo "<script>alert('Email Sent');</script>";
+
+		}else{
+			
+			echo "<script>alert('Error: Email Not Sent');</script>";
 
 		}
 
