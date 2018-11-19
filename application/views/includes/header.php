@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light col-12">
   <a class="navbar-brand text-center" href="#">&emsp;G.O.A.T.S</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
