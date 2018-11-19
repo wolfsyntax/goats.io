@@ -1,9 +1,10 @@
-<div class="container-fluid">
+<div class="container-fluid body" style="position: fixed;">
 	<div class="row">
     <?php $this->load->view('includes/header'); ?>
     <?php $this->load->view('includes/sidebar'); ?>
 
     <main class="col-12 col-md-11 col-lg-10 mt-5" role="main">
+      <section class="col-12 mt-5"></section>
       <section class="col-12 bg-light p-2">
         
         <div class="alert alert-warning alert-dismissible fade show p-2" role="alert">

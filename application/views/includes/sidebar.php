@@ -1,7 +1,7 @@
-<nav class="col-1 col-lg-2 d-none d-sm-none d-md-block d-xl-inline-block sidebar">
+<nav class="col-1 col-lg-2 d-none d-sm-none d-md-block d-xl-inline-block bg-light">
 
-  <div class="sidebar-sticky">
-    <ul class="nav flex-column">
+  <div class="sidebar" id="sidebar-div">
+    <ul class="nav flex-column " >
       <li class="nav-item">
         <a class="nav-link active" href="#" >
           <span class="fa fa-tachometer text-primary d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Dashboard"></span>
@@ -19,13 +19,11 @@
 
         <div class="collapse" id="goatManagement">
           <a class="nav-link">
-            &nbsp;
-            Add Livestock
+            <span class="fa fa-database d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none  d-lg-inline-block font-weight-normal">Goat Records</span>
           </a>
 
           <a class="nav-link">
-            &nbsp;
-            View Livestock
+            <span class="fa fa-plus-circle d-inline-block d-lg-none" title="Add Goat"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Add Goat</span>
           </a>
         </div>        
       </li>
@@ -39,18 +37,15 @@
 
         <div class="collapse" id="financialManagement">
           <a class="nav-link">
-            &nbsp;
-            Goat Sales
+            &nbsp;<span class="fa fa-usd d-inline-block d-lg-none" title="Goat Sales"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Goat Sales</span>
           </a>
 
           <a class="nav-link">
-           &nbsp;
-            Goat Purchases
+            &nbsp;<span class="fa fa-bar-chart-o d-inline-block d-lg-none" title="Goat Purchases"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Goat Purchases</span>
           </a>
 
           <a class="nav-link">
-            &nbsp;
-            Supply Expenses
+            &nbsp;<span class="fa fa-shopping-basket  d-inline-block d-lg-none" title="Supply Expense"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Supply Expense</span>
           </a>
 
         </div>         
@@ -58,25 +53,22 @@
 
       <li class="nav-item">
         <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck">
-           <span class="fa fa-stethoscope text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Vaccines and Health Check"></span>
-          <span class="fa fa-stethoscope text-sucess d-none d-sm-none d-md-none d-lg-inline-block"></span>
+           <span class="fa fa-heartbeat text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Vaccines and Health Check"></span>
+          <span class="fa fa-heartbeat text-sucess d-none d-sm-none d-md-none d-lg-inline-block"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block ">Health Check</span>
         </a>
 
         <div class="collapse" id="healthCheck">
           <a class="nav-link">
-            &nbsp;
-            Vaccination
+            <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Vaccination</span>
           </a>
 
           <a class="nav-link">
-           &nbsp;
-            Supplementation
+            <span class="fa fa-medkit d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Supplementation</span>
           </a>
 
           <a class="nav-link">
-            &nbsp;
-            Checkup
+            <span class="fa fa-user-md d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Checkup</span>
           </a>
 
         </div>
@@ -85,22 +77,19 @@
 
       <li class="nav-item">
         <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#breedingInfo" aria-expanded="false" aria-controls="breedingInfo">
-           <span class="fa fa-sitemap text-warning d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Breeding Info"></span>
-          <span class="fa fa-sitemap text-warning d-none d-sm-none d-md-none d-lg-inline-block"></span>
+           <span class="fa fa-table text-warning d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Breeding Records"></span>
+          <span class="fa fa-table text-warning d-none d-sm-none d-md-none d-lg-inline-block"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Breeding Records</span>
         </a>
 
         <div class="collapse" id="breedingInfo">
           <a class="nav-link">
-            &nbsp;
-            Breeding
+            <span class="fa fa-sitemap d-inline-block d-lg-none" title="Breeding"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Breeding</span>
           </a>
 
           <a class="nav-link">
-           &nbsp;
-            Pregnancy Check
+            <span class="fa fa-calendar d-inline-block d-lg-none" title="Pregnancy Check"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Pregnancy Check</span>
           </a>
-
         </div>
 
       </li>
@@ -109,7 +98,7 @@
         <a class="nav-link text-dark" href="#" >
            <span class="fa fa-archive text-danger d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Asset Management"></span>
           <span class="fa fa-archive text-danger d-none d-sm-none d-md-none d-lg-inline-block"></span>
-          &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Inventory Management</span>
+          &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Asset Management</span>
         </a>
       </li>
 
@@ -120,6 +109,9 @@
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Reports</span>
         </a>
       </li>
+
+      <li class="nav-item">&emsp;</li>
+      <li class="nav-item">&emsp;</li>
 
     </ul>
   </div>

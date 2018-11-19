@@ -34,9 +34,26 @@
 		$(document).ready(function(){
 			$(function () {
 
+				$('.sidebar').slimScroll({
+					height: '100vh',
+					width: '100%',
+
+					position: 'right',
+					top: '20px',
+					size : '3px',
+					barClass : 'slimScrollBar_new',
+					alwaysVisible: true,
+				})
+
+				$('.body').slimScroll({
+					height: '100vh',
+					width: '100%',
+					size: '3px',
+				})
+
 				$('[data-toggle="tooltip"]').tooltip()
 
-	  			$('#err_username').popover('show',{
+		  		$('#err_username').popover('show',{
 					container: 'body'
 				})
 
@@ -46,13 +63,13 @@
 
 				$('body').scrollspy({ target: '#navbar-example' })
 
-
 				$('[data-spy="scroll"]').each(function () {
-					var $spy = $(this).scrollspy('refresh')
+						var $spy = $(this).scrollspy('refresh')
 				})
 
 			})			
-		})
+		});
+
 	</script>
 </body>
 </html>
