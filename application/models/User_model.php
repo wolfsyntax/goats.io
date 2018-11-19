@@ -98,6 +98,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 		}
 
+		public function emailer($email, $new_pass){
+
+			$this->email->from('mail.goats@gmail.com','G.O.A.T.S');
+
+			$this->email->to($email);
+
+			$this->email->subject("Your password has been changed ".$this->session->userdata('user_email')."!");
+				
+			$this->email->message('<h1>Your Password has been changed!</h1><br/>New Password: '.$new_pass.'.<br/>For security purposes please delete this email. Note: <i>You can change your password on your profile settings</i><br/>-The Team');
+				
+			if($this->email->send()){
+			
+				echo "<script>alert('Email Sent');</script>";
+
+			}else{
+			
+				echo "<script>alert('Error: Email Not Sent');</script>";
+
+			}
+
+		}
+
 		public function confirm_change($option = 0){
 			
 			if(!empty($_POST)){
@@ -137,13 +159,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					}
 
-				} else {
+				} else if($option == 1) {
 
 					$data = array(
 						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
 					);					
 				
 					$this->db->where('UserID',$this->session->userdata('user_id'));
+					return $this->db->update('user_account',$data); 
+
+				}else {
+
+					$data = array(
+						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
+					);					
+				
+					$this->db->where('Email',$this->session->userdata('email'));
+
+					$this->emailer($this->session->userdata('email'), $this->input->post('passwd'));
+
 					return $this->db->update('user_account',$data); 
 
 				}

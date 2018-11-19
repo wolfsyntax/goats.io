@@ -157,6 +157,19 @@ class CI_Form_validation {
 
 	}
 
+	public function is_exist($str, $field)
+	{
+		
+		sscanf($field, '%[^.].%[^.]', $table, $field);
+		
+		if(isset($this->CI->db)){
+
+			return ($this->CI->db->limit(1)->get_where($table, array($field => $str))->num_rows() === 0 ? FALSE : TRUE);
+
+		}
+
+		return FALSE;
+	}
 
 	// --------------------------------------------------------------------
 
@@ -1092,7 +1105,8 @@ class CI_Form_validation {
 	 * @return	bool
 	 */
 	public function matches($str, $field)
-	{
+	{	
+		
 		return isset($this->_field_data[$field], $this->_field_data[$field]['postdata'])
 			? ($str === $this->_field_data[$field]['postdata'])
 			: FALSE;

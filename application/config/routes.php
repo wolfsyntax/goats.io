@@ -70,3 +70,9 @@ $route['logout'] = 'sessions';
 
 $route['about'] = 'sitemap/about';
 $route['dashboard'] = 'sitemap/dashboard';
+
+$route['forgot']['GET'] = 'user/forgot_pass';
+$route['forgot/identify']['POST'] = 'user/send_pass';
+$route['forgot/reset']['GET'] = 'user/reset_pass';
+$route['forgot/reset']['POST'] = 'user/change_pass';
+$route['cancel']['GET'] = 'user/cancel';

@@ -66,7 +66,7 @@
 								</div>
 							
 								<div class="col-12 col-sm-6 col-lg-6">
-									<a href="" class="nav-link font-weight-bold text-uppercase text-dark" title="Forgot Password?" tabindex="0"><small>Forgot Password?</small></a>
+									<a href="<?= base_url(); ?>forgot" class="nav-link font-weight-bold text-uppercase text-dark" title="Forgot Password?" tabindex="0"><small>Forgot Password?</small></a>
 								</div>
 							</div>							
 
