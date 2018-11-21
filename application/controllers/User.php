@@ -444,7 +444,7 @@ class User extends CI_Controller {
 
 		}else{
 			if($this->User_model->confirm_change(2)){
-
+				
 				redirect(base_url()."login");
 
 			}else{

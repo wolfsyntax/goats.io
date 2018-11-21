@@ -34,7 +34,7 @@
 											</button>
 										</div>
 										<div class="col-2">
-											<a href="#" class="btn btn-dark btn-sm">Cancel</a>
+											<a href="<?= base_url(); ?>login" class="btn btn-dark btn-sm">Cancel</a>
 										</div>
 									</div>
 								<?= form_close(); ?>

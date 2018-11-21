@@ -50,14 +50,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						
 						//Case Sensitive: $row->field_name, field_name is case-sensitive
 
-						$this->session->set_userdata('user_email',$row->Email);
-						$this->session->set_userdata('username',$row->Username);
-						$this->session->set_userdata('user_id',$row->UserID);
-						$this->session->set_userdata('user_fname',$row->FirstName);
-						$this->session->set_userdata('user_lname',$row->LastName);
-						$this->session->set_userdata('user_phone',$row->Phone);
-						$this->session->set_userdata('farm_name',$row->FarmName);
-						$this->session->set_userdata('user_type',$row->AccountType);
+						$this->session->set_userdata('user_email',$row->email);
+						$this->session->set_userdata('username',$row->username);
+						$this->session->set_userdata('user_id',$row->user_id);
+						$this->session->set_userdata('user_fname',$row->first_name);
+						$this->session->set_userdata('user_lname',$row->last_name);
+						$this->session->set_userdata('user_phone',$row->phone);
+						$this->session->set_userdata('farm_name',$row->farm_name);
+						$this->session->set_userdata('user_type',$row->account_type);
 
 						$this->session->set_userdata('notif', 1);
 
@@ -82,13 +82,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				$data = array(
 
-					'FirstName'		=>	$this->input->post('first_name', TRUE),
-					'LastName'		=>	$this->input->post('last_name', TRUE),
+					'first_name'		=>	$this->input->post('first_name', TRUE),
+					'last_name'		=>	$this->input->post('last_name', TRUE),
 					'Username'		=>	$this->input->post('username', TRUE),
 					'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
 					'Email'			=>	$this->input->post('email', TRUE),
 					'Phone'			=>	$this->input->post('phone',TRUE),
-					'AccountType'	=>	$this->input->post('account_type',TRUE),
+					'Account_Type'	=>	$this->input->post('account_type',TRUE),
 
 				);
 					
@@ -132,15 +132,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					$data = array(
 
-						'FirstName'		=>	$first_name,
-						'LastName'		=>	$last_name,
+						'first_name'		=>	$first_name,
+						'last_name'		=>	$last_name,
 						'Phone'			=>	$phone,
 
 					);
 
 
 					
-					$this->db->where('UserID',$this->session->userdata('user_id'));
+					$this->db->where('User_ID',$this->session->userdata('user_id'));
 
 					if($this->db->update('user_account',$data)){
 						
@@ -167,7 +167,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
 					);					
 				
-					$this->db->where('UserID',$this->session->userdata('user_id'));
+					$this->db->where('User_ID',$this->session->userdata('user_id'));
 					return $this->db->update('user_account',$data); 
 
 				}else {
