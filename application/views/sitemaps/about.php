@@ -1,3 +1,9 @@
+<section class="bg-dark">
+  <div class="container-fluid">
+    <?php $this->load->view('includes/generic_header');?>
+  </div>
+</section>
+
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">About Us</h1>
@@ -75,5 +81,14 @@
   			</div>
   		</div>
   	</div>
+  </div>
+</section>
+<section>
+  <div class="container mt-5">
+    <div class="row px-1">
+      <div class="col-4">
+        Some Icons are trademark of respective owners from <a href="https://www.flaticon.com/">www.flaticon.com</a> and licensed by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+      </div>
+    </div>
   </div>
 </section>

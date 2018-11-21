@@ -1,6 +1,6 @@
 <div class="container-fluid body" style="position: fixed;">
 	<div class="row">
-    <?php $this->load->view('includes/header'); ?>
+    <?php $this->load->view('includes/user_header'); ?>
     <?php $this->load->view('includes/sidebar'); ?>
 
     <main class="col-12 col-md-11 col-lg-10 mt-5" role="main">

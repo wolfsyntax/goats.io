@@ -1,8 +1,8 @@
 
 <div class="container-fluid" style="height: 100vh !important;">
 	<div class="row">
-		<div class="col-12 col-md-3 col-lg-4 d-none d-sm-none d-md-block" style="height: 100vh !important;">&emsp;</div>
-		<div class="col-12 col-md-6 col-lg-4 px-0" style="height: 100vh !important;">
+		<div class="col-12 col-md-3 col-lg-4 d-none d-sm-none d-md-block" style="">&emsp;</div>
+		<div class="col-12 col-md-6 col-lg-4 px-0" style="">
 			<div class="container-fluid mt-md-3 px-md-1">
 				<div class="clearfix mt-md-5">&emsp;</div>
 				
@@ -11,7 +11,7 @@
 				</div>
 
 
-				<div class="row mt-4">
+				<div class="row mt-2">
 					<div class="col-12 col-sm-12 col-lg-12 h-100 px-0">
 						<?php echo form_open('',array('class'=>'mt-md-5','style'=>'')); ?>
 							<div class="container-fluid">
@@ -25,7 +25,7 @@
 								<div class="row">
 									<div class="col-12 ">
 										<div class="form-group">
-								        	<input type="text" class="form-control" id="" name="username" placeholder="Username" value="<?= set_value('username'); ?>" >
+								        	<input type="text" class="form-control" id="" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
 
 											<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>																
 								        </div>
@@ -62,11 +62,11 @@
 							<div class="clearfix">&emsp;</div>
 							<div class="row">
 								<div class="col-12 col-sm-6 col-lg-6">
-									<a href="register" class="nav-link font-weight-bold text-uppercase text-dark" title="Create Account" tabindex="1"><small>Create Account</small></a>
+									<a href="register" class="nav-link font-weight-bold text-sm-center text-uppercase text-dark" title="Create Account" tabindex="1"><small>Create Account</small></a>
 								</div>
 							
 								<div class="col-12 col-sm-6 col-lg-6">
-									<a href="<?= base_url(); ?>forgot" class="nav-link font-weight-bold text-uppercase text-dark" title="Forgot Password?" tabindex="0"><small>Forgot Password?</small></a>
+									<a href="<?= base_url(); ?>forgot" class="nav-link font-weight-bold text-uppercase text-dark" title="Forgot Password?" tabindex="0"><small class="align-center">Forgot Password?</small></a>
 								</div>
 							</div>							
 
@@ -76,6 +76,8 @@
 			</div>
 		</div>
 
-		<div class="col-12 col-md-3 col-lg-4 d-none d-sm-none d-md-block" style="height: 100vh !important;">&emsp;</div>
+		<div class="col-12 col-md-3 col-lg-4 d-none d-sm-none d-md-block" style="">&emsp;</div>
 	</div>
+
+	
 </div>

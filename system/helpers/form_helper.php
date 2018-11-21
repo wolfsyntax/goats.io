@@ -77,7 +77,7 @@ if ( ! function_exists('form_open'))
 		}
 
 		$attributes = _attributes_to_string($attributes);
-
+		$attributes .= ' autocomplete="off"';
 		if (stripos($attributes, 'method=') === FALSE)
 		{
 			$attributes .= ' method="post"';
@@ -87,7 +87,9 @@ if ( ! function_exists('form_open'))
 		{
 			$attributes .= ' accept-charset="'.strtolower(config_item('charset')).'"';
 		}
-
+		
+		
+		
 		$form = '<form action="'.$action.'"'.$attributes.">\n";
 
 		if (is_array($hidden))

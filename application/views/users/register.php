@@ -16,7 +16,7 @@
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 							
-									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?php echo set_value('first_name');?>">
+									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?php echo set_value('first_name');?>" autocomplete="off">
 									
 									<small class="form-text text-muted">
 										<?php echo (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
@@ -27,7 +27,7 @@
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 							
-									<input type="text" class="form-control" name = "last_name" id="" aria-describedby="" placeholder="Last name" value="<?php echo set_value('last_name');?>">
+									<input type="text" class="form-control" name = "last_name" id="" aria-describedby="" placeholder="Last name" value="<?php echo set_value('last_name');?>" autocomplete="off">
 
 									<small class="form-text text-muted">
 										<?php echo (form_error('last_name')	!= "" ? form_error('last_name') : ''); ?>							
@@ -39,7 +39,7 @@
 							<div class="col-12 col-md-12">
 								<div class="form-group">
 							
-									<input type="text" class="form-control" name = "username" id="" aria-describedby="" placeholder="Username" value="<?php echo set_value('username');?>">
+									<input type="text" class="form-control" name = "username" id="" aria-describedby="" placeholder="Username" value="<?php echo set_value('username');?>" autocomplete="off">
 
 									<small class="form-text text-muted">
 										<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>			
@@ -51,7 +51,7 @@
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 							
-									<input type="email" class="form-control" name = "email" id="" aria-describedby="" placeholder="Email" value="<?php echo set_value('email');?>">
+									<input type="email" class="form-control" name = "email" id="" aria-describedby="" placeholder="Email" value="<?php echo set_value('email');?>" autocomplete="off">
 
 									<small class="form-text text-muted">
 										<?php echo (form_error('email')	!= "" ? form_error('email') : ''); ?>							
@@ -62,7 +62,7 @@
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 							
-									<input type="text" class="form-control" name = "phone" id="" aria-describedby="" placeholder="Mobile number" value="<?php echo set_value('phone');?>">
+									<input type="text" class="form-control" name = "phone" id="" aria-describedby="" placeholder="Mobile number" value="<?php echo set_value('phone');?>" autocomplete="off">
 									
 									<small class="form-text text-muted">
 										<?php echo (form_error('phone')	!= "" ? form_error('phone') : ''); ?>							
