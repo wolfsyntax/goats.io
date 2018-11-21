@@ -17,7 +17,7 @@
                 <label class="col-lg-2 col-form-label form-control-label">EarTag ID:</label>
                         
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="">
+                    <input class="form-control" type="text" value="" name="eartag_id">
                 </div>
 
             </div>
@@ -25,9 +25,9 @@
             <div class="form-group row">
 
                 <label class="col-lg-2 col-form-label form-control-label">Tag Color:</label>
-                <div class="col-lg-9">
 
-                    <input class="form-control" type="text" value="">
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" value="" name="eartag_color">
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                 <label class="col-lg-2 col-form-label form-control-label">Body Color:</label>
 
                 <div class="col-lg-9">
-                    <input class="form-control" type="email" value="">
+                    <input class="form-control" type="text" value="" name="body_color">
                 </div>
 
             </div>
@@ -46,7 +46,7 @@
                         
                 <div class="col-lg-9">
 
-                    <input class="form-control" type="date" value="yyyy-mm-dd" id="example-date-input">
+                    <input class="form-control" type="date" value="yyyy-mm-dd" id="example-date-input" name="birth_date">
 
                 </div>
 

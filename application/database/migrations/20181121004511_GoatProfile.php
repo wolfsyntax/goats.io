@@ -36,6 +36,7 @@
             'is_castrated' => array(
               'type' => 'INT',
               'constraint' => 1,
+              'null' => TRUE,
             ),
           ));
 

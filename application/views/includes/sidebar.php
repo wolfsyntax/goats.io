@@ -10,9 +10,9 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#goatManagement" aria-expanded="false" aria-controls="goatManagement">
-           <span class="fa fa-paw text-secondary d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Manage Livestock"></span>
+      <li class="nav-item" >
+        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#goatManagement" aria-expanded="false" aria-controls="goatManagement"  data-toggled="popover" title="Goat Management" data-content="Here you can manage your goats records" data-placement="right" data-trigger="focus" >
+           <span class="fa fa-paw text-secondary d-inline d-sm-inline-block d-md-inline-block d-lg-none"></span>
           <span class="fa fa-paw text-secondary d-none d-sm-none d-md-none d-lg-inline-block"></span>
             &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Goat Management</span>
         </a>
@@ -29,7 +29,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#financialManagement" aria-expanded="false" aria-controls="financialManagement">
+        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#financialManagement" aria-expanded="false" aria-controls="financialManagement"data-toggled="popover" title="Financials" data-content="Here you can manage your Goat Sales, Purchases and Expenses Purchased." data-placement="right" data-trigger="focus" >
            <span class="fa fa-money text-info d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Financials"></span>
           <span class="fa fa-money text-info d-none d-sm-none d-md-none d-lg-inline-block"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Financials</span>
@@ -52,7 +52,7 @@
       </li>
 
       <li class="nav-item ">
-        <a class="nav-link text-success" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck">
+        <a class="nav-link text-success" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck" data-toggled="popover" title="Health Check" data-content="Here you can farm activities like Vaccination, Supplementation and Health Checkup" data-placement="right" data-trigger="focus" >
            <span class="fa fa-heartbeat text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Health Check"></span>
           <span class="fa fa-heartbeat text-sucess d-none d-sm-none d-md-none d-lg-inline-block" title="Health Check"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block text-dark">Health Check</span>
@@ -76,7 +76,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#breedingInfo" aria-expanded="false" aria-controls="breedingInfo">
+        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#breedingInfo" aria-expanded="false" aria-controls="breedingInfo" data-toggled="popover" title="Breeding Records" data-content="Here you can manage your Goat breeding" data-placement="right" data-trigger="focus" >
            <span class="fa fa-table text-warning d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Breeding Records"></span>
           <span class="fa fa-table text-warning d-none d-sm-none d-md-none d-lg-inline-block"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Breeding Records</span>
@@ -95,7 +95,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-dark" href="#" >
+        <a class="nav-link text-dark" href="#" data-toggled="popover" title="Asset Management" data-content="Here you can manage your farm assets" data-placement="right" data-trigger="focus" >
            <span class="fa fa-archive text-danger d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Asset Management"></span>
           <span class="fa fa-archive text-danger d-none d-sm-none d-md-none d-lg-inline-block"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Asset Management</span>
@@ -103,7 +103,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-dark" href="#" >
+        <a class="nav-link text-dark" href="#" data-toggled="popover" title="Reports" data-content="Here you reports on all transaction of your account" data-placement="right" data-trigger="focus" >
            <span class="fa fa-info-circle text-dark d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Reports"></span>
           <span class="fa fa-info-circle text-dark d-none d-sm-none d-md-none d-lg-inline-block"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Reports</span>
