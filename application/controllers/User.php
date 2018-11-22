@@ -50,6 +50,9 @@ class User extends CI_Controller {
 
 	}
 
+	public function test(){
+		echo "<script>alert('test');</script>";
+	}
 	public function index()
 	{
 		
@@ -83,13 +86,13 @@ class User extends CI_Controller {
 		
 		if($this->session->userdata('username')){	
 
-			$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim',
+			$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim|xss_clean',
 				array(
 					'required' => 'Mobile number is required',
 				)
 			);
 
-			$this->form_validation->set_rules('last_name','Last name','required|min_length[2]|trim',
+			$this->form_validation->set_rules('last_name','Last name','required|min_length[2]|trim|xss_clean',
 				array(
 					'required' => 'Last name is required',
 					'min_length[2]' => 'Last name must contain at least two (2) letters',
@@ -97,7 +100,7 @@ class User extends CI_Controller {
 			);
 
 
-			$this->form_validation->set_rules('first_name','First name','required|trim',
+			$this->form_validation->set_rules('first_name','First name','required|trim|xss_clean',
 				array(
 					'required' => 'First name is required',			)
 			);
@@ -145,7 +148,7 @@ class User extends CI_Controller {
 		if($this->session->userdata('username')){
 
 			$this->form_validation->set_rules(
-				'passwd','Password','required|min_length[6]|trim',
+				'passwd','Password','required|min_length[6]|trim|xss_clean',
 				array(
 					'required' => 'Password is required',
 					'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
@@ -153,7 +156,7 @@ class User extends CI_Controller {
 			);
 
 			$this->form_validation->set_rules(
-				'conf_passwd','Confirm Password','required|matches[passwd]',
+				'conf_passwd','Confirm Password','required|matches[passwd]|xss_clean',
 				array(
 					'required' => 'Password is required',
 					'matches["password"]' => 'Confirmation Password does not match',
@@ -221,7 +224,7 @@ class User extends CI_Controller {
 		
 
 		$this->form_validation->set_rules(
-			'email','Email Address','required|valid_email|trim|is_unique[user_account.Email]',
+			'email','Email Address','required|valid_email|trim|is_unique[user_account.Email]|xss_clean',
 			array(
 				'required' => '%s is required',
 				'is_unique' => '%s is already taken',
@@ -230,7 +233,7 @@ class User extends CI_Controller {
 		);
 
 		$this->form_validation->set_rules(
-			'username','Username','required|trim|is_unique[user_account.Username]',
+			'username','Username','required|trim|is_unique[user_account.Username]|xss_clean',
 			array(
 				'required' => '%s is required',
 				'is_unique' => '%s is already taken',
@@ -238,27 +241,27 @@ class User extends CI_Controller {
 		);
 
 		$this->form_validation->set_rules(
-			'passwd','Password','required|min_length[6]|trim',
+			'passwd','Password','required|min_length[6]|trim|xss_clean',
 			array(
 				'required' => 'Password is required',
 				'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
 			)
 		);
 
-		$this->form_validation->set_rules('account_type','Account Type','required|account_type|trim',
+		$this->form_validation->set_rules('account_type','Account Type','required|account_type|trim|xss_clean',
 			array(
 				'required' => 'Account Type is required',
 				'account_type' => '%s is not a valid Account Type',
 			)
 		);
 
-		$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim',
+		$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim|xss_clean',
 			array(
 				'required' => 'Mobile number is required',
 			)
 		);
 
-		$this->form_validation->set_rules('last_name','Last name','required|min_length[2]|trim',
+		$this->form_validation->set_rules('last_name','Last name','required|min_length[2]|trim|xss_clean',
 			array(
 				'required' => 'Last name is required',
 				'min_length[2]' => 'Last name must contain at least two (2) letters',
@@ -266,14 +269,14 @@ class User extends CI_Controller {
 		);
 
 
-		$this->form_validation->set_rules('first_name','First name','required|trim',
+		$this->form_validation->set_rules('first_name','First name','required|trim|xss_clean',
 			array(
 				'required' => 'First name is required',			)
 		);
 
 
 		$this->form_validation->set_rules(
-			'conf_passwd','Confirm Password','required|matches[passwd]',
+			'conf_passwd','Confirm Password','required|matches[passwd]|xss_clean',
 			array(
 				'required' => 'Password is required',
 				'matches["password"]' => 'Confirmation Password does not match',
@@ -423,7 +426,7 @@ class User extends CI_Controller {
 	public function change_pass(){
 
 		$this->form_validation->set_rules(
-			'passwd','Password','required|min_length[6]|trim',
+			'passwd','Password','required|min_length[6]|trim|xss_clean',
 			array(
 				'required' => 'Password is required',
 				'min_length[6]' => 'Password must contain atleast six (6) alpha numeric characters'
@@ -431,7 +434,7 @@ class User extends CI_Controller {
 		);
 
 		$this->form_validation->set_rules(
-			'conf_passwd','Confirm Password','required|matches[passwd]',
+			'conf_passwd','Confirm Password','required|matches[passwd]|xss_clean',
 			array(
 				'required' => 'Password is required',
 				'matches["passwd"]' => 'Confirmation Password does not match',

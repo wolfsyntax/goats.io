@@ -22,7 +22,7 @@
             <span class="fa fa-database d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none  d-lg-inline-block font-weight-normal">Goat Records</span>
           </a>
 
-          <a class="nav-link">
+          <a class="nav-link" href="<?= base_url(); ?>goats/new">
             <span class="fa fa-plus-circle d-inline-block d-lg-none" title="Add Goat"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Add Goat</span>
           </a>
         </div>        

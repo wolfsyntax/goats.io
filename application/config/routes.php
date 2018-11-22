@@ -77,3 +77,6 @@ $route['forgot/reset']['GET'] = 'user/reset_pass';
 $route['forgot/reset']['POST'] = 'user/change_pass';
 
 $route['cancel']['GET'] = 'user/cancel';
+
+$route['goats/new']['GET'] = 'goat';
+$route['goats/new']['POST'] = 'goat/validate_goat_details';

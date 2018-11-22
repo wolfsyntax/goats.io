@@ -9,6 +9,7 @@
             'eartag_id' => array(
               'type' => 'INT',
               'constraint' => 11,
+              'unique' => TRUE,
             ),
             'eartag_color' => array(
               'type' => 'VARCHAR',

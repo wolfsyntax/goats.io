@@ -157,6 +157,11 @@ class CI_Form_validation {
 
 	}
 
+	public function alpha_spaces($str)
+	{
+		return (bool) preg_match('/^[A-Z ]+$/i', $str);
+	}
+
 	public function is_exist($str, $field)
 	{
 		
