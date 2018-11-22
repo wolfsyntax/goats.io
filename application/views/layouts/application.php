@@ -27,12 +27,17 @@
     <script src="<?= base_url()?>public/js/popper.min.js"></script>    
     <script src="<?= base_url()?>public/js/bootstrap.min.js"></script>
 
-   
+   	<script src="<?= base_url(); ?>assets/js/jquery-editable-select.min.js"></script>
     
 	<script type="text/javascript">
 
 	$(function () {
-  		$('[data-toggled="popover"]').popover()
+  		
+  		$('[data-toggled="popover"]').popover();
+
+  		$('#dam_id_select').editableSelect();
+
+  		$('#sire_id_select').editableSelect();
 	})
 
 	</script>

@@ -19,11 +19,11 @@
 
         <div class="collapse" id="goatManagement">
           <a class="nav-link">
-            <span class="fa fa-database d-inline-block d-lg-none" title="Goat Records"></span>&nbsp;<span class="d-none d-sm-none  d-lg-inline-block font-weight-normal">Goat Records</span>
+            <span class="fa fa-database d-inline-block d-lg-none" title="Goat Records"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Goat Records</span>
           </a>
 
-          <a class="nav-link" href="<?= base_url(); ?>goats/new">
-            <span class="fa fa-plus-circle d-inline-block d-lg-none" title="Add Goat"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Add Goat</span>
+          <a class="nav-link text-dark" href="<?= base_url(); ?>goats/new">
+            <span class="fa fa-plus-circle d-inline-block d-lg-none" title="Add Goat"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Add Goat</span>
           </a>
         </div>        
       </li>
@@ -37,15 +37,15 @@
 
         <div class="collapse" id="financialManagement">
           <a class="nav-link">
-            &nbsp;<span class="fa fa-usd d-inline-block d-lg-none" title="Goat Sales"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Goat Sales</span>
+            &nbsp;<span class="fa fa-usd d-inline-block d-lg-none" title="Goat Sales"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Goat Sales</span>
           </a>
 
           <a class="nav-link">
-            &nbsp;<span class="fa fa-bar-chart-o d-inline-block d-lg-none" title="Goat Purchases"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Goat Purchases</span>
+            &nbsp;<span class="fa fa-bar-chart-o d-inline-block d-lg-none" title="Goat Purchases"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Goat Purchases</span>
           </a>
 
           <a class="nav-link">
-            &nbsp;<span class="fa fa-shopping-basket  d-inline-block d-lg-none" title="Supply Expense"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Supply Expense</span>
+            &nbsp;<span class="fa fa-shopping-basket  d-inline-block d-lg-none" title="Supply Expense"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Supply Expense</span>
           </a>
 
         </div>         
@@ -60,15 +60,15 @@
 
         <div class="collapse" id="healthCheck">
           <a class="nav-link">
-            <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Vaccination"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Vaccination</span>
+            <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Vaccination"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Vaccination</span>
           </a>
 
           <a class="nav-link">
-            <span class="fas fa-capsules d-inline-block d-lg-none" title="Supplementation"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Supplementation</span>
+            <span class="fas fa-capsules d-inline-block d-lg-none" title="Supplementation"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Supplementation</span>
           </a>
 
           <a class="nav-link">
-            <span class="fa fa-user-md d-inline-block d-lg-none" title="Checkup"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Checkup</span>
+            <span class="fa fa-user-md d-inline-block d-lg-none" title="Checkup"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Checkup</span>
           </a>
 
         </div>
@@ -83,12 +83,12 @@
         </a>
 
         <div class="collapse" id="breedingInfo">
-          <a class="nav-link">
-            <span class="fa fa-sitemap d-inline-block d-lg-none" title="Breeding"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Breeding</span>
+          <a class="nav-link text-dark" href="<?= base_url(); ?>breed/new">
+            <span class="fa fa-sitemap d-inline-block d-lg-none" title="Breeding"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Breeding</span>
           </a>
 
           <a class="nav-link">
-            <span class="fa fa-calendar d-inline-block d-lg-none" title="Pregnancy Check"></span>&nbsp;<span class="d-none d-sm-none d-lg-inline-block font-weight-normal">Pregnancy Check</span>
+            <span class="fa fa-calendar d-inline-block d-lg-none" title="Pregnancy Check"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Pregnancy Check</span>
           </a>
         </div>
 

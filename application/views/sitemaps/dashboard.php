@@ -20,6 +20,8 @@
 
       <section class="col-12">
         <?= ($this->session->flashdata('item')) ? $this->session->flashdata('item') : ''; ?>
+        
+        <?= ($this->session->flashdata('goat') ? $this->session->flashdata('goat') : ''); ?>
       </section>
 
       <section class="p-5 col-12 text-dark">

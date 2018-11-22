@@ -10,6 +10,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		}
 
+		public function select_applet( $table_name,$where="",  $field = "*"){
+			
+			if($field != '*')
+				$this->db->select($field);
+			
+			if($where){
+				$this->db->where($where);
+			}
+
+			return $this->db->get($table_name)->result();
+
+		}
+
 		public function add_goat(){
 
 			if(!empty($_POST)){
@@ -17,9 +30,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$data = array(
 
 					'eartag_id'		=>	$this->input->post('eartag_id', TRUE),
-					'eartag_color'	=>	$this->input->post('tag_color', TRUE),
-					'gender'		=>	$this->input->post('gender', TRUE),
-					'body_color'	=>	$this->input->post('body_color', TRUE),
+					'eartag_color'	=>	strtolower($this->input->post('tag_color', TRUE)),
+					'gender'		=>	strtolower($this->input->post('gender', TRUE)),
+					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
 					'birth_date'	=>	$this->input->post('birth_date', TRUE),
 					'sire_id'		=>	$this->input->post('sire_id',TRUE),
 					'dam_id'		=>	$this->input->post('dam_id',TRUE),
@@ -43,9 +56,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$data = array(
 
 					'eartag_id'		=>	$this->input->post('eartag_id', TRUE),
-					'eartag_color'	=>	$this->input->post('tag_color', TRUE),
-					'gender'		=>	$this->input->post('gender', TRUE),
-					'body_color'	=>	$this->input->post('body_color', TRUE),
+					'eartag_color'	=>	strtolower($this->input->post('tag_color', TRUE)),
+					'gender'		=>	strtolower($this->input->post('gender', TRUE)),
+					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
 					'birth_date'	=>	$this->input->post('birth_date', TRUE),
 					'sire_id'		=>	$this->input->post('sire_id',TRUE),
 					'dam_id'		=>	$this->input->post('dam_id',TRUE),
@@ -60,96 +73,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 		}
 
-		public function emailer($email, $new_pass){
+	
+		public function add_breeding_record(){
 
-			$this->email->from('mail.goats@gmail.com','G.O.A.T.S');
+			if(!empty($_POST)){
 
-			$this->email->to($email);
+				$data = array(
 
-			$this->email->subject("Your password has been changed ".$this->session->userdata('user_email')."!");
+					'dam_id'		=>	$this->input->post('dam_id', TRUE),
+					'sire_id'	=>	$this->input->post('sire_id', TRUE),
+					'breeding_date'		=>	$this->input->post('breed_date', TRUE),
+					'notes'	=>	$this->input->post('description', TRUE),
+
+				);
 				
-			$this->email->message('<h1>Your Password has been changed!</h1><br/>New Password: '.$new_pass.'.<br/>For security purposes please delete this email. Note: <i>You can change your password on your profile settings</i><br/>-The Team');
-				
-			if($this->email->send()){
-			
-				echo "<script>alert('Email Sent');</script>";
-
-			}else{
-			
-				echo "<script>alert('Error: Email Not Sent');</script>";
+				return $this->db->insert('breeding_record',$data);
 
 			}
 
 		}
-
-		public function confirm_change($option = 0){
-			
-			if(!empty($_POST)){
-
-				if($option == 0){
-					
-					$first_name = $this->input->post('first_name', TRUE);
-					$last_name = $this->input->post('last_name', TRUE);
-					$phone = $this->input->post('phone',TRUE);
-
-					$data = array(
-
-						'first_name'		=>	$first_name,
-						'last_name'		=>	$last_name,
-						'Phone'			=>	$phone,
-
-					);
-
-
-					
-					$this->db->where('User_ID',$this->session->userdata('user_id'));
-
-					if($this->db->update('user_account',$data)){
-						
-						$this->session->unset_userdata('user_fname');
-						$this->session->set_userdata('user_fname', $first_name);
-
-						$this->session->unset_userdata('user_lname');
-						$this->session->set_userdata('user_lname', $last_name);
-
-						$this->session->unset_userdata('user_phone');
-						$this->session->set_userdata('user_phone', $phone);
-
-						return true;
-
-					}else{
-
-						return false;
-
-					}
-
-				} else if($option == 1) {
-
-					$data = array(
-						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
-					);					
-				
-					$this->db->where('User_ID',$this->session->userdata('user_id'));
-					return $this->db->update('user_account',$data); 
-
-				}else {
-
-					$data = array(
-						'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
-					);					
-				
-					$this->db->where('Email',$this->session->userdata('email'));
-
-					$this->emailer($this->session->userdata('email'), $this->input->post('passwd'));
-
-					return $this->db->update('user_account',$data); 
-
-				}
-
-			}	
-
-		}
-
 
 	}
 ?>

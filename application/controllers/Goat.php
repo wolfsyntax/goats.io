@@ -55,6 +55,7 @@ class Goat extends CI_Controller {
 
 	}
 
+
 	public function validate_goat_details(){
 
 		if($this->session->userdata('username') != ''){
@@ -92,7 +93,7 @@ class Goat extends CI_Controller {
 					'required' => '{field} is required',
 				)
 			);
-			if($this->session->userdata('account_type') == 'admin')
+			
 			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric',
 				array(
 					'required' => '{field} is required',
@@ -150,7 +151,7 @@ class Goat extends CI_Controller {
 										
 										<div class="row">
 											<p><span class="fa fa-exclamation-circle"></span>
-						<strong>Success</strong>&emsp;Error: Cannot Add Goat.</p>
+						<strong>Failed</strong>&emsp;Error: Cannot Add Goat.</p>
 										</div>
 									</div>');
 				}
@@ -160,5 +161,119 @@ class Goat extends CI_Controller {
 		}
 
 	}
+
+	/**
+	 * Breeding Module
+	 *
+	 * Description... Line 1
+	 * Description... Line 2
+	 * Description... Line End
+	 *
+//	 * @param	mixed	$field
+//	 * @param	string	$label
+//	 * @param	mixed	$rules
+//	 * @param	array	$errors
+//	 * @return	CI_Form_validation
+	 */
+
+	public function breeding_module()
+	{
+		
+		if($this->session->userdata('username') != ''){
+			
+			$data['title'] = 'Goat Breeding';
+			$data['body'] = 'goats/breeding';
+			$data['sire_record'] = $this->Goat_model->select_applet('goat_profile',"gender = 'male'");
+
+			$data['dam_record'] = $this->Goat_model->select_applet('Goat_Profile',"gender = 'female'");
+
+			$data['test'] = $this->Goat_model->select_applet('goat_profile');
+
+			$this->load->view('layouts/application',$data);
+
+		}else{
+
+			redirect('dashboard');
+
+		}
+
+	}
+
+	public function validate_breeding_info()
+	{
+		
+		if($this->session->userdata('username') != ''){
+			
+			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id]',
+				array(
+					'required' => 'Dam ID is required',
+					'is_dam_exist' => 'Do not exist as a {field}',
+				)
+			);
+
+			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
+				array(
+					'required' => 'Sire ID is required',
+					'is_sire_exist' => 'Do not exist as a {field}',
+				)
+			);
+
+			$this->form_validation->set_rules('breed_date','Breed Date','required|xss_clean|trim',
+				array(
+					'required' => 'Breed Date is required',
+				)
+			);
+
+			$this->form_validation->set_rules('breed_date','Breed Date','required|xss_clean|trim',
+				array(
+					'required' => 'Breed Date is required',
+				)
+			);
+
+			if($this->form_validation->run() === FALSE){
+
+				self::breeding_module();
+
+			}else{
+				
+				$message = '';						
+				$flag = 0;		
+				if($this->Goat_model->add_breeding_record()){
+
+					$message = '<span class="fa fa-check-circle"></span>
+						<strong>Success</strong>&emsp; Breeding record added';
+					
+					$flag = 1;
+
+				}else{
+
+					$message = '<span class="fa fa-exclamation-circle"></span>
+						<strong>Failed</strong>&emsp; Cannot create new Breeding Record';
+
+				}
+
+				
+
+				$content = '<div class="alert '.($flag === 1 ? 'alert-success' : 'alert-danger').' col-12" role="alert" style="height: 50px;">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button><div class="row">
+											<p>'. $message . '</p>
+										</div>
+									</div>';
+
+				
+				$this->session->set_flashdata('goat', $content);
+				//self::breeding_module();
+				redirect('dashboard');
+				
+			}
+
+
+		}else{
+
+			redirect('dashboard');
+
+		}
+
+	}	
 
 }

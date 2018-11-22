@@ -15,19 +15,14 @@
 					<div class="col-12 col-sm-12 col-lg-12 h-100 px-0">
 						<?php echo form_open('',array('class'=>'mt-md-5','style'=>'')); ?>
 							<div class="container-fluid">
-								<?php if($this->session->flashdata('item')) { ?>
-								
-									<?php echo $this->session->flashdata('item'); ?>
-										
-								<?php } ?>
-								
+								<?= ($this->session->flashdata('item') ? $this->session->flashdata('item') : ''); ?>
 								
 								<div class="row">
 									<div class="col-12 ">
 										<div class="form-group">
 								        	<input type="text" class="form-control" id="" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
 
-											<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>																
+											<?= (form_error('username')	!= "" ? form_error('username') : ''); ?>																
 								        </div>
 								    </div>
 
@@ -36,7 +31,7 @@
 								        
 								        	<input type="password" class="form-control" id="" name="passwd" placeholder="Password" value="<?= set_value('passwd'); ?>">
 
-											<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>							
+											<?= (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>							
 								        </div>
 								    </div>
 
@@ -53,7 +48,7 @@
 								</div>
 							</div>
 
-						<?php echo form_close(); ?>
+						<?= form_close(); ?>
 
 					</div>
 

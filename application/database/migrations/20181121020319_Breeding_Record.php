@@ -26,6 +26,8 @@
             'is_pregnant' => array(
               'type' => 'INT',
               'constraint' => 1,
+              'default' => 0,
+              'null' => TRUE,
             ),
           ));
 
