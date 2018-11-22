@@ -22,11 +22,11 @@
                         
                 <div class="col-lg-9">
                     <div class="row">
-                        <input class="form-control" type="text" value="" name="eartag_id" placeholder="Ear Tag ID">
+                        <input class="form-control" type="text" value="<?= set_value('eartag_id'); ?>" name="eartag_id" placeholder="Ear Tag ID">
                     </div>
 
                     <div class="row mt-2">
-                        <?php echo (form_error('eartag_id')  != "" ? form_error('eartag_id') : ''); ?>
+                        <?= (form_error('eartag_id')  != "" ? form_error('eartag_id') : ''); ?>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="row mt-2">
-                        <?php echo (form_error('tag_color')  != "" ? form_error('tag_color') : ''); ?>
+                        <?= (form_error('tag_color')  != "" ? form_error('tag_color') : ''); ?>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="row mt-2">
-                        <?php echo (form_error('body_color')  != "" ? form_error('body_color') : ''); ?>
+                        <?= (form_error('body_color')  != "" ? form_error('body_color') : ''); ?>
                     </div>
 
                 </div>
@@ -76,7 +76,7 @@
                     </div>
                     
                     <div class="row mt-2">
-                        <?php echo (form_error('birth_date')  != "" ? form_error('birth_date') : ''); ?>
+                        <?= (form_error('birth_date')  != "" ? form_error('birth_date') : ''); ?>
                     </div>
 
                 </div>
