@@ -105,7 +105,8 @@ class User extends CI_Controller {
 					'required' => 'First name is required',			)
 			);
 
-
+			$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
+			
 			if ($this->form_validation->run() == FALSE){
 
 				$this->edit_account();
@@ -162,6 +163,8 @@ class User extends CI_Controller {
 					'matches["password"]' => 'Confirmation Password does not match',
 				)
 			);	
+
+			$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
 			if ($this->form_validation->run() == FALSE){
 
@@ -282,6 +285,9 @@ class User extends CI_Controller {
 				'matches["password"]' => 'Confirmation Password does not match',
 			)
 		);	
+
+
+		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
 		if ($this->form_validation->run() == FALSE){
 
@@ -441,6 +447,9 @@ class User extends CI_Controller {
 			)
 		);		
 
+		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
+
+
 		if ($this->form_validation->run() == FALSE){
 
 			$this->reset_pass();
@@ -473,6 +482,9 @@ class User extends CI_Controller {
 			'is_exist' => "%s is not registered",
 			'xss_clean' => '%s is not valid',
 			));
+
+
+		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
 		if ($this->form_validation->run() == FALSE){
 

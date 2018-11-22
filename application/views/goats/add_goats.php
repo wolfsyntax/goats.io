@@ -21,8 +21,13 @@
                 <label class="col-lg-2 col-form-label form-control-label">EarTag ID:</label>
                         
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="" name="eartag_id" placeholder="Ear Tag ID">
-                    <?php echo (form_error('eartag_id')  != "" ? form_error('eartag_id') : ''); ?>
+                    <div class="row">
+                        <input class="form-control" type="text" value="" name="eartag_id" placeholder="Ear Tag ID">
+                    </div>
+
+                    <div class="row mt-2">
+                        <?php echo (form_error('eartag_id')  != "" ? form_error('eartag_id') : ''); ?>
+                    </div>
                 </div>
 
             </div>
@@ -32,8 +37,14 @@
                 <label class="col-lg-2 col-form-label form-control-label">Tag Color:</label>
 
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="<?= set_value('tag_color'); ?>" name="tag_color" placeholder="Ear Tag Color">
-                    <?php echo (form_error('tag_color')  != "" ? form_error('tag_color') : ''); ?>
+
+                    <div class="row">
+                        <input class="form-control" type="text" value="<?= set_value('tag_color'); ?>" name="tag_color" placeholder="Ear Tag Color">
+                    </div>
+
+                    <div class="row mt-2">
+                        <?php echo (form_error('tag_color')  != "" ? form_error('tag_color') : ''); ?>
+                    </div>
                 </div>
             </div>
 
@@ -41,8 +52,15 @@
                 <label class="col-lg-2 col-form-label form-control-label">Body Color:</label>
 
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="<?= set_value('body_color'); ?>" name="body_color" placeholder="Body Color">
-                    <?php echo (form_error('body_color')  != "" ? form_error('body_color') : ''); ?>
+                    
+                    <div class="row">
+                        <input class="form-control" type="text" value="<?= set_value('body_color'); ?>" name="body_color" placeholder="Body Color">
+                    </div>
+
+                    <div class="row mt-2">
+                        <?php echo (form_error('body_color')  != "" ? form_error('body_color') : ''); ?>
+                    </div>
+
                 </div>
 
             </div>
@@ -52,10 +70,15 @@
                 <label class="col-lg-2 col-form-label form-control-label">Birthdate:</label>
                         
                 <div class="col-lg-9">
+                    
+                    <div class="row">
+                        <input class="form-control" type="date" value="<?= set_value('birth_date'); ?>" id="" name="birth_date" placeholder="Birth Date">
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <?php echo (form_error('birth_date')  != "" ? form_error('birth_date') : ''); ?>
+                    </div>
 
-                    <input class="form-control" type="date" value="<?= set_value('birth_date'); ?>" id="" name="birth_date" placeholder="Birth Date">
-
-                    <?php echo (form_error('birth_date')  != "" ? form_error('birth_date') : ''); ?>
                 </div>
 
             </div>
@@ -77,20 +100,24 @@
                 <label class="col-lg-2 col-form-label form-control-label">Gender:</label>
                         
                 <div class="col-lg-9">
+                    <div class="row">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            
+                            <label class="btn btn-light active">
+                                <input type="radio" name="gender" id="option1" value="Male"> Male
+                            </label>
 
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        
-                        <label class="btn btn-light">
-                            <input type="radio" name="gender" id="option1" value="Male"> Male
-                        </label>
+                            <label class="btn btn-light">
+                                <input type="radio" name="gender" id="option2" value="Female"> Female
+                            </label>
 
-                        <label class="btn btn-light">
-                            <input type="radio" name="gender" id="option2" value="Female"> Female
-                        </label>
-
-                        
+                            
+                        </div>
                     </div>
-                    <?php echo (form_error('gender')  != "" ? form_error('gender') : ''); ?>
+
+                    <div class="row mt-2">
+                        <?= (form_error('gender')  != "" ? form_error('gender') : ''); ?>
+                    </div>
                 </div>
 
             </div>
@@ -100,8 +127,12 @@
                 <label class="col-lg-2 col-form-label form-control-label">Sire Tag ID</label>
 
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="<?= set_value('sire_id'); ?>" name="sire_id" placeholder="Ear Tag ID (Sire)">
-                    <?php echo (form_error('sire_id')  != "" ? form_error('sire_id') : ''); ?>
+                    <div class="row">
+                        <input class="form-control" type="text" value="<?= set_value('sire_id'); ?>" name="sire_id" placeholder="Ear Tag ID (Sire)">
+                    </div>
+                    <div class="row mt-2">
+                        <?= (form_error('sire_id')  != "" ? form_error('sire_id') : ''); ?>
+                    </div>
                 </div>
 
             </div>
@@ -111,8 +142,12 @@
                 <label class="col-lg-2 col-form-label form-control-label">Dam Tag ID</label>
 
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="<?= set_value('dam_id'); ?>" name="dam_id" placeholder="Ear Tag ID (Dam)">
-                    <?php echo (form_error('dam_id')  != "" ? form_error('dam_id') : ''); ?>
+                    <div class="row">
+                        <input class="form-control" type="text" value="<?= set_value('dam_id'); ?>" name="dam_id" placeholder="Ear Tag ID (Dam)">
+                    </div>
+                    <div class="row mt-2">
+                        <?= (form_error('dam_id')  != "" ? form_error('dam_id') : ''); ?>
+                    </div>
                 </div>
 
             </div>

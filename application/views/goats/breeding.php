@@ -15,7 +15,9 @@
         <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Dam ID</label>                           
           
         <div class="col-lg-6">
-          <input class="form-control" type="text" value="" >
+          
+          <input class="form-control" type="text" value="<?= set_value('dam_id');?>" name="dam_id" placeholder="Dam ID">
+
         </div>
       </div>
 
@@ -23,7 +25,7 @@
         <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Sire ID</label>                           
           
         <div class="col-lg-6">
-          <input class="form-control" type="text" value="" >
+          <input class="form-control" type="text" value="<?= set_value('sire_id');?>" name="sire_id" placeholder="Sire ID" >
         </div>
       </div>
                                     
@@ -31,7 +33,7 @@
         <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Breeding Date</label>    
           
         <div class="col-lg-6">
-          <input class="form-control" type="date" value="yyyy-mm-dd" id="example-date-input">
+          <input class="form-control" type="date" value="<?= set_value('breed_date');?>" id="" placeholder="yyyy-mm-dd" name="breed_date">
         </div>
       </div>
 
@@ -40,7 +42,7 @@
         <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Description:</label>
                                                 
         <div class="col-lg-6">
-          <textarea class="form-control" id="exampleMessage"></textarea>
+          <textarea class="form-control" id="" placeholder="Description" name="description"></textarea>
         </div>
 
       </div>

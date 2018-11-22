@@ -1,5 +1,5 @@
 <div class="bg-light" style="height: 100vh;">
-<?php $this->load->view('includes/header'); ?>
+<?php $this->load->view('includes/user_header'); ?>
 <main role="main">
 	
 	<section>
@@ -19,9 +19,9 @@
 								
 									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?php echo (set_value('first_name') ? set_value('first_name') : $this->session->userdata('user_fname')); ?>">
 									
-									<small class="form-text text-muted">
-										<?php echo (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
-									</small>
+									
+									<?php echo (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
+									
 
 								</div>					
 							</div>
@@ -31,9 +31,9 @@
 							
 									<input type="text" class="form-control" name = "last_name" id="" aria-describedby="" placeholder="Last name" value="<?php echo (set_value('last_name') ? set_value('last_name') : $this->session->userdata('user_lname')); ?>">
 
-									<small class="form-text text-muted">
+									
 										<?php echo (form_error('last_name')	!= "" ? form_error('last_name') : ''); ?>							
-									</small>
+									
 
 								</div>					
 							</div>
@@ -43,9 +43,9 @@
 							
 									<input type="text" class="form-control" name = "phone" id="" aria-describedby="" placeholder="Mobile number" value="<?php echo (set_value('phone') ? set_value('phone') : $this->session->userdata('user_phone')); ?>">
 									
-									<small class="form-text text-muted">
+									
 										<?php echo (form_error('phone')	!= "" ? form_error('phone') : ''); ?>							
-									</small>
+									
 
 								</div>					
 							</div>
@@ -65,9 +65,9 @@
 							
 									<input type="password" class="form-control" name = "passwd" id="" aria-describedby="" placeholder="New Password" value="<?php echo set_value('passwd');?>">
 
-									<small class="form-text text-muted">
+									
 										<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>		
-									</small>
+									
 
 								</div>					
 							</div>
@@ -77,9 +77,9 @@
 							
 									<input type="password" class="form-control" name = "conf_passwd" id="" aria-describedby="" placeholder="Re-Type New Password" value="<?php echo set_value('conf_passwd');?>">
 
-									<small class="form-text text-muted">
+									
 										<?php echo (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>		
-									</small>		
+										
 
 								</div>					
 							</div>

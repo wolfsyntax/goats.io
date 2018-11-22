@@ -22,18 +22,18 @@
 										<div class="col-6">
 											<div class="form-group">
 												<input class="form-control" type="password" value="" name="passwd" value="" placeholder="New Password" />
-												<small class="form-text text-muted">
-													<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>	
-												</small>
+												
+												<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>	
+												
 											</div>
 										</div>
 
 										<div class="col-6">
 											<div class="form-group">
 												<input class="form-control" type="password" value="" name="conf_passwd" value="" placeholder="Re-Type New Password" />
-												<small class="form-text text-muted">
-													<?php echo (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>	
-												</small>
+												
+												<?php echo (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>	
+												
 											</div>
 										</div>
 

@@ -92,7 +92,7 @@ class Goat extends CI_Controller {
 					'required' => '{field} is required',
 				)
 			);
-
+			if($this->session->userdata('account_type') == 'admin')
 			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric',
 				array(
 					'required' => '{field} is required',
@@ -104,6 +104,26 @@ class Goat extends CI_Controller {
 					'required' => '{field} is required',
 				)
 			);
+
+
+			//check if the Dam ID is existed
+#			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numericis_exist[goat_profile.eartag_id]',
+#				array(
+#					'required' => '{field} is required',
+#					'is_exist' => '{field} is not a Sire',
+#				)
+#			);
+
+
+			//check if the Dam ID is existed
+#			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric|is_exist[goat_profile.eartag_id]',
+#				array(
+#					'required' => '{field} is required',
+#					'is_exist' => '{field} is not a Sire',
+#				)
+#			);
+
+			$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
 			if($this->form_validation->run() === FALSE){
 

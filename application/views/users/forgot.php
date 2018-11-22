@@ -21,9 +21,9 @@
 										<div class="col-12">
 											<div class="form-group">
 												<input class="form-control" type="text" value="" name="forgot_info" placeholder="Email Address" />
-												<small class="form-text text-muted">
-													<?php echo (form_error('forgot_info')	!= "" ? form_error('forgot_info') : ''); ?>	
-												</small>
+												
+												<?php echo (form_error('forgot_info')	!= "" ? form_error('forgot_info') : ''); ?>	
+												
 											</div>
 										</div>
 									</div>

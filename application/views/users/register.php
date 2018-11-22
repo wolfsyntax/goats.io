@@ -18,9 +18,9 @@
 							
 									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?php echo set_value('first_name');?>" autocomplete="off">
 									
-									<small class="form-text text-muted">
-										<?php echo (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
-									</small>
+									
+									<?= (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
+								
 
 								</div>					
 							</div>
@@ -29,9 +29,9 @@
 							
 									<input type="text" class="form-control" name = "last_name" id="" aria-describedby="" placeholder="Last name" value="<?php echo set_value('last_name');?>" autocomplete="off">
 
-									<small class="form-text text-muted">
-										<?php echo (form_error('last_name')	!= "" ? form_error('last_name') : ''); ?>							
-									</small>
+									
+									<?= (form_error('last_name')	!= "" ? form_error('last_name') : ''); ?>							
+									
 
 								</div>					
 							</div>
@@ -41,9 +41,9 @@
 							
 									<input type="text" class="form-control" name = "username" id="" aria-describedby="" placeholder="Username" value="<?php echo set_value('username');?>" autocomplete="off">
 
-									<small class="form-text text-muted">
-										<?php echo (form_error('username')	!= "" ? form_error('username') : ''); ?>			
-									</small>
+									
+									<?= (form_error('username')	!= "" ? form_error('username') : ''); ?>			
+								
 
 								</div>					
 							</div>
@@ -53,9 +53,8 @@
 							
 									<input type="email" class="form-control" name = "email" id="" aria-describedby="" placeholder="Email" value="<?php echo set_value('email');?>" autocomplete="off">
 
-									<small class="form-text text-muted">
-										<?php echo (form_error('email')	!= "" ? form_error('email') : ''); ?>							
-									</small>
+									<?= (form_error('email')	!= "" ? form_error('email') : ''); ?>							
+
 								</div>					
 							</div>
 
@@ -64,9 +63,8 @@
 							
 									<input type="text" class="form-control" name = "phone" id="" aria-describedby="" placeholder="Mobile number" value="<?php echo set_value('phone');?>" autocomplete="off">
 									
-									<small class="form-text text-muted">
-										<?php echo (form_error('phone')	!= "" ? form_error('phone') : ''); ?>							
-									</small>
+
+									<?= (form_error('phone')	!= "" ? form_error('phone') : ''); ?>							
 
 								</div>					
 							</div>
@@ -87,9 +85,9 @@
 										<option value="superuser">Tech Support</option>
 									</select>
 									
-									<small class="form-text text-muted">
-									<?php echo (form_error('account_type')	!= "" ? form_error('account_type') : ''); ?>				
-									</small>
+									
+									<?= (form_error('account_type')	!= "" ? form_error('account_type') : ''); ?>				
+									
 								</div>					
 							</div>
 
@@ -98,9 +96,9 @@
 							
 									<input type="password" class="form-control" name = "passwd" id="" aria-describedby="" placeholder="New Password" value="<?php echo set_value('passwd');?>">
 
-									<small class="form-text text-muted">
-										<?php echo (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>		
-									</small>
+									
+									<?= (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>		
+								
 
 								</div>					
 							</div>
@@ -110,9 +108,9 @@
 							
 									<input type="password" class="form-control" name = "conf_passwd" id="" aria-describedby="" placeholder="Re-Type New Password" value="<?php echo set_value('conf_passwd');?>">
 
-									<small class="form-text text-muted">
-										<?php echo (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>		
-									</small>		
+								
+									<?= (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>		
+											
 
 								</div>					
 							</div>
