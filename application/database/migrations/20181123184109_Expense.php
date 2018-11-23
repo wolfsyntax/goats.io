@@ -30,11 +30,17 @@
               'type' => 'INT',
               'constraint' => 8,
             ),
+            'user_id' => array(
+              'type' => 'INT',
+              'constraint' => 11,
+            ),
           ));
+
+           $this->dbforge->add_field('CONSTRAINT fk_expense_user FOREIGN KEY (`user_id`) REFERENCES User_Account(`user_id`)');
 
           $this->dbforge->add_key('expense_id', TRUE);
 
-          $this->dbforge->create_table('expense',TRUE,array('AUTO_INCREMENT' => '1'));
+          $this->dbforge->create_table('expense',TRUE,array('AUTO_INCREMENT' => '1',));
 
         }
 

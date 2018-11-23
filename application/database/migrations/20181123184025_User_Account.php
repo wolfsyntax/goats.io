@@ -1,6 +1,6 @@
 <?php
 
-      class Migration_UserAccount extends CI_Migration {
+      class Migration_User_Account extends CI_Migration {
 
         public function up() {
           
@@ -47,7 +47,7 @@
 
 
           $this->dbforge->add_key('user_id', TRUE);
-          $this->dbforge->create_table('user_account',TRUE);
+          $this->dbforge->create_table('user_account',TRUE,array('AUTO_INCREMENT' => '1'));
 
         }
 

@@ -37,7 +37,7 @@
 
           $this->dbforge->add_field('CONSTRAINT fk_dam_breeding FOREIGN KEY (`dam_id`) REFERENCES Goat_Profile(`eartag_id`)');
 
-          $this->dbforge->create_table('breeding_record',TRUE,array('AUTO_INCREMENT' => '1'));
+          $this->dbforge->create_table('breeding_record',TRUE,array('AUTO_INCREMENT' => '1',));
 
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-      class Migration_GoatProfile extends CI_Migration {
+      class Migration_Goat_Profile extends CI_Migration {
 
         public function up() {
 
@@ -38,11 +38,12 @@
               'type' => 'INT',
               'constraint' => 1,
               'null' => TRUE,
+              'default' => 0,
             ),
           ));
 
           $this->dbforge->add_key('eartag_id', TRUE);
-           $this->dbforge->create_table('goat_profile',TRUE);
+          $this->dbforge->create_table('goat_profile',TRUE,array('AUTO_INCREMENT' => '1',));
 
         }
 
