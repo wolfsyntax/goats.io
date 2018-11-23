@@ -1,11 +1,28 @@
-<div class="container-fluid body" style="position: fixed;">
+<div class="container-fluid body col-sm-10" style="position: fixed;">
 	<div class="row">
     <?php $this->load->view('includes/user_header'); ?>
     <?php $this->load->view('includes/sidebar'); ?>
 
-    <main class="col-12 col-md-11 col-lg-10 mt-5" role="main">
+    <main class="col-12 col-md-11 col-lg-10 mt-5" role="main" >
       <section class="col-12 mt-5">
-        &emsp;
+        <?php 
+
+          $carbon = new Carbon\Carbon;
+          echo $carbon::createFromFormat('Y-m-d H:i:s', $carbon::now())->format('H:i:s');
+
+        ?>
+        &emsp; 
+        <?php echo '<script>
+          window.onload = test();
+          function test(){
+            var x = "'.$carbon::createFromFormat('Y-m-d H:i:s', Carbon\Carbon::now())->format('H:i:s').'";
+            alert(x);
+            
+            setTimeout(test,1);
+          }
+          
+          </script>';
+        ?>
       </section>
       <section class="col-12 bg-light p-2">
         
@@ -46,3 +63,4 @@ Sed euismod nisi porta lorem. Suscipit tellus mauris a diam. Facilisi nullam veh
     </main>
 	</div>
 </div>
+

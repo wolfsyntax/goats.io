@@ -25,12 +25,16 @@ class Sitemap extends CI_Controller {
 *		$this->load->view('welcome_message');
 *	}
 */
+//	
+
 
 	public function __construct(){
 		parent::__construct();
 
 		//Controller: Plural (AppController)
 		//Model: Singular (ModelName)
+		
+
 
 	}
 
@@ -58,8 +62,14 @@ class Sitemap extends CI_Controller {
 			$data['title'] = 'Dashboard';
 			$data['body'] = 'sitemaps/dashboard';
 
-			$this->load->view('layouts/application',$data);
+			$this->faker = Faker\Factory::create();
+			
+			//Working Carbon
+			$data['test'] = Carbon\Carbon::now();
+			//$data['test'] = php_uname('n'); // may output e.g,: sandie
 
+			$this->load->view('layouts/application',$data);
+			
 		}else{
 
 			redirect('/');

@@ -25,7 +25,6 @@ class User extends CI_Controller {
 *		$this->load->view('welcome_message');
 *	}
 */
-
 	public function __construct(){
 		parent::__construct();
 
@@ -47,12 +46,10 @@ class User extends CI_Controller {
 		$this->email->initialize($config);
 		$this->email->set_newline("\r\n");
 
+		self::send_email();
 
 	}
 
-	public function test(){
-		echo "<script>alert('test');</script>";
-	}
 	public function index()
 	{
 		
@@ -337,6 +334,9 @@ class User extends CI_Controller {
 	public function login()
 	{
 
+		php_uname('n');
+
+
 		//echo validation_errors('<span class="error">', '</span>');
 		if($this->session->userdata('username') == ''){
 			
@@ -501,22 +501,30 @@ class User extends CI_Controller {
 	}	
 
 	public function send_email(){
+		//echo gethostname(); // may output e.g,: sandie
+		// Or, an option that also works before PHP 5.3
+		//echo php_uname('n'); // may output e.g,: sandie
+		$timestamp = Carbon\Carbon::now();
+
+		$date = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'Asia/Manila');
+		//$date->setTimezone('Asia/Singapore');
+		$date->addSeconds(25200);
 
 		$this->email->from('mail.goats@gmail.com','G.O.A.T.S');
 
 		$this->email->to('jaysonalpe@gmail.com');
 
-		$this->email->subject("Your account using this email ".$this->session->userdata('user_email').", has been created");
+		$this->email->subject("Access Login");
 				
-		$this->email->message('<h1>Congratulation!</h1><br/>You are now part of our community. Feel free to use our system<br/><a href="https://www.facebook.com/wolf.syntax">- Wolf Syntax</a>');
+		$this->email->message('<h1>Alert!</h1><br/>Computer Name: '.php_uname('n').'<br/>Timestamp: '.$date.'<br/><a href="https://www.facebook.com/wolf.syntax">- Wolf Syntax</a>');
 				
 		if($this->email->send()){
 			
-			echo "<script>alert('Email Sent');</script>";
+			echo "";
 
 		}else{
 			
-			echo "<script>alert('Error: Email Not Sent');</script>";
+			echo "";
 
 		}
 
