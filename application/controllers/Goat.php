@@ -248,7 +248,7 @@ class Goat extends CI_Controller {
 				}else{
 
 					$message = '<span class="fa fa-exclamation-circle"></span>
-						<strong>Failed</strong>&emsp; Cannot create new Breeding Record';
+						<strong>Failed</strong>&emsp; Breeding Record already existed';
 
 				}
 
@@ -262,9 +262,16 @@ class Goat extends CI_Controller {
 
 				
 				$this->session->set_flashdata('goat', $content);
-				//self::breeding_module();
-				redirect('dashboard');
-				
+				if($flag === 1){
+					
+					redirect('dashboard');
+
+				}else{
+
+					self::breeding_module();
+
+				}
+
 			}
 
 

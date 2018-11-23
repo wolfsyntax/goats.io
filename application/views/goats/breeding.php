@@ -3,7 +3,7 @@
   <section>
     <?php $this->load->view('/includes/user_header'); ?>
   </section>
-  <section>
+  <section class="mt-5">
  
     <div class="col-md-8 offset-md-2">
       <span class="anchor" id="formUserEdit"></span>
@@ -17,7 +17,9 @@
         
         <div class="card-body" >
           <?= form_open(base_url().'breed/verify', array('class'=> 'form')); ?>
-
+          <div class="form-group row"> 
+            <?= ($this->session->flashdata('goat') ? $this->session->flashdata('goat') : ''); ?>
+          </div>
 
           <div class="form-group row"> 
             <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Dam ID</label>                           
