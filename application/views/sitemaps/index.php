@@ -87,5 +87,27 @@
 		</div>
 	</section>
 
+
+	<section>
+		<div class="row">
+			<div class="col-2 bg-danger collapse show" id="demo">
+				A
+			</div>
+			<div class="col-10 bg-primary" id="myDIV">
+				 <button data-toggle="collapse" data-target="#demo" onclick="xv(); return false;">A</button>
+			</div>
+		</div>
+
+	</section>
+
+
+	<script type="text/javascript">
+		function xv(){
+			var element = document.getElementById("myDIV");
+   			element.classList.toggle("col-12");
+   			document.getElementById("demo");
+   			element.classList.toggle("d-non d-sm-none");
+		}
+	</script>
 </main>
 </div>

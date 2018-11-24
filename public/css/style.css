@@ -59,3 +59,21 @@ a:hover {
   text-decoration: underline;
 }
 
+
+/**
+*  
+**/
+
+/**.sidebar ul li a {
+  background-color: #fff !important;
+
+}**/
+
+.sidebar ul li div.collapse a.nav-link:hover {
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+
+.sidebar ul li div.collapse a.nav-link:hover span.fa {
+  color: #fff !important;
+}

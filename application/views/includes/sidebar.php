@@ -52,12 +52,16 @@
       </li>
 
       <li class="nav-item ">
-        <a class="nav-link text-success" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck" data-toggled="popover" title="Health Check" data-content="Here you can farm activities like Vaccination, Supplementation and Health Checkup" data-placement="right" data-trigger="focus" >
+        <!--a class="nav-link text-success" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck" data-toggled="popover" title="Health Check" data-content="Here you can farm activities like Vaccination, Supplementation and Health Checkup" data-placement="right" data-trigger="focus" >
            <span class="fa fa-heartbeat text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Health Check"></span>
           <span class="fa fa-heartbeat text-sucess d-none d-sm-none d-md-none d-lg-inline-block" title="Health Check"></span>
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block text-dark">Health Check</span>
+        </a-->
+        <a class="nav-link text-dark" href="#" data-toggle="collapse" data-target="#healthCheck" aria-expanded="false" aria-controls="healthCheck"data-toggled="popover" title="Health Check" data-content="Here you can farm activities like Vaccination, Supplementation and Health Checkup"" data-placement="right" data-trigger="focus" >
+           <span class="fa fa-heartbeat text-success d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Health Check"></span>
+          <span class="fa fa-heartbeat text-success d-none d-sm-none d-md-none d-lg-inline-block"></span>
+          &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Health Check</span>
         </a>
-
         <div class="collapse" id="healthCheck" data-parent="#sidebar-div" >
           <a class="nav-link">
             <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Vaccination"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Vaccination</span>

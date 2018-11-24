@@ -38,6 +38,7 @@
   		$('#dam_id_select').editableSelect();
 
   		$('#sire_id_select').editableSelect();
+
 	})
 
 	</script>
