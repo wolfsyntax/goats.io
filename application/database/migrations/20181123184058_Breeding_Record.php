@@ -5,8 +5,7 @@
         public function up() {
           $this->dbforge->add_field(array(
             'breeding_id' => array(
-              'type' => 'INT',
-              'constraint' => 11,
+              'type' => 'INT', 'constraint' => 11, 
               'auto_increment' => TRUE,
             ),
             'breeding_date' => array(
@@ -30,6 +29,7 @@
               'null' => TRUE,
             ),
           ));
+
 
           $this->dbforge->add_key('breeding_id', TRUE);
           

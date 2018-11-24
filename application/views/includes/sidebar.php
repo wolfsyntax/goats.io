@@ -17,7 +17,7 @@
             &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Goat Management</span>
         </a>
 
-        <div class="collapse" id="goatManagement">
+        <div class="collapse" id="goatManagement"  data-parent="#sidebar-div" >
           <a class="nav-link">
             <span class="fa fa-database d-inline-block d-lg-none" title="Goat Records"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Goat Records</span>
           </a>
@@ -35,7 +35,7 @@
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Financials</span>
         </a>
 
-        <div class="collapse" id="financialManagement">
+        <div class="collapse" id="financialManagement" data-parent="#sidebar-div" >
           <a class="nav-link">
             &nbsp;<span class="fa fa-usd d-inline-block d-lg-none" title="Goat Sales"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Goat Sales</span>
           </a>
@@ -58,7 +58,7 @@
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block text-dark">Health Check</span>
         </a>
 
-        <div class="collapse" id="healthCheck">
+        <div class="collapse" id="healthCheck" data-parent="#sidebar-div" >
           <a class="nav-link">
             <span class="fa fa-stethoscope d-inline-block d-lg-none" title="Vaccination"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Vaccination</span>
           </a>
@@ -82,7 +82,7 @@
           &nbsp;<span class="d-none d-sm-none d-md-none d-lg-inline-block">Breeding Records</span>
         </a>
 
-        <div class="collapse" id="breedingInfo">
+        <div class="collapse" id="breedingInfo" data-parent="#sidebar-div" >
           <a class="nav-link text-dark" href="<?= base_url(); ?>breed/new">
             <span class="fa fa-sitemap d-inline-block d-lg-none" title="Breeding"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Breeding</span>
           </a>

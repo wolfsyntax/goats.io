@@ -29,11 +29,10 @@ class Goat extends CI_Controller {
 	public function __construct(){
 
 		parent::__construct();
-		//$this->load->library('../controllers/user');
-		//$this->user->test();
+
 		//Controller: Plural (AppController)	
 		//Model: Singular (ModelName)
-		//require_once(dirname(__FILE__) . "/User.php");
+
 		$this->load->model('Goat_model');
 
 	}

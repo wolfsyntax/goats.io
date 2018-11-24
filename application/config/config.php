@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+//Addons (Composer Faker and Carbon, etc.,)
 include_once 'vendor/autoload.php';
 
 /*
