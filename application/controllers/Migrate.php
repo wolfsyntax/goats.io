@@ -7,6 +7,7 @@ class Migrate extends CI_Controller {
     $this->input->is_cli_request () or exit ( "Execute via command line: php index.php migrate" );
     
     $this->load->library('migration');
+    $this->load->dbforge();
 
   }
 
@@ -28,6 +29,21 @@ class Migrate extends CI_Controller {
 
   public function migration($name){
     $this->make_migration_file($name);
+  }
+
+  #*
+  public function latest(){
+    
+    $this->migration->latest();
+    echo $this->migration->error_string() . PHP_EOL;
+
+  }
+
+  public function reset(){
+    
+    $this->migration->version(0);
+    echo $this->migration->error_string(). PHP_EOL;
+
   }
 
   public function migrate($version = null) {

@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //Addons (Composer Faker and Carbon, etc.,)
 include_once 'vendor/autoload.php';
+//Set Timezone
+//date_default_timezone_set('Europe/Amsterdam'); #Europe
+date_default_timezone_set('Asia/Manila'); #Philippines
 
 /*
 |--------------------------------------------------------------------------
