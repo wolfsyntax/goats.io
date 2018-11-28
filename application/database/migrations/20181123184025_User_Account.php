@@ -12,36 +12,36 @@
             ),
             'username' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'password' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'phone' => array(
               'type' => 'VARCHAR',
-              'constraint' => '15',
+              'constraint' => 15,
             ),
             'email' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'first_name' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'last_name' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'account_type' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
               'default' => 'Tenant',
             ),
             'farm_name' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
               'default' => 'MGM Farm',
             ),
             'member_since' => array(

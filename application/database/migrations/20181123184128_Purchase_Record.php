@@ -24,7 +24,7 @@
             ),
             'vendor_name' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
               'default' => 'N/A',
             ),
             'description' => array(

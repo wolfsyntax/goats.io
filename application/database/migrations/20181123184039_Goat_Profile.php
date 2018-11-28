@@ -13,15 +13,15 @@
             ),
             'eartag_color' => array(
               'type' => 'VARCHAR',
-              'constraint' => '64',
+              'constraint' => 64,
             ),
             'gender' => array(
               'type' => 'VARCHAR',
-              'constraint' => '64',
+              'constraint' => 64,
             ),
             'body_color' => array(
               'type' => 'VARCHAR',
-              'constraint' => '64',
+              'constraint' => 64,
             ),
             'birth_date' => array(
               'type' => 'DATE',

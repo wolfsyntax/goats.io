@@ -25,11 +25,11 @@
             ),
             'activity_type' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ), 
             'performed_by' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'quantity' => array(
               'type' => 'INT',
@@ -38,7 +38,7 @@
             ),
             'medicine_name' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255'
+              'constraint' => 255,
             ),
           ));
 
