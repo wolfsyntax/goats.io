@@ -1,4 +1,14 @@
-
+.custom-link:hover, .custom-link:focus{
+  border-color: transparent;
+  box-shadow: none;
+  text-decoration: none !important;
+  background-color: transparent;
+}
+.custom-link{
+  text-decoration: none !important;  
+  background-color: transparent;
+  border-color: transparent;
+}
 
 .sidebar {
   position: fixed;
@@ -77,3 +87,4 @@ a:hover {
 .sidebar ul li div.collapse a.nav-link:hover span.fa {
   color: #fff !important;
 }
+
