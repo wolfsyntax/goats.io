@@ -25,7 +25,8 @@ Carbon\Carbon::now();
 
 ## Added Custom Form Validation
 ```php
-	
+	//Check the input value is a valid account type
+	//just add this 'account_type' to the form_validation
 	public function account_type($str){
 		
 		if($str == 'admin' || $str == 'employee' || $str == 'superuser') return true;
@@ -33,11 +34,14 @@ Carbon\Carbon::now();
 
 	}
 
+	//Check the input value contains alpha characters and space//just add this 'alpha_spaces' to the form_validation
 	public function alpha_spaces($str)
 	{
 		return (bool) preg_match('/^[A-Z ]+$/i', $str);
 	}
 
+	//Use to check if the email address is registered before the user can forgot password
+	//just add this 'is_exist[user_account.Email]' to the form_validation
 	public function is_exist($str, $field)
 	{
 		
@@ -52,6 +56,9 @@ Carbon\Carbon::now();
 		return FALSE;
 	}
 
+
+	//Use to check if the Ear tag ID for Dam exist
+	//just add this 'is_dam_exist[goat_profile.eartag_id]' to the form_validation
 	public function is_dam_exist($str, $field)
 	{
 		
@@ -59,6 +66,7 @@ Carbon\Carbon::now();
 		
 		if(isset($this->CI->db)){
 
+			//If the eartag ID is not exist return FALSE, otherwise TRUE
 			return ($this->CI->db->limit(1)->get_where($table, array($field => $str,"gender" => "female"))->num_rows() === 0 ? FALSE : TRUE);
 
 		}
@@ -66,13 +74,15 @@ Carbon\Carbon::now();
 		return FALSE;
 	}	
 
+	//Use to check if the Ear tag ID for Sire exist
+	//just add this 'is_sire_exist[goat_profile.eartag_id]' to the form_validation
 	public function is_sire_exist($str, $field)
 	{
 		
 		sscanf($field, '%[^.].%[^.]', $table, $field);
 		
 		if(isset($this->CI->db)){
-
+			//If the eartag ID is not exist return FALSE, otherwise TRUE
 			return ($this->CI->db->limit(1)->get_where($table, array($field => $str,"gender" => "male"))->num_rows() === 0 ? FALSE : TRUE);
 
 		}

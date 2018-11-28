@@ -12,7 +12,7 @@
             ),
             'item_name' => array(
               'type' => 'VARCHAR',
-              'constraint' => '255',
+              'constraint' => 255,
             ),
             'total_amount' => array(
               'type' => 'FLOAT',

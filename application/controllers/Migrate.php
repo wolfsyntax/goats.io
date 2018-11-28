@@ -39,6 +39,7 @@ class Migrate extends CI_Controller {
 
   }
 
+  #*
   public function reset(){
     
     $this->migration->version(0);
