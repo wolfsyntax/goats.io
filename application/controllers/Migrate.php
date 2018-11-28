@@ -52,7 +52,7 @@ class Migrate extends CI_Controller {
   }
 
   public function seeder($name) {
-    $this->make_seed_file($name);
+    self::make_seed_file($name);
   }
 
   public function seed($name) {

@@ -44,6 +44,11 @@ class Goat extends CI_Controller {
 			
 			$data['title'] = 'Add Goats';
 			$data['body'] = 'goats/add_goats';
+
+			$data['sire_record'] = $this->Goat_model->select_applet('goat_profile',"gender = 'male'");
+
+			$data['dam_record'] = $this->Goat_model->select_applet('Goat_Profile',"gender = 'female'");
+
 			$this->load->view('layouts/application',$data);
 
 		}else{
@@ -93,15 +98,17 @@ class Goat extends CI_Controller {
 				)
 			);
 			
-			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric',
+			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
 				array(
 					'required' => '{field} is required',
+					'is_sire_exist' => '{field} do not exist',
 				)
 			);
 
-			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numeric',
+			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id]',
 				array(
 					'required' => '{field} is required',
+					'is_dam_exist' => '{field} do not exist',
 				)
 			);
 
@@ -132,14 +139,15 @@ class Goat extends CI_Controller {
 			}else{
 
 				if($this->Goat_model->add_goat()){
+					
 					$this->session->set_flashdata('goat', '<div class="alert alert-success col-12" role="alert" style="height: 50px;">
-										<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
 										
-										<div class="row">
-											<p><span class="fa fa-check-circle"></span>
-						<strong>Success</strong>&emsp;New goat added successfully. <a href="'.base_url().'dashboard">Dashboard</a></p>
-										</div>
-									</div>');
+							<div class="row">
+								<p><span class="fa fa-check-circle"></span>
+								<strong>Success</strong>&emsp;New goat added successfully. <a href="'.base_url().'dashboard">Dashboard</a></p>
+							</div>
+						</div>');
 
 					
 

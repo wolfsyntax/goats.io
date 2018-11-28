@@ -128,8 +128,14 @@
 
                 <div class="col-lg-9">
                     <div class="row">
-                        <input class="form-control" type="text" value="<?= set_value('sire_id'); ?>" name="sire_id" placeholder="Ear Tag ID (Sire)">
+                        <select name="sire_id" id="sire_id_select" class="form-control" placeholder="Enter or Choose Tag Number" required="" value="<?= set_value('sire_id');?>">
+
+                        <?php foreach($sire_record as $row) {?>
+                            <option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
+                        <?php }?>
+                        </select>
                     </div>
+
                     <div class="row mt-2">
                         <?= (form_error('sire_id')  != "" ? form_error('sire_id') : ''); ?>
                     </div>
@@ -143,7 +149,12 @@
 
                 <div class="col-lg-9">
                     <div class="row">
-                        <input class="form-control" type="text" value="<?= set_value('dam_id'); ?>" name="dam_id" placeholder="Ear Tag ID (Dam)">
+                        <select name="dam_id" id="dam_id_select" class="form-control" placeholder="Enter or Choose Tag Number" required="" value="<?= set_value('dam_id');?>">
+
+                        <?php foreach($dam_record as $row) {?>
+                            <option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
+                        <?php }?>
+                        </select>
                     </div>
                     <div class="row mt-2">
                         <?= (form_error('dam_id')  != "" ? form_error('dam_id') : ''); ?>

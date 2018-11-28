@@ -21,3 +21,66 @@ Carbon\Carbon::now();
   color: #fff !important;
 }
 ```
+
+
+## Added Custom Form Validation
+```php
+	
+	public function account_type($str){
+		
+		if($str == 'admin' || $str == 'employee' || $str == 'superuser') return true;
+		return false;
+
+	}
+
+	public function alpha_spaces($str)
+	{
+		return (bool) preg_match('/^[A-Z ]+$/i', $str);
+	}
+
+	public function is_exist($str, $field)
+	{
+		
+		sscanf($field, '%[^.].%[^.]', $table, $field);
+		
+		if(isset($this->CI->db)){
+
+			return ($this->CI->db->limit(1)->get_where($table, array($field => $str))->num_rows() === 0 ? FALSE : TRUE);
+
+		}
+
+		return FALSE;
+	}
+
+	public function is_dam_exist($str, $field)
+	{
+		
+		sscanf($field, '%[^.].%[^.]', $table, $field);
+		
+		if(isset($this->CI->db)){
+
+			return ($this->CI->db->limit(1)->get_where($table, array($field => $str,"gender" => "female"))->num_rows() === 0 ? FALSE : TRUE);
+
+		}
+
+		return FALSE;
+	}	
+
+	public function is_sire_exist($str, $field)
+	{
+		
+		sscanf($field, '%[^.].%[^.]', $table, $field);
+		
+		if(isset($this->CI->db)){
+
+			return ($this->CI->db->limit(1)->get_where($table, array($field => $str,"gender" => "male"))->num_rows() === 0 ? FALSE : TRUE);
+
+		}
+
+		return FALSE;
+	}	
+
+
+
+
+```
