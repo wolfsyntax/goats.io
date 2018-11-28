@@ -49,7 +49,7 @@
 			
 		</div>
 		<div class="col-12 col-sm-12 col-md-5 col-lg-4">
-			<?= form_open('',array('class'=>'mt-sm-2 mb-3 mb-sm-0 ml-sm-0', 'style'=>'')); ?>
+			<?= form_open(base_url().'register',array('class'=>'mt-sm-2 mb-3 mb-sm-0 ml-sm-0', 'style'=>'')); ?>
 				<div class="form-row">
 					
 					<?= ($this->session->flashdata('item') ? $this->session->flashdata('item') : ''); ?>
@@ -61,50 +61,63 @@
 				</div>
 				<div class="form-row mt-4">
 					<div class="col-12 col-sm-6 col-md-6 form-group">
-						<input type="text" value="" placeholder="First Name" class="form-control" name="first_name">
+						<input type="text" value="<?= set_value('first_name');?>" placeholder="First Name" class="form-control" name="first_name">
+						<?= (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>
 					</div>
 					<div class="col-12 col-sm-6 col-md-6 form-group">
-						<input type="text" value="" placeholder="Last Name" class="form-control" name="last_name">
+						<input type="text" value="<?= set_value('last_name');?>" placeholder="Last Name" class="form-control" name="last_name">
+						<?= (form_error('last_name')	!= "" ? form_error('last_name') : ''); ?>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="col-12 form-group">
-						<input type="email" value="" placeholder="Email Address" class="form-control" name="email">
+						<input type="email" value="<?= set_value('email');?>" placeholder="Email Address" class="form-control" name="email">
+						<?= (form_error('email')	!= "" ? form_error('email') : ''); ?>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-12 form-group">
+						<input type="text" value="<?= set_value('username');?>" placeholder="Username" class="form-control" name="username">
+						<?= (form_error('username')	!= "" ? form_error('username') : ''); ?>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="col-12 form-group">
 						<input type="text" value="" placeholder="Mobile number" class="form-control" name="phone">
+						<?= (form_error('phone') != "" ? form_error('phone') : ''); ?>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="col-12 col-sm-6 col-md-6 form-group">
 						<input type="password" value="" placeholder="Password" class="form-control" name="passwd">
+						<?= (form_error('passwd')	!= "" ? form_error('passwd') : ''); ?>
 					</div>
 					<div class="col-12 col-sm-6 col-md-6 form-group">
 						<input type="password" value="" placeholder="Re-Type Password" class="form-control" name="conf_passwd">
+						<?= (form_error('conf_passwd')	!= "" ? form_error('conf_passwd') : ''); ?>
 					</div>
 				</div>
-				<div class="form-row">
+				<!--div class="form-row">
 					<div class="d-none d-sm-none d-md-inline-block col form-group">
 						Security Code
 					</div>
 					<div class="col-12 col-md-8 col-lg-8 form-group">
 						<input type="password" value="" placeholder="Security Code" class="form-control" name="secode">
-					</div>
-				</div>
+					</div-->
+				</div-->
 				<div class="form-row">
 					<button type="submit" class="col btn btn-primary">Create Account</button>
 				</div>
 				<div class="form-row mt-3 justify-content-center">
 					<div class="col-12 col-md-7 col-lg-7 align-self-center">
-						<span class="d-inline-block">Already have an account?&nbsp;</span><a href="" class="custom-link d-inline-block" style="text-decoration: none;">Sign In</a>
+						<span class="d-inline-block">Already have an account?&nbsp;</span><a href="<?= base_url();?>login" class="custom-link d-inline-block" style="text-decoration: none;">Sign In</a>
 					</div>
 					<div class="col-12 col-md-5 col-lg-5">
-						<a href="" class="custom-link d-inline-block" style="text-decoration: none;">
+						<a href="<?= base_url(); ?>forgot" class="custom-link d-inline-block" style="text-decoration: none;">
 							Forgot Password?
 						</a>
 					</div>

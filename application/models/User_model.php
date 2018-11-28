@@ -79,6 +79,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function process_registration(){
 
 			if(!empty($_POST)){
+				$timestamp = Carbon\Carbon::now();
+
+				$date = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'Asia/Manila')->format('Y-m-d');
 
 				$data = array(
 
@@ -88,8 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
 					'Email'			=>	$this->input->post('email', TRUE),
 					'Phone'			=>	$this->input->post('phone',TRUE),
-					'Account_Type'	=>	$this->input->post('account_type',TRUE),
-
+					'member_since'	=> $date,
 				);
 					
 				return $this->db->insert('user_account',$data);

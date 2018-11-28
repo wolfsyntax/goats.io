@@ -40,7 +40,7 @@ class Sitemap extends CI_Controller {
 
 	public function index()
 	{
-		
+/**		
 		if($this->session->userdata('username') != ''){
 			
 			redirect('dashboard');
@@ -52,7 +52,7 @@ class Sitemap extends CI_Controller {
 			$this->load->view('layouts/application',$data);
 
 		}
-
+**/
 	}
 
 	public function dashboard(){

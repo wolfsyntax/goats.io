@@ -53,11 +53,17 @@ class User extends CI_Controller {
 	public function index()
 	{
 		
-		$data['title'] = 'Register';
-		$data['body'] = 'users/register';
-		
+		if($this->session->userdata('username') != ''){
+			
+			redirect('dashboard');
 
-		$this->load->view('layouts/application',$data);
+		}else{
+
+			$data['title'] = 'Home';
+			$data['body'] = 'sitemaps/index';
+			$this->load->view('layouts/application',$data);
+
+		}
 
 	}
 
@@ -248,12 +254,12 @@ class User extends CI_Controller {
 			)
 		);
 
-		$this->form_validation->set_rules('account_type','Account Type','required|account_type|trim|xss_clean',
-			array(
-				'required' => 'Account Type is required',
-				'account_type' => '%s is not a valid Account Type',
-			)
-		);
+#		$this->form_validation->set_rules('account_type','Account Type','required|account_type|trim|xss_clean',
+#			array(
+#				'required' => 'Account Type is required',
+#				'account_type' => '%s is not a valid Account Type',
+#			)
+#		);
 
 		$this->form_validation->set_rules('phone','Mobile number','required|min_length[11]|trim|xss_clean',
 			array(
@@ -288,7 +294,7 @@ class User extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE){
 
-			$this->register();
+			self::index();
 
 		}else{
 
@@ -321,7 +327,7 @@ class User extends CI_Controller {
 
 			}else{
 
-				$this->register();
+				self::index();
 		
 			}
 			
@@ -367,7 +373,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
 		$data['title'] = 'Login';
-		$data['body'] = 'users/login';	
+		$data['body'] = 'users/login';
 		
 		if ($this->form_validation->run() == FALSE){
 
