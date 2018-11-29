@@ -40,6 +40,11 @@
               'null' => TRUE,
               'default' => 0,
             ),
+            'goat_status' => array(
+              'type' => 'VARCHAR',
+              'constraint' => 128,
+              'default' => 'active',
+            ),
           ));
 
           $this->dbforge->add_key('eartag_id', TRUE);

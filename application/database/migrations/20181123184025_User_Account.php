@@ -39,19 +39,6 @@
               'constraint' => 255,
               'default' => 'Tenant',
             ),
-            'farm_name' => array(
-              'type' => 'VARCHAR',
-              'constraint' => 255,
-              'default' => 'MGM Farm',
-            ),
-            'member_since' => array(
-              'type' => 'DATE',
-            ),
-            'is_activated' => array(
-              'type' => 'INT',
-              'constraint' => 1,
-              'default' => 0,
-            ),
           ));
 
 
