@@ -91,7 +91,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'Password'		=>	hash('sha256',$this->input->post('passwd', TRUE)),
 					'Email'			=>	$this->input->post('email', TRUE),
 					'Phone'			=>	$this->input->post('phone',TRUE),
-					'member_since'	=> $date,
 				);
 					
 				return $this->db->insert('user_account',$data);
