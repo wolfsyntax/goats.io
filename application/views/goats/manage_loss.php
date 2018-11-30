@@ -17,7 +17,12 @@
                 <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Eartag Number</label>                           
                 
                 <div class="col-lg-6">
-                    <input class="form-control" type="text" value="" >
+                    <select name="dam_id" id="dam_id_select" class="form-control" placeholder="Enter or Choose Tag Number" required="" value="<?= set_value('dam_id');?>">
+
+                  <?php foreach($dam_record as $row) {?>
+                    <option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
+                  <?php }?>
+              </select>
                 </div>
             
             </div>
@@ -60,7 +65,7 @@
                 
                 <div class="col-lg-9 mt-2">
 
-                    <input type="button" class="btn btn-primary" value="Submit Loss">
+                    <input type="button" class="btn btn-success mr-auto" value="Submit Loss">
 
                 </div>
             </div>

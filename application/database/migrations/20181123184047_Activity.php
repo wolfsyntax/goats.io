@@ -28,7 +28,7 @@
               'constraint' => 255,
             ), 
             'user_id' => array(
-              'type' => INT,
+              'type' => 'INT',
               'constraint' => 11,
             ),
             'quantity' => array(

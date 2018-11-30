@@ -35,10 +35,9 @@
               'constraint' => 11,
             ),
             'is_castrated' => array(
-              'type' => 'INT',
-              'constraint' => 1,
+              'type' => 'VARCHAR',
+              'constraint' => 5,
               'null' => TRUE,
-              'default' => 0,
             ),
             'goat_status' => array(
               'type' => 'VARCHAR',

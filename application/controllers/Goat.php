@@ -59,7 +59,6 @@ class Goat extends CI_Controller {
 
 	}
 
-
 	public function validate_goat_details(){
 
 		if($this->session->userdata('username') != ''){
@@ -290,4 +289,11 @@ class Goat extends CI_Controller {
 
 	}	
 
+	public function manage_loss(){
+
+		$data['body'] = 'goats/manage_loss';
+		$data['title'] = '';
+
+		$this->load->view('layouts/application',$data);
+	}
 }

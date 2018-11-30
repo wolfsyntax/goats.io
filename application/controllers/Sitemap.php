@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+#if (defined('BASEPATH') && !($this->input->is_ajax_request()))
+#   exit('No direct script access allowed'); 
 
 class Sitemap extends CI_Controller {
 
@@ -40,6 +42,10 @@ class Sitemap extends CI_Controller {
 
 	public function index()
 	{
+			
+		$data['title'] = 'Home';
+		$data['body'] = 'sitemaps/index';
+		$this->load->view('layouts/application',$data);		
 /**		
 		if($this->session->userdata('username') != ''){
 			
@@ -53,6 +59,16 @@ class Sitemap extends CI_Controller {
 
 		}
 **/
+	}
+
+
+	public function landing_page(){
+
+		$data['title'] = '';
+		$data['body'] = 'sitemaps/welcome';
+
+		$this->load->view('layouts/application',$data);
+
 	}
 
 	public function dashboard(){

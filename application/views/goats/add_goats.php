@@ -162,7 +162,15 @@
                 </div>
 
             </div>
-                                
+            <div class="form-row mb-1">
+                <div class="col-2">
+                    <label>Is castrated?</label>
+                </div>
+                <div class="col-10">
+                    &emsp;<input type="checkbox" name="" value="" class="form-check-input">
+                </div>
+            </div>
+                                 
             <div class="form-group row">
                         
                 <label class="col-lg-2 col-form-label form-control-label"></label>

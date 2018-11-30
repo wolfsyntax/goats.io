@@ -26,20 +26,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function add_goat(){
 
 			if(!empty($_POST)){
-
+				$gender = strtolower($this->input->post('gender', TRUE));
 				$data = array(
 
 					'eartag_id'		=>	$this->input->post('eartag_id', TRUE),
 					'eartag_color'	=>	strtolower($this->input->post('tag_color', TRUE)),
-					'gender'		=>	strtolower($this->input->post('gender', TRUE)),
+					'gender'		=>	$gender,
 					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
 					'birth_date'	=>	$this->input->post('birth_date', TRUE),
 					'sire_id'		=>	$this->input->post('sire_id',TRUE),
 					'dam_id'		=>	$this->input->post('dam_id',TRUE),
-
-				);
-				
-
+					'is_castrated'  =>  $gender === 'male' ? 'No' : 'N/A',
+				);		
 
 				return $this->db->insert('goat_profile',$data);
 

@@ -49,10 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'user';
+$route['default_controller'] = 'financials';
 $route['404_override'] = 'sitemap/page_not_found';
 $route['translate_uri_dashes'] = FALSE;
 
+//$route['sitemap/(:any)'] = 'sitemap/page_not_found';
+//$route['goat/(:any)'] = 'sitemap/page_not_found';
+//$route['financial/(:any)'] = 'sitemap/page_not_found';
 
 //User Defined Routes
 
@@ -83,3 +86,11 @@ $route['goats/new']['POST'] = 'goat/validate_goat_details';
 
 $route['breed/new']['GET'] = 'goat/breeding_module';
 $route['breed/verify']['POST'] = 'goat/validate_breeding_info';
+
+//$route['manage/loss'] = 'goat/manage_loss';
+
+// Financials
+//$route['purchases']['GET'] = 'financial/purchase';
+//$route['expense'] = 'financial/index';
+
+//$route['welcome'] = 'sitemap/landing_page';
