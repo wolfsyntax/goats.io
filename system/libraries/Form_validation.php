@@ -152,7 +152,7 @@ class CI_Form_validation {
 
 	public function account_type($str){
 		
-		if($str == 'admin' || $str == 'employee' || $str == 'superuser') return true;
+		if($str == 'farm owner' || $str == 'tenant') return true;
 		return false;
 
 	}

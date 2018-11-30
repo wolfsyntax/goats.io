@@ -20,7 +20,7 @@
           <?php } else { ?>
             <i class="fa fa-bell">
           <?php } ?>
-            </i><span class="d-block-inline d-sm-block-inline d-md-block-inline d-lg-none ">&emsp;Notifications</span>
+            </i><span class="badge badge-danger">1</span><span class="d-block-inline d-sm-block-inline d-md-block-inline d-lg-none ">&emsp;Notifications</span>
         </a>
       </li>
 
