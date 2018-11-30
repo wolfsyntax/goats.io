@@ -290,10 +290,18 @@ class Goat extends CI_Controller {
 	}	
 
 	public function manage_loss(){
+		if($this->session->userdata('username') != ''){
+			$data['body'] = 'goats/manage_loss';
+			$data['title'] = '';
 
-		$data['body'] = 'goats/manage_loss';
-		$data['title'] = '';
 
-		$this->load->view('layouts/application',$data);
+			$this->load->view('layouts/application',$data);
+		}else{
+			redirect('dashboard');
+		}
+	}
+
+	public function record_loss(){
+
 	}
 }

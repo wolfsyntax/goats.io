@@ -8,7 +8,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col">
-							Transaction <strong>Total</strong>: P0.00
+							Transaction <strong>Total</strong>: &#8369;&nbsp;0.00
 						</div>
 					</div>
 				</div>

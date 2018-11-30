@@ -13,10 +13,10 @@
 				<div class="col-12 col-md-5 offset-md-1 mt-md-5 pr-md-5" >
 					<?= form_open('',array('class'=>'mt-5','style'=>'')); ?>
 						<div class="row mt-md-5">
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-md-6 ">
 								<div class="form-group">
-							
-									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?= set_value('first_name');?>" >
+									<label class="col-form-label-sm mb-0">First Name: <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" name = "first_name" id="" aria-describedby="" placeholder="First name" value="<?= set_value('first_name');?>" required>
 									
 									
 									<?= (form_error('first_name')	!= "" ? form_error('first_name') : ''); ?>			
@@ -26,7 +26,7 @@
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-							
+									<label class="col-form-label-sm mb-0">Last Name: <span class="text-danger">*</span></label>							
 									<input type="text" class="form-control" name = "last_name" id="" aria-describedby="" placeholder="Last name" value="<?=set_value('last_name');?>" autocomplete="off">
 
 									
@@ -38,7 +38,7 @@
 
 							<div class="col-12 col-md-12">
 								<div class="form-group">
-							
+									<label class="col-form-label-sm mb-0">Username: <span class="text-danger">*</span></label>							
 									<input type="text" class="form-control" name = "username" id="" aria-describedby="" placeholder="Username" value="<?= set_value('username');?>" autocomplete="off">
 
 									
@@ -50,7 +50,7 @@
 
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-							
+									<label class="col-form-label-sm mb-0">E-mail: <span class="text-danger">*</span></label>							
 									<input type="email" class="form-control" name = "email" id="" aria-describedby="" placeholder="Email" value="<?= set_value('email');?>" autocomplete="off">
 
 									<?= (form_error('email')	!= "" ? form_error('email') : ''); ?>							
@@ -60,7 +60,7 @@
 
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-							
+									<label class="col-form-label-sm mb-0">Mobile number: <span class="text-danger">*</span></label>							
 									<input type="text" class="form-control" name = "phone" id="" aria-describedby="" placeholder="Mobile number" value="<?= set_value('phone');?>" autocomplete="off">
 									
 
@@ -69,9 +69,10 @@
 								</div>					
 							</div>
 
-							<div class="d-none d-sm-none d-md-block col-md-3">
+							<div class="d-none d-sm-none d-md-block col-md-3 mb-0">
 								<div class="form-group">
-									<label for="" class="text-dark">Account Type</label>
+
+									<label class="col-form-label-sm mb-0">Account Type<span class="text-danger"></span></label>
 								</div>					
 							</div>
 							
@@ -80,9 +81,9 @@
 							
 									<select name="account_type" class="custom-select ">
 										<option value="">-- Choose Account Type --</option>
-										<option value="admin">Farm Owner</option>
-										<option value="employee">Tenant</option>
-										<option value="superuser">Tech Support</option>
+										<option value="farm owner">Farm Owner</option>
+										<option value="tenant">Tenant</option>
+										
 									</select>
 									
 									
@@ -93,7 +94,7 @@
 
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-							
+									<label class="col-form-label-sm mb-0 pt-0">Password: <span class="text-danger">*</span></label>							
 									<input type="password" class="form-control" name = "passwd" id="" aria-describedby="" placeholder="New Password" value="<?= set_value('passwd');?>">
 
 									
@@ -105,7 +106,7 @@
 
 							<div class="col-12 col-md-6">
 								<div class="form-group text-dark">
-							
+									<label class="col-form-label-sm mb-0 pt-0">Confirm Password: <span class="text-danger">*</span></label>							
 									<input type="password" class="form-control" name = "conf_passwd" id="" aria-describedby="" placeholder="Re-Type New Password" value="<?= set_value('conf_passwd');?>">
 
 								
@@ -139,6 +140,8 @@
 								</div>
 							</div>
 						</div>
+
+						
 						<?= form_close(); ?>
 					</div>
 					
