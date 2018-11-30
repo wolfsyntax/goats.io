@@ -1,7 +1,7 @@
 <nav class="col-1 col-lg-2 d-none d-sm-none d-md-block d-xl-inline-block bg-light">
 
   <div class="sidebar" id="sidebar-div">
-    <ul class="nav flex-column " >
+    <ul class="nav flex-column " id="sidebar">
       <li class="nav-item">
         <a class="nav-link active" href="#" >
           <span class="fa fa-tachometer text-primary d-inline d-sm-inline-block d-md-inline-block d-lg-none" title="Dashboard"></span>

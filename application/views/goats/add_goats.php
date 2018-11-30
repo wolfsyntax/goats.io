@@ -1,17 +1,17 @@
-<?php $this->load->view('includes/user_header'); ?>
-<div class="col-md-8 offset-md-2 mt-5">
+<?php //$this->load->view('includes/user_header'); ?>
+<div class="col-md-8 offset-md-2 mt-1">
     <span class="anchor" id="formUserEdit"></span>
     <hr class="my-3">
 
         <!-- form user info -->
-    <div class="card card-outline-secondary">
+    <div class="card card-outline-secondary mb-5" style="height: 100vh;">
         <div class="card-header">
             <h3 class="mb-0">Add Goat</h3>
         </div>
             
         <div class="card-body">
         <!--form class="form" role="form" autocomplete="off"-->
-        <?= form_open('', array('class'=> 'form')); ?>
+        <?= form_open('', array('class'=> 'form mb-5')); ?>
             <div class="form-group row">
                 <?= ($this->session->flashdata('goat') ? $this->session->flashdata('goat') : ''); ?>
                 
@@ -179,7 +179,7 @@
 
         <?= form_close(); ?>
         </div>
-
+        <div class="card-footer mt-5 cleafix">&emsp;</div>
     </div>
     <!-- /form user info -->
 </div>

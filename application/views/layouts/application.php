@@ -39,7 +39,19 @@
 
   		$('#sire_id_select').editableSelect();
 
-	})
+  		$("#sidebar > li div.collapse a.nav-link").each(function(){
+  			var self = $(this);
+  			var href = self.attr("href");
+
+  			self.attr("href","javascript:void(0);");
+
+  			self.click(function(){
+  				//alert(href);
+  				$("#ui_view").prop('src',href)
+//  				$("#body-content ui_view").load();
+  			});
+  		});
+	});
 
 	</script>
 </body>
