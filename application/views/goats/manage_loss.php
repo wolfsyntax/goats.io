@@ -1,76 +1,60 @@
+<div class="container-fluid mt-2">
+	<div class="row">
+		<div class="col">
+			<section class="">
+				<div class="card">
+					<div class="card-header">
+						Manage Loss
+					</div>
+					<div class="card-body p-2">
+						<?= form_open('',array('class'=>'form')); ?>
 
-<div class="col-md-8 offset-md-2">
-    <span class="anchor" id="formUserEdit"></span>
-    <hr class="my-4">
-    
-    <!-- form user info -->
-    <div class="card card-outline-secondary">
-        <div class="card-header">
-            <h3 class="mb-0"><i class="fas fa-book"></i></i>&nbsp;</i>Manage Loss</h3>
-        </div>
-        
-        <div class="card-body" >
-            <?= form_open('', array('class'=> 'form')); ?>
+							<div class="form-row p-1">
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-1">Ear Tag ID <span class="text-danger">*</span></label>
+								<div class="col">
+									<select name="eartag_color" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" required="" value="">
 
-            <div class="form-group row"> 
-            
-                <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Eartag Number</label>                           
-                
-                <div class="col-lg-6">
-                    <select name="dam_id" id="dam_id_select" class="form-control" placeholder="Enter or Choose Tag Number" required="" value="<?= set_value('dam_id');?>">
+                                    	<option value="1">1</option>           
+                        			</select>
 
-                  <?php foreach($dam_record as $row) {?>
-                    <option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
-                  <?php }?>
-              </select>
-                </div>
-            
-            </div>
+								</div>
 
-            <div class="form-group row"> 
-                <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Cause of Loss</label>                           
-                
-                <div class="col-lg-6">
-                    <select class="form-control" id="Loss">
-                        <option>Deceased</option>
-                        <option>Lost</option>
-                        <option>Stolen</option>
-                    </select>
-                </div>
-            </div>
-                                    
-            <div class="form-group row">  
-                <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Notes</label>    
-                
-                <div class="col-lg-6">
-                    <textarea class="form-control" id="exampleMessage"></textarea>
-                </div>
-            </div>
+							</div>
 
-            <div class="form-group row">
-                    
-                <label class="col-lg-2 col-form-label form-control-label" style="margin-left:130px;">Date of Loss:</label>
-                                                
-                <div class="col-lg-6">
-                                                
-                    <input class="form-control" type="date" value="yyyy-mm-dd" id="example-date-input">
-                                                
-                </div>
-                            
-            </div>
+							<div class="form-row p-1">
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-1">Caused of Loss<span class="text-danger font-weight-bold">*</span></label>
+								<div class="col">
+									<select name="" class="custom-select">
+										<option>- Select a Cause -</option>
+										<option value="Deceased">Deceased</option>
+										<option value="Lost">Lost</option>
+										<option value="Stolen">Stolen</option>
+									</select>
 
-            <div class="form-group row">
-                
-                <label class="form-control-label" style="margin-left:130px;"></label>
-                
-                <div class="col-lg-9 mt-2">
+								</div>
+							</div>
 
-                    <input type="button" class="btn btn-success mr-auto" value="Submit Loss">
+							<div class="form-row p-1">
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-1">Date of Loss <span class="text-danger">*</span></label>
+								<div class="col">
+									<input type="date" name="loss_date" value="" placeholder="Date of Loss" class="form-control">
+								</div>
+							</div>
 
-                </div>
-            </div>
-                                 
-            <?= form_close(); ?>
-        </div>
-    </div>
+							<div class="form-row p-1">
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-1">Notes <span class="text-danger">*</span></label>
+								<div class="col">
+									<input type="text" name="description" value="" placeholder="" class="form-control">
+								</div>
+							</div>
+						<?= form_close();?>
+					</div>
+					<div class="card-footer">
+						A
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</div>
 </div>
