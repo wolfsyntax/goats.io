@@ -39,6 +39,10 @@
 
   		$('#sire_id_select').editableSelect();
 
+		$('#body_color_select').editableSelect();
+
+		$('#goat_id_select').editableSelect();		
+		
   		$("#sidebar > li div.collapse a.nav-link").each(function(){
   			var self = $(this);
   			var href = self.attr("href");

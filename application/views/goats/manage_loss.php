@@ -1,5 +1,5 @@
-<div class="container-fluid mt-2">
-	<div class="row">
+<div class="container-fluid mt-2 mb-5 pb-5">
+	<div class="row mb-5">
 		<div class="col">
 			<section class="">
 				<div class="card">
@@ -47,6 +47,12 @@
 									<input type="text" name="description" value="" placeholder="" class="form-control">
 								</div>
 							</div>
+
+							<div class="form-row p-1 float-right w-100">
+								<span class="col clearfix"></span>
+								<input type="submit" class="btn btn-success col-3" value="Submit Loss">
+
+							</div>								
 						<?= form_close();?>
 					</div>
 					<div class="card-footer">
@@ -54,7 +60,7 @@
 					</div>
 				</div>
 			</section>
-
+			<section class="mt-5">&emsp;</section>
 		</div>
 	</div>
 </div>
