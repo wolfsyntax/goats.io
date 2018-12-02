@@ -59,38 +59,42 @@
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Birth Date <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase Date <span class="text-danger">*</span></label>
 								<div class="col">
-									<input type="date" name="birth_date" value="" placeholder="Date of Birth" class="form-control">
+									<input type="date" name="purchase_date" value="" placeholder="Date of Purchase" class="form-control">
 								</div>
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Birth Weight <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase Weight <span class="text-danger">*</span></label>
 								<div class="col">
-									<input type="text" name="birth_weight" value="" placeholder="Enter weight in lbs." class="form-control">
+									<input type="text" name="purchase_weight" value="" placeholder="Enter weight in lbs." class="form-control">
 								</div>
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Dam ID <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase From <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="dam_id" id="dam_id_select" class="form-control" placeholder="- Enter Dam ID -" required="" value="">
+									<select name="purchase_from" id="client_select" class="form-control" placeholder="- Vendor -" required="" value="">
 
-                                    	<option value="1">1</option>           
+                                    	<option value="Brown">Brown</option>           
                         			</select>
 
 								</div>
+
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Sire ID <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Price per Kilo<span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="sire_id" id="sire_id_select" class="form-control" placeholder="- Enter Sire ID -" required="" value="">
+									<input type="date" name="purchase_price" value="" placeholder="Purchase Price" class="form-control">
+								</div>
+							</div>
 
-                                    	<option value="1">1</option>           
-                        			</select>
-
+							<div class="form-row p-1">
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Notes <span class="text-danger">*</span></label>
+								<div class="col">
+									<input type="text" name="description" value="" placeholder="Other details / Description" class="form-control">
 								</div>
 							</div>
 

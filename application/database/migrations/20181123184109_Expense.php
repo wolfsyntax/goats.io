@@ -10,7 +10,7 @@
               'constraint' => 11,
               'auto_increment' => TRUE,
             ),
-            'item_name' => array(
+            'expense_type' => array(
               'type' => 'VARCHAR',
               'constraint' => 255,
             ),
@@ -22,17 +22,24 @@
             'total_ml' => array(
               'type' => 'INT',
               'constraint' => 8,
+              'null' => TRUE,
             ),
-            'purchase_date' => array(
+            'expense_date' => array(
               'type' => 'DATE',
             ),
             'quantity' => array(
               'type' => 'INT',
               'constraint' => 8,
+              'null' => TRUE,
             ),
             'user_id' => array(
               'type' => 'INT',
               'constraint' => 11,
+            ),
+            'vendor_name' => array(
+              'type' => 'VARCHAR',
+              'constraint' => 255,
+              'null' => TRUE,
             ),
           ));
 

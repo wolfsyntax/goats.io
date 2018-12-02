@@ -13,7 +13,7 @@
             'transact_date' => array(
               'type' => 'DATE',
             ),
-            'price' => array(
+            'price_per_kilo' => array(
               'type' => 'FLOAT',
               'constraint' => '8,2',
             ),
@@ -21,7 +21,7 @@
               'type' => 'FLOAT',
               'constraint' => '8,2',
             ),
-            'amount' => array(
+            'total_amount' => array(
               'type' => 'FLOAT',
               'constraint' => '8,2',
             ),
@@ -37,6 +37,11 @@
               'type' => 'INT',
               'constraint' => 11,
             ),
+            'buyer_name' => array(
+              'type' => 'VARCHAR',
+              'constraint' => 255,
+            ),
+
           ));
 
           $this->dbforge->add_field('CONSTRAINT fk_sales_goat FOREIGN KEY (`eartag_id`) REFERENCES Goat_Profile(`eartag_id`)');

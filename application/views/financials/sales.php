@@ -12,7 +12,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Date Sold <span class="text-danger">*</span></label>
 								<div class="col">
-									<input type="date" name="buyer" value="" placeholder="" class="form-control ">
+									<input type="date" name="date_sold" value="" placeholder="" class="form-control ">
 
 								</div>
 							</div>
@@ -20,7 +20,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Sold Through <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="body_color" id="client_select" class="form-control" placeholder="- Select Buyer -" required="" value="">
+									<select name="buyer_name" id="client_select" class="form-control" placeholder="- Select Buyer -" required="" value="">
 
                                     	<option value="MGM">MGM</option>           
                         			</select>
@@ -37,7 +37,7 @@
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Total Amount <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Price per Kilo <span class="text-danger">*</span></label>
 								<div class="col">
 									<input type="text" name="amount" value="" placeholder="" class="form-control ">
 								</div>

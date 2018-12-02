@@ -25,21 +25,29 @@
             ),
             'birth_date' => array(
               'type' => 'DATE',
+              'null' => 'TRUE',
+            ),
+            'birth_weight' => array(
+              'type' => 'INT',
+              'constraint' => 11,
+              'null' => TRUE,
             ),
             'sire_id' => array(
               'type' => 'INT',
               'constraint' => 11,
+              'null' => TRUE,
             ),
             'dam_id' => array(
               'type' => 'INT',
               'constraint' => 11,
+              'null' => TRUE,
             ),
             'is_castrated' => array(
               'type' => 'VARCHAR',
               'constraint' => 5,
               'null' => TRUE,
             ),
-            'goat_status' => array(
+            'status' => array(
               'type' => 'VARCHAR',
               'constraint' => 128,
               'default' => 'active',
@@ -47,6 +55,11 @@
           ));
 
           $this->dbforge->add_key('eartag_id', TRUE);
+
+          $this->dbforge->add_field('CONSTRAINT fk_sire_profile FOREIGN KEY (`sire_id`) REFERENCES Goat_Profile(`eartag_id`)');
+
+          $this->dbforge->add_field('CONSTRAINT fk_dam_profile FOREIGN KEY (`dam_id`) REFERENCES Goat_Profile(`eartag_id`)');
+
           $this->dbforge->create_table('goat_profile',TRUE,array('AUTO_INCREMENT' => '1',));
 
         }

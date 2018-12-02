@@ -12,7 +12,8 @@
               'type' => 'DATE',
             ),
             'notes' => array(
-              'type' => 'TEXT'
+              'type' => 'TEXT',
+              'null' => TRUE,
             ),
             'sire_id' => array(
               'type' => 'INT',

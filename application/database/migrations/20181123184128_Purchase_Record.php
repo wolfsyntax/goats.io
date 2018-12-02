@@ -18,7 +18,7 @@
               'type' => 'FLOAT',
               'constraint' => '8,2',
             ),
-            'amount' => array(
+            'price_per_kilo' => array(
               'type' => 'FLOAT',
               'constraint' => '8,2',
             ),

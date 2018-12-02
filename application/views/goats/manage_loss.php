@@ -13,7 +13,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Ear Tag ID <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="eartag_color" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" required="" value="">
+									<select name="eartag_id" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" required="" value="">
 
                                     	<option value="1">1</option>           
                         			</select>
