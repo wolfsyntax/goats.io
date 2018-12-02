@@ -22,6 +22,9 @@ tests/
 /nbproject/
 .idea/*
 
+#Ignore Compressed Backup
+goats_*.rar
+
 ## Sublime Text cache files
 *.tmlanguage.cache
 *.tmPreferences.cache
