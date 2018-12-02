@@ -94,3 +94,25 @@ Carbon\Carbon::now();
 
 
 ```
+
+##2018.12.2 Add enable/disable function for is_castrated
+
+```javascript
+
+	$(document).ready(function () {
+		$('#gender').change(function () {
+			
+			if($(this).val() == 'male'){
+				
+				$("#is_castrated").prop("disabled",false);
+
+			}else{
+
+				$("#is_castrated").prop("checked",false);
+				$("#is_castrated").prop("disabled",true);
+
+			}
+		})
+	});
+
+```

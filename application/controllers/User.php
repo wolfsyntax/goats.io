@@ -46,8 +46,8 @@ class User extends CI_Controller {
 		$this->email->initialize($config);
 		$this->email->set_newline("\r\n");
 
-		self::send_email();
-
+		$this->send_email();
+		
 	}
 
 	public function index()

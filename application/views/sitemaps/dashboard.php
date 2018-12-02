@@ -30,7 +30,7 @@
         
         <!--iframe class="p-0 w-100 h-100" src="<?= base_url();?>welcome" id="ui_view" frameborder="0" scrolling="yes"></iframe-->
 
-      <iframe class="p-0 w-100 h-100" src="<?php echo base_url('sitemap/landing_page');?>" id="ui_view" frameborder="0" scrolling="yes"></iframe>        
+      <iframe class="p-0 w-100 mh-100 h-100" src="<?php echo base_url('sitemap/landing_page');?>" id="ui_view" frameborder="0" scrolling="yes"></iframe>        
 
       </section>
     </main>

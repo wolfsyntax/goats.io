@@ -9,16 +9,24 @@
 					<div class="card-body p-2">
 						<?= form_open('',array('class'=>'form')); ?>
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Ear Tag ID <span class="text-danger">*</span></label>								
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Tag ID <span class="text-danger">*</span></label>								
 								<div class="col">
 									<input type="text" name="eartag_id" placeholder="Tag ID"  class="form-control" />
+								</div>
+
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Tag Color <span class="text-danger">*</span></label>								
+								<div class="col">
+									<select name="tag_color" id="tag_color_select" class="form-control" placeholder="- Enter Tag Color -" required="" value="">
+
+                                    	<option value="Brown">Brown</option>           
+                        			</select>
 								</div>
 							</div>
 
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Gender <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="" class="custom-select">
+									<select name="" class="custom-select" id="gender">
 										<option>- Select a Gender -</option>
 										<option value="female">Female</option>
 										<option value="male">Male</option>
@@ -76,46 +84,21 @@
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase Date <span class="text-danger">*</span></label>
-								<div class="col">
-									<input type="date" name="purchase_date" value="" placeholder="Date of Purchased" class="form-control">
-								</div>
-							</div>
-
-							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase From <span class="text-danger">*</span></label>
-								<div class="col">
-									<input type="text" name="purchase_from" value="" placeholder="Purchase From" class="form-control">
-								</div>
-							</div>
-
-							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase Price <span class="text-danger">*</span></label>
-								<div class="col">
-									<input type="number" name="purchase_from" value="" min="0" placeholder="- Enter vendor name -" class="form-control">
-								</div>
-							</div>							
-
-
-							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase Weight <span class="text-danger">*</span></label>
-								<div class="col">
-									<input type="text" name="purchase_weight" value="" placeholder="- Enter weight in lbs. -" class="form-control">
-								</div>
-							</div>							
-
-							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Is castrated ? <span class="text-danger">*</span></label>
 								<div class="col">
-									<input type="checkbox" name="is_castrated" value="" class="custom-checkbox">
+									<input type="checkbox" name="is_castrated" value="" class="custom-checkbox" id="is_castrated" disabled="">
 								</div>
 							</div>
 
 							<div class="form-row p-1 float-right w-100">
 								<span class="col clearfix"></span>
 								<input type="submit" class="btn btn-success col-3" value="Add Goat">
+							</div>
 
-							</div>							
+
+							<div class="form-row p-1 float-right w-100">
+								&emsp;
+							</div>															
 						<?= form_close();?>
 					</div>
 					<div class="card-footer">

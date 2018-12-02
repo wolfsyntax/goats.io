@@ -31,6 +31,24 @@
     
 	<script type="text/javascript">
 
+
+
+	$(document).ready(function () {
+		$('#gender').change(function () {
+			
+			if($(this).val() == 'male'){
+				
+				$("#is_castrated").prop("disabled",false);
+
+			}else{
+
+				$("#is_castrated").prop("checked",false);
+				$("#is_castrated").prop("disabled",true);
+
+			}
+		})
+	});
+
 	$(function () {
   		
   		$('[data-toggled="popover"]').popover();
@@ -41,7 +59,11 @@
 
 		$('#body_color_select').editableSelect();
 
-		$('#goat_id_select').editableSelect();		
+		$('#tag_color_select').editableSelect();
+
+		$('#goat_id_select').editableSelect();
+
+		$('#client_select').editableSelect();		
 		
   		$("#sidebar > li div.collapse a.nav-link").each(function(){
   			var self = $(this);
@@ -58,5 +80,23 @@
 	});
 
 	</script>
+
+	<script>
+
+	/**	$(function () {
+			$("#gender").on("change", function() {
+		    	// Check the option value for gender is "male" then enable checkbox, otherwise disable the checkbox
+		    	if ($("#gender").val() === "male") {
+		        	$("#is_castrated").prop("disabled",false);
+
+		    	// For all other options, enable the checkbox
+		    	} else {
+		        	$("#is_castrated").prop("disabled",true);
+		    	}
+			});
+		});
+	**/
+
+	</script>	
 </body>
 </html>

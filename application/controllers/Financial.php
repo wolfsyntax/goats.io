@@ -41,7 +41,7 @@ class Financial extends CI_Controller {
 	{
 		
 	
-		$data['title'] = 'Home';
+		$data['title'] = '-';
 		$data['body'] = 'financials/expense';
 
 		$this->load->view('layouts/application',$data);
@@ -54,7 +54,7 @@ class Financial extends CI_Controller {
 	{
 		
 	
-		$data['title'] = 'Home';
+		$data['title'] = '-';
 		$data['body'] = 'financials/purchases';
 
 		$this->load->view('layouts/application',$data);
@@ -63,6 +63,16 @@ class Financial extends CI_Controller {
 
 	}
 
+	public function sales()
+	{
+		
+	
+		$data['title'] = '-';
+		$data['body'] = 'financials/sales';
+
+		$this->load->view('layouts/application',$data);
+
+	}
 
 
 

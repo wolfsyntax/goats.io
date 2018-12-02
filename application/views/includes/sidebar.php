@@ -25,9 +25,12 @@
           <a class="nav-link" href="<?= base_url(); ?>goat">
             <span class="fa fa-plus-circle d-inline-block d-lg-none text-success" title="Add Goat"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="text-dark font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Add Goat</span>
           </a>
+
+          <?php //if($this->session->userdata('user_type') == 'tenant') {?>
           <a class="nav-link text-dark" href="<?= base_url(); ?>goat/manage_loss">
             <span class="fa fa-plus-circle d-inline-block d-lg-none text-dark" title="Add Goat"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="text-dark font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Manage Loss</span>
           </a>
+          <?php //}?>
         </div>        
       </li>
 
@@ -39,7 +42,7 @@
         </a>
 
         <div class="collapse" id="financialManagement" data-parent="#sidebar-div" >
-          <a class="nav-link">
+          <a class="nav-link" href="<?= base_url(); ?>financial/sales">
             &nbsp;<span class="fa fa-usd d-inline-block d-lg-none text-warning" title="Goat Sales"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="text-dark font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Goat Sales</span>
           </a>
 
