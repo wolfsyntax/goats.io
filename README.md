@@ -95,7 +95,7 @@ Carbon\Carbon::now();
 
 ```
 
-##2018.12.2 Add enable/disable function for is_castrated
+## 2018.12.2 Add enable/disable function for is_castrated
 
 ```javascript
 
