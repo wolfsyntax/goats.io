@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'databases.000webhost.com',
 	'username' => 'id1345229_pywizard',
 	'password' => 'godtoor',
 	'database' => 'id1345229_mgmf',
