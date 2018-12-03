@@ -1,4 +1,4 @@
-<div class="container-fluid bg-danger col-12 col-sm-12 col-md-12" style="position: fixed;">
+<div class="container-fluid bg-light col-12 col-sm-12 col-md-12" style="position: fixed;">
 	<div class="row">
     <?php $this->load->view('includes/user_header'); ?>
     <?php $this->load->view('includes/sidebar'); ?>

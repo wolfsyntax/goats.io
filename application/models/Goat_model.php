@@ -147,6 +147,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		}
 
+		public function goat_sales(){
+
+			if(!empty($_POST)){
+
+				$tag_id = $this->input->post('eartag_id', TRUE);
+
+				$data = array(
+					'eartag_id' => $tag_id,
+					'status' => "Sold",
+				);
+
+				$this->db->where('eartag_id',$tag_id);
+
+				if($this->db->update('Goat_Profile',$data)){
+					
+					$amount = $this->input->post("amount", TRUE);
+					$data = array(
+						'eartag_id' => $tag_id,
+						'price_per_kilo' => $amount,
+						'transact_date' => $this->input->post("date_sold", TRUE),
+						'buyer_name' => $this->input->post("buyer_name", TRUE),
+						'weight' => $this->input->post("weight", TRUE),
+						'total_amount' => (floatval($amount) * floatval($weight)),
+						'user_id' => $this->session->userdata('user_id'),
+						'description' => $this->input->post("description", TRUE),
+					);
+
+					return $this->db->insert('sales_record',$data);
+				}
+
+				return FALSE;
+			}
+
+		}
+
 		public function manage_loss(){
 
 			if(!empty($_POST)){
