@@ -93,7 +93,7 @@
         </a>
 
         <div class="collapse" id="breedingInfo" data-parent="#sidebar-div" >
-          <a class="nav-link text-dark" href="<?= base_url(); ?>breed/new">
+          <a class="nav-link text-dark" href="<?= base_url(); ?>goat/breeding_module">
             <span class="fa fa-sitemap d-inline-block d-lg-none text-success" title="Breeding"></span><span class="d-none d-sm-none d-lg-inline-block fa fa-angle-right"></span><span class="font-weight-normal d-none d-sm-none d-lg-inline-block ">&nbsp;&nbsp;Breeding</span>
           </a>
 

@@ -69,29 +69,6 @@
 								</div>					
 							</div>
 
-							<div class="d-none d-sm-none d-md-block col-md-3 mb-0">
-								<div class="form-group">
-
-									<label class="col-form-label-sm mb-0">Account Type<span class="text-danger"></span></label>
-								</div>					
-							</div>
-							
-							<div class="col-12 col-md-9">
-								<div class="form-group">
-							
-									<select name="account_type" class="custom-select ">
-										<option value="">-- Choose Account Type --</option>
-										<option value="farm owner">Farm Owner</option>
-										<option value="tenant">Tenant</option>
-										
-									</select>
-									
-									
-									<?= (form_error('account_type')	!= "" ? form_error('account_type') : ''); ?>				
-									
-								</div>					
-							</div>
-
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label class="col-form-label-sm mb-0 pt-0">Password: <span class="text-danger">*</span></label>							

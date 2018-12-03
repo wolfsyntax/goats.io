@@ -63,62 +63,7 @@ class Goat extends CI_Controller {
 
 		if($this->session->userdata('username') != ''){
 			
-			$this->form_validation->set_rules('eartag_id','Tag ID','required|numeric|xss_clean|trim|is_unique[goat_profile.eartag_id]',
-				array(
-					'required' => '{field} is required',
-					'numeric' => 'Not a valid {field} provided. Only digits are allowed',
-					'is_unique' => '{field} is already existing',
-				)
-			);
-
-			$this->form_validation->set_rules('tag_color','Tag Color','required|xss_clean|trim|alpha_spaces',
-				array(
-					'required' => 'Tag Color is required',
-					'alpha_spaces'=> 'The {field} field may only contain alphabetical characters and space.',
-				)
-			);
-
-			$this->form_validation->set_rules('gender','Gender','required|xss_clean|trim',
-				array(
-					'required' => '{field} is required',
-				)
-			);
-
-			$this->form_validation->set_rules('body_color','Body Color','required|xss_clean|trim|alpha_spaces',
-				array(
-					'required' => 'Body Color is required',
-					'alpha_spaces'=> 'The {field} field may only contain alphabetical characters and space.',
-
-				)
-			);
-
-			$this->form_validation->set_rules('birth_date','Birth Date','required|xss_clean|trim',
-				array(
-					'required' => '{field} is required',
-				)
-			);
-
-
-			$this->form_validation->set_rules('birth_weight','Birth Weight','required|xss_clean|trim|numeric',
-				array(
-					'required' => '{field} is required',
-				)
-			);			
-			
-			$this->form_validation->set_rules('sire_id','Sire ID','xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
-				array(
-					'required' => '{field} is required',
-					'is_sire_exist' => '{field} do not exist',
-				)
-			);
-
-			$this->form_validation->set_rules('dam_id','Dam ID','xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id]',
-				array(
-					'required' => '{field} is required',
-					'is_dam_exist' => '{field} do not exist',
-				)
-			);
-
+			self::goat_profile_validator();
 
 
 
@@ -176,6 +121,65 @@ class Goat extends CI_Controller {
 
 	}
 
+	public function goat_profile_validator(){
+
+		$this->form_validation->set_rules('eartag_id','Tag ID','required|numeric|xss_clean|trim|is_unique[goat_profile.eartag_id]',
+				array(
+					'required' => '{field} is required',
+					'numeric' => 'Not a valid {field} provided. Only digits are allowed',
+					'is_unique' => '{field} is already existing',
+				)
+			);
+
+			$this->form_validation->set_rules('tag_color','Tag Color','required|xss_clean|trim|alpha_spaces',
+				array(
+					'required' => 'Tag Color is required',
+					'alpha_spaces'=> 'The {field} field may only contain alphabetical characters and space.',
+				)
+			);
+
+			$this->form_validation->set_rules('gender','Gender','required|xss_clean|trim',
+				array(
+					'required' => '{field} is required',
+				)
+			);
+
+			$this->form_validation->set_rules('body_color','Body Color','required|xss_clean|trim|alpha_spaces',
+				array(
+					'required' => 'Body Color is required',
+					'alpha_spaces'=> 'The {field} field may only contain alphabetical characters and space.',
+
+				)
+			);
+
+			$this->form_validation->set_rules('birth_date','Birth Date','required|xss_clean|trim',
+				array(
+					'required' => '{field} is required',
+				)
+			);
+
+
+			$this->form_validation->set_rules('birth_weight','Birth Weight','required|xss_clean|trim|numeric',
+				array(
+					'required' => '{field} is required',
+				)
+			);			
+			
+			$this->form_validation->set_rules('sire_id','Sire ID','xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
+				array(
+					'required' => '{field} is required',
+					'is_sire_exist' => '{field} do not exist',
+				)
+			);
+
+			$this->form_validation->set_rules('dam_id','Dam ID','xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id]',
+				array(
+					'required' => '{field} is required',
+					'is_dam_exist' => '{field} do not exist',
+				)
+			);
+
+	}
 	/**
 	 * Breeding Module
 	 *
@@ -315,23 +319,7 @@ class Goat extends CI_Controller {
 
 	public function record_loss(){
 
-		$this->form_validation->set_rules('eartag_id', 'Tag ID', 'trim|required|numeric|is_exist[goat_profile.eartag_id]|xss_clean',array(
-			'is_exist' => '{field} do not exist',
-			'required' => '{field} is required',
-		));
-
-		$this->form_validation->set_rules('loss_caused', 'Caused of Loss', 'trim|required|xss_clean',array(
-			'required' => '{field} is required',
-		));
-
-		$this->form_validation->set_rules('loss_date', 'Date of Loss', 'trim|required|xss_clean',array(
-			'required' => '{field} is required',
-		));
-
-
-		$this->form_validation->set_rules('description', 'Notes / Description', 'trim|xss_clean|required',array(
-			'required' => '{field} is required',
-		));
+		self::manage_loss_validator();
 
 		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 		
@@ -368,5 +356,28 @@ class Goat extends CI_Controller {
 			self::manage_loss();
 
 		}
+	}
+
+	public function manage_loss_validator(){
+
+		$this->form_validation->set_rules('eartag_id', 'Tag ID', 'trim|required|numeric|is_exist[goat_profile.eartag_id]|xss_clean',array(
+			'is_exist' => '{field} do not exist',
+			'required' => '{field} is required',
+		));
+
+		$this->form_validation->set_rules('loss_caused', 'Caused of Loss', 'trim|required|xss_clean',array(
+			'required' => '{field} is required',
+		));
+
+		$this->form_validation->set_rules('loss_date', 'Date of Loss', 'trim|required|xss_clean',array(
+			'required' => '{field} is required',
+		));
+
+
+		$this->form_validation->set_rules('description', 'Notes / Description', 'trim|xss_clean|required',array(
+			'required' => '{field} is required',
+		));
+		
+		
 	}
 }

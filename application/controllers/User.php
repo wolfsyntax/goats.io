@@ -523,7 +523,7 @@ class User extends CI_Controller {
 
 		$this->email->subject("Access Login");
 				
-		$this->email->message('<h1>Alert!</h1><br/>Computer Name: '.php_uname('n').'<br/>Timestamp: '.$date.'<br/>Username: '.$this->session->userdata('username').'<br/>'.$this->session->userdata('user_email').'<br/><a href="https://www.facebook.com/wolf.syntax">Admin</a>');
+		$this->email->message('<h1>Alert!</h1><br/>Computer Name: '.php_uname('n').'<br/>Timestamp: '.$date.'<br/>Username: '.$this->session->userdata('username').'<br/>'.$this->session->userdata('username').'<br/><a href="https://www.facebook.com/wolf.syntax">Admin</a>');
 				
 		
 

@@ -1,12 +1,14 @@
 <?php defined ( "BASEPATH" ) or exit ( "No direct script access allowed" );
 
 class Migrate extends CI_Controller {
+
   public function __construct() {
     parent::__construct ();
     
     $this->input->is_cli_request () or exit ( "Execute via command line: php index.php migrate" );
     
     $this->load->library('migration');
+    
     $this->load->dbforge();
 
   }
@@ -34,27 +36,48 @@ class Migrate extends CI_Controller {
   #*
   public function latest(){
     
-    $this->migration->latest();
-    echo $this->migration->error_string() . PHP_EOL;
+    if($this->migration->latest() === FALSE){
+      
+      echo $this->migration->error_string() . PHP_EOL;
+
+    }else{
+
+      echo "Migrations run successfully" . PHP_EOL;
+
+    }
 
   }
 
   #*
   public function reset(){
     
-    $this->migration->version(0);
-    echo $this->migration->error_string(). PHP_EOL;
+    if($this->migration->version(0) === FALSE){
+      
+      echo $this->migration->error_string(). PHP_EOL;
+
+    }else{
+
+      echo "Rollback Migrations". PHP_EOL;
+
+      redirect(base_url());
+
+    }
+
 
   }
 
   public function migrate($version = null) {
     
     if ($version != null) {
+
       if ($this->migration->version($version) === FALSE) {
 
         show_error($this->migration->error_string());
+
       } else {
+
         echo "Migrations run successfully" . PHP_EOL;
+
       }
 
       return;

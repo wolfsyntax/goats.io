@@ -1,8 +1,4 @@
-<main>
 
-  <section>
-    <?php $this->load->view('/includes/user_header'); ?>
-  </section>
   <section class="mt-5">
  
     <div class="col-md-8 offset-md-2">
@@ -55,7 +51,6 @@
             foreach($test as $row){
                     
                 $client_id = $row->eartag_id;
-
                     
               }
 
@@ -99,4 +94,4 @@
 
 
   </section>  
-</main>
+

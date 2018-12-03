@@ -1,4 +1,4 @@
-<?php //if($this->session->userdata('user_type') === 'tenant'){?>
+<?php if($this->session->userdata('username') != ''){?>
 <div class="container-fluid mt-2 mb-5 pb-5">
 	<div class="row mb-5">
 		<div class="col">
@@ -16,7 +16,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Ear Tag ID <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="eartag_id" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" required="" value="<?= set_value('eartag_id'); ?>">
+									<select name="eartag_id" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" value="<?= set_value('eartag_id'); ?>">
 
                                     	<?php foreach($goat_record as $row) {?>           
                                     		<option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
@@ -31,7 +31,7 @@
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Caused of Loss<span class="text-danger font-weight-bold">*</span></label>
 								<div class="col">
 									<select name="loss_caused" class="custom-select">
-										<option>- Select a Cause -</option>
+										<option value="">- Select a Cause -</option>
 										<option value="Deceased">Deceased</option>
 										<option value="Lost">Lost</option>
 										<option value="Stolen">Stolen</option>
@@ -72,4 +72,4 @@
 		</div>
 	</div>
 </div>
-<?php //}else{ show_404(); }?>
+<?php }else{ show_404(); }?>
