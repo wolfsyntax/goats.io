@@ -134,7 +134,7 @@ class Financial extends CI_Controller {
 
 			if($this->form_validation->run() === FALSE){
 
-				self::purchase();
+				self::sales();
 
 			}else{
 
@@ -163,7 +163,7 @@ class Financial extends CI_Controller {
 						</div>');
 				}
 
-				redirect(base_url()."financial/purchase");
+				redirect(base_url()."financial/sales");
 			}
 		}
 
