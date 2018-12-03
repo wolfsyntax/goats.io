@@ -7,7 +7,7 @@
 						Add Goats
 					</div>
 					<div class="card-body p-2">
-						<?= form_open('',array('class'=>'form')); ?>
+						<?= form_open(base_url().'goats/new',array('class'=>'form')); ?>
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Tag ID <span class="text-danger">*</span></label>								
 								<div class="col">
@@ -40,7 +40,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Body Color <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="body_color" id="body_color_select" class="form-control" placeholder="- Enter Body Color -" required="" value="<?= set_value('body_color'); ?>">
+									<select name="body_color" id="body_color_select" class="form-control" placeholder="- Enter Body Color -" value="<?= set_value('body_color'); ?>">
 
                                     	<option value="Brown">Brown</option>           
                         			</select>
@@ -68,9 +68,12 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Dam ID <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="dam_id" id="dam_id_select" class="form-control" placeholder="- Enter Dam ID -" required="" value="<?= set_value('dam_id'); ?>">
+									<select name="dam_id" id="dam_id_select" class="form-control" placeholder="- Enter Dam ID -" value="<?= set_value('dam_id'); ?>">
 
-                                    	<option value="1">1</option>           
+                                    	<?php foreach($dam_record as $row){ ?>
+                                    		<option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
+                                    	<?php } ?>           
+
                         			</select>
                         			<?= (form_error('dam_id')	!= "" ? form_error('dam_id') : ''); ?>	
 								</div>
@@ -79,9 +82,12 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Sire ID <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="sire_id" id="sire_id_select" class="form-control" placeholder="- Enter Sire ID -" required="" value="<?= set_value('sire_id');?>">
+									<select name="sire_id" id="sire_id_select" class="form-control" placeholder="- Enter Sire ID -" value="<?= set_value('sire_id');?>">
 
-                                    	<option value="1">1</option>           
+                                    	<?php foreach($sire_record as $row){ ?>
+                                    		<option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
+                                    	<?php } ?>                                	
+     
                         			</select>
                         			<?= (form_error('sire_id')	!= "" ? form_error('sire_id') : ''); ?>	
 								</div>

@@ -29,6 +29,7 @@
             ),
             'description' => array(
               'type' => 'TEXT',
+              'null' => TRUE,
             ),
             'purchase_date' => array(
               'type' => 'DATE',

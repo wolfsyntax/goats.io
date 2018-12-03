@@ -25,7 +25,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Caused of Loss<span class="text-danger font-weight-bold">*</span></label>
 								<div class="col">
-									<select name="" class="custom-select">
+									<select name="loss_caused" class="custom-select">
 										<option>- Select a Cause -</option>
 										<option value="Deceased">Deceased</option>
 										<option value="Lost">Lost</option>

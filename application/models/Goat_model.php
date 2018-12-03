@@ -34,9 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'gender'		=>	$gender,
 					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
 					'birth_date'	=>	$this->input->post('birth_date', TRUE),
+					'birth_weight'	=>	$this->input->post('birth_weight', TRUE),
 					'sire_id'		=>	$this->input->post('sire_id',TRUE),
 					'dam_id'		=>	$this->input->post('dam_id',TRUE),
-					'is_castrated'  =>  $gender === 'male' ? 'No' : 'N/A',
+					'is_castrated'  =>  $this->input->post('is_castrated',TRUE),
+					'status'		=> 'active',
 				);		
 
 				return $this->db->insert('goat_profile',$data);
@@ -45,7 +47,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		}			
 
+		public function goat_purchase(){
+			if(!empty($_POST)){
 
+				$gender = strtolower($this->input->post('gender', TRUE));
+				$data_profile = array(
+
+					'eartag_id'		=>	$this->input->post('eartag_id', TRUE),
+					'eartag_color'	=>	strtolower($this->input->post('tag_color', TRUE)),
+					'gender'		=>	$gender,
+					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
+					'is_castrated'  =>  $this->input->post('is_castrated',TRUE),
+					'status'		=> 'active',
+				);		
+
+				$data_purchase = array(
+					'eartag_id' => $this->input->post('eartag_id',TRUE),
+					'purchase_weight' => $this->input->post('purchase_weight',TRUE),
+					'price_per_kilo' => $this->input->post("purchase_price",TRUE),
+					'purchase_date' => $this->input->post("purchase_date",TRUE),
+					'description' => $this->input->post("description",TRUE),
+					'user_id' => $this->session->userdata("user_id"),
+					'vendor_name' => $this->input->post("vendor_name",TRUE),
+				);
+
+				if($this->db->insert('goat_profile',$data_profile)){
+					
+					return $this->db->insert('purchase_record',$data_purchase);
+
+				}else{
+
+					return FALSE;
+					
+				}
+
+			}
+			
+		}
 
 		public function process_registration(){
 

@@ -8,8 +8,9 @@
 					<div class="card-header">
 						Add Goat Purchase
 					</div>
+					
 					<div class="card-body p-2">
-						<?= form_open('',array('class'=>'form')); ?>
+						<?= form_open(base_url().'goats/purchase',array('class'=>'form')); ?>
 							<div class="form-row p-1">
 								<div class="col pl-0">
 									<div class="row">
@@ -27,7 +28,7 @@
 										<div class="col">
 											<select name="tag_color" id="tag_color_select" class="form-control" placeholder="- Enter Tag Color -" required="" value="">
 
-	                                    		<option value="Brown">Brown</option>           
+	                                    		<option value="Green">Green</option>           
 	                        				</select>
 										</div>
 									</div>
@@ -68,16 +69,16 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase Weight <span class="text-danger">*</span></label>
 								<div class="col">
-									<input type="text" name="purchase_weight" value="" placeholder="Enter weight in lbs." class="form-control">
+									<input type="text" name="purchase_weight" value="" placeholder="Enter weight in kilo" class="form-control">
 								</div>
 							</div>
 
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase From <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="purchase_from" id="client_select" class="form-control" placeholder="- Vendor -" required="" value="">
+									<select name="vendor_name" id="client_select" class="form-control" placeholder="- Vendor -" required="" value="">
 
-                                    	<option value="Brown">Brown</option>           
+                                    	<option value=""></option>           
                         			</select>
 
 								</div>
@@ -87,12 +88,12 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Price per Kilo<span class="text-danger">*</span></label>
 								<div class="col">
-									<input type="date" name="purchase_price" value="" placeholder="Purchase Price" class="form-control">
+									<input type="text" name="purchase_price" value="" placeholder="Purchase Price" class="form-control">
 								</div>
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Notes <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Notes</label>
 								<div class="col">
 									<input type="text" name="description" value="" placeholder="Other details / Description" class="form-control">
 								</div>

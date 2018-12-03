@@ -63,10 +63,11 @@ class Goat extends CI_Controller {
 
 		if($this->session->userdata('username') != ''){
 			
-			$this->form_validation->set_rules('eartag_id','Tag ID','required|numeric|xss_clean|trim',
+			$this->form_validation->set_rules('eartag_id','Tag ID','required|numeric|xss_clean|trim|is_unique[goat_profile.eartag_id]',
 				array(
 					'required' => '{field} is required',
 					'numeric' => 'Not a valid {field} provided. Only digits are allowed',
+					'is_unique' => '{field} is already existing',
 				)
 			);
 
@@ -96,15 +97,22 @@ class Goat extends CI_Controller {
 					'required' => '{field} is required',
 				)
 			);
+
+
+			$this->form_validation->set_rules('birth_weight','Birth Weight','required|xss_clean|trim|numeric',
+				array(
+					'required' => '{field} is required',
+				)
+			);			
 			
-			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
+			$this->form_validation->set_rules('sire_id','Sire ID','xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
 				array(
 					'required' => '{field} is required',
 					'is_sire_exist' => '{field} do not exist',
 				)
 			);
 
-			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id]',
+			$this->form_validation->set_rules('dam_id','Dam ID','xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id]',
 				array(
 					'required' => '{field} is required',
 					'is_dam_exist' => '{field} do not exist',
@@ -112,22 +120,22 @@ class Goat extends CI_Controller {
 			);
 
 
-			//check if the Dam ID is existed
-#			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numericis_exist[goat_profile.eartag_id]',
+
+
+#			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric|is_sire_exist[goat_profile.eartag_id]',
 #				array(
 #					'required' => '{field} is required',
-#					'is_exist' => '{field} is not a Sire',
+#					'is_sire_exist' => '{field} do not exist',
 #				)
 #			);
 
-
-			//check if the Dam ID is existed
-#			$this->form_validation->set_rules('sire_id','Sire ID','required|xss_clean|trim|numeric|is_exist[goat_profile.eartag_id]',
+#			$this->form_validation->set_rules('dam_id','Dam ID','required|xss_clean|trim|numeric|is_dam_exist[goat_profile.eartag_id],
 #				array(
 #					'required' => '{field} is required',
-#					'is_exist' => '{field} is not a Sire',
+#					'is_dam_exist' => '{field} do not exist',
 #				)
 #			);
+
 
 			$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
@@ -162,7 +170,7 @@ class Goat extends CI_Controller {
 									</div>');
 				}
 
-				redirect('goats/new');
+				redirect('dashboard');
 			}
 		}
 
