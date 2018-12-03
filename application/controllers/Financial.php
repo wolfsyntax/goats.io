@@ -188,9 +188,10 @@ class Financial extends CI_Controller {
 				)
 			);
 
-			$this->form_validation->set_rules('gender','Gender','required|xss_clean|trim',
+			$this->form_validation->set_rules('goat_gender','Gender','required|xss_clean|trim',
 				array(
-					'required' => '{field} is required',
+					'required' => 'Gender is required',
+
 				)
 			);
 

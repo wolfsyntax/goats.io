@@ -17,7 +17,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Tag ID <span class="text-danger">*</span></label>								
 								<div class="col">
-									<select name="eartag_id" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" required="" value="<?= set_value('eartag_id'); ?>">
+									<select name="eartag_id" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" value="<?= set_value('eartag_id'); ?>">
 
                                     	<?php foreach($goat_record as $row) {?>           
                                     		<option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
@@ -40,7 +40,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Sold Through <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="buyer_name" id="client_select" class="form-control" placeholder="- Select Buyer -" required="" value="<?= set_value('buyer_name'); ?>">
+									<select name="buyer_name" id="client_select" class="form-control" placeholder="- Select Buyer -" value="<?= set_value('buyer_name'); ?>">
 
                                     	<option value="MGM">MGM</option>           
                         			</select>

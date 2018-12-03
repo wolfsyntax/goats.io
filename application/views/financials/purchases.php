@@ -33,7 +33,7 @@
 									<div class="row">
 										<label class="col-form-label-sm col-3 col-sm-3 col-md-3 col-lg-3">Tag Color <span class="text-danger">*</span></label>								
 										<div class="col">
-											<select name="tag_color" id="tag_color_select" class="form-control" placeholder="- Enter Tag Color -" required="" value="<?= set_value('tag_color');?>">
+											<select name="tag_color" id="tag_color_select" class="form-control" placeholder="- Enter Tag Color -" value="<?= set_value('tag_color');?>">
 
 	                                    		<option value="Green">Green</option>           
 	                        				</select>
@@ -46,19 +46,19 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Gender <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="gender" class="custom-select" id="gender">
-										<option>- Select a Gender -</option>
+									<select name="goat_gender" class="form-control" id="gender">
+										<option value="">- Select a Gender -</option>
 										<option value="female">Female</option>
 										<option value="male">Male</option>
 									</select>
-									<?= (form_error('gender')	!= "" ? form_error('gender') : ''); ?>		
+									<?= form_error('goat_gender') != "" ? form_error('goat_gender') : ' '; ?>		
 								</div>
 							</div>
 
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Body Color <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="body_color" id="body_color_select" class="form-control" placeholder="- Enter Body Color -" required="" value="<?= set_value('body_color'); ?>">
+									<select name="body_color" id="body_color_select" class="form-control" placeholder="- Enter Body Color -" value="<?= set_value('body_color'); ?>">
 
                                     	<option value="Brown">Brown</option>           
                         			</select>
@@ -86,7 +86,7 @@
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Purchase From <span class="text-danger">*</span></label>
 								<div class="col">
-									<select name="vendor_name" id="client_select" class="form-control" placeholder="- Vendor -" required="" value="<?= set_value('vendor_name');?>">
+									<select name="vendor_name" id="client_select" class="form-control" placeholder="- Vendor -" value="<?= set_value('vendor_name');?>">
 
                                     	<option value=""></option>           
                         			</select>
