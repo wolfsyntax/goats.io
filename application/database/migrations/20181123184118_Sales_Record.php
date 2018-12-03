@@ -26,8 +26,9 @@
               'constraint' => '8,2',
             ),
             'description' => array(
-              'type' => 'TEXT',
-              'null' => TRUE,
+              'type' => 'VARCHAR',
+              'constraint' => 255,
+              'default' => "-",
             ),
             'user_id' => array(
               'type' => 'INT',

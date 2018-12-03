@@ -137,6 +137,7 @@ class Financial extends CI_Controller {
 			
 			$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
 
+
 			if($this->form_validation->run() === FALSE){
 
 				self::purchase();
@@ -145,16 +146,30 @@ class Financial extends CI_Controller {
 
 				if($this->Goat_model->goat_purchase()){
 					
-					$this->session->set_flashdata('goat', '');
+					$this->session->set_flashdata('goat', '<div class="alert alert-success col-12" role="alert" style="height: 50px;">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+										
+							<div class="row">
+								<p><span class="fa fa-check-circle"></span>
+								<strong>Success</strong>&emsp;New goat added successfully.</p>
+							</div>
+						</div>');
 
 					
 
 				}else{
 
-					$this->session->set_flashdata('goat', '');
+					$this->session->set_flashdata('goat', '<div class="alert alert-danger col-12" role="alert" style="height: 50px;">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+										
+							<div class="row">
+								<p><span class="fa fa-check-circle"></span>
+								<strong>Success</strong>&emsp;Goat Purchased not added successfully.</p>
+							</div>
+						</div>');
 				}
 
-				redirect(base_url()."financial/sales");
+				redirect(base_url()."financial/purchase");
 			}
 		}
 

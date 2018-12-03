@@ -8,14 +8,19 @@
 						Manage Loss
 					</div>
 					<div class="card-body p-2">
-						<?= form_open('',array('class'=>'form')); ?>
+						<?= form_open(base_url().'manage/loss',array('class'=>'form')); ?>
+							<div class="form-row p-1">
+								<?= ($this->session->flashdata('goat') ? $this->session->flashdata('goat') : ''); ?>
+							</div>
 
 							<div class="form-row p-1">
 								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Ear Tag ID <span class="text-danger">*</span></label>
 								<div class="col">
 									<select name="eartag_id" id="goat_id_select" class="form-control" placeholder="- Enter Ear Tag ID -" required="" value="">
 
-                                    	<option value="1">1</option>           
+                                    	<?php foreach($goat_record as $row) {?>           
+                                    		<option value="<?= $row->eartag_id; ?>"><?= $row->eartag_id; ?></option>
+                                    	<?php } ?>
                         			</select>
 
 								</div>
@@ -43,7 +48,7 @@
 							</div>
 
 							<div class="form-row p-1">
-								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Notes <span class="text-danger">*</span></label>
+								<label class="col-form-label-sm col-3 col-sm-3 col-md-2 col-lg-2">Notes</label>
 								<div class="col">
 									<input type="text" name="description" value="" placeholder="" class="form-control">
 								</div>

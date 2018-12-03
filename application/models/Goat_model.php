@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'birth_weight'	=>	$this->input->post('birth_weight', TRUE),
 					'sire_id'		=>	$this->input->post('sire_id',TRUE),
 					'dam_id'		=>	$this->input->post('dam_id',TRUE),
-					'is_castrated'  =>  $this->input->post('is_castrated',TRUE),
+					'is_castrated'  =>  $gender === "female" ? "N/A" : ($this->input->post('is_castrated',TRUE) ? "Yes" : "No"),
 					'status'		=> 'active',
 				);		
 
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'eartag_color'	=>	strtolower($this->input->post('tag_color', TRUE)),
 					'gender'		=>	$gender,
 					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
-					'is_castrated'  =>  $this->input->post('is_castrated',TRUE),
+					'is_castrated'  =>  $gender === "female" ? "N/A" : ($this->input->post('is_castrated',TRUE) ? "Yes" : "No"),
 					'status'		=> 'active',
 				);		
 
@@ -88,17 +88,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function process_registration(){
 
 			if(!empty($_POST)){
+				
+				$gender = strtolower($this->input->post('gender', TRUE));
 
 				$data = array(
 
 					'eartag_id'		=>	$this->input->post('eartag_id', TRUE),
 					'eartag_color'	=>	strtolower($this->input->post('tag_color', TRUE)),
-					'gender'		=>	strtolower($this->input->post('gender', TRUE)),
+					'gender'		=>	$gender,
 					'body_color'	=>	strtolower($this->input->post('body_color', TRUE)),
 					'birth_date'	=>	$this->input->post('birth_date', TRUE),
 					'sire_id'		=>	$this->input->post('sire_id',TRUE),
 					'dam_id'		=>	$this->input->post('dam_id',TRUE),
-
+					'is_castrated' 	=> 	$gender === "female" ? "N/A" : ($this->input->post('is_castrated',TRUE) ? "Yes" : "No"),
 				);
 				
 
@@ -143,6 +145,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			}
 
+		}
+
+		public function manage_loss(){
+
+			if(!empty($_POST)){
+				
+				$tag_id = $this->input->post('eartag_id', TRUE);
+
+				$data = array(
+					'eartag_id' => $tag_id,
+					'status' => $this->input->post("loss_caused",TRUE),
+				);
+
+				$this->db->where('eartag_id',$tag_id);
+
+				if($this->db->update('Goat_Profile',$data)){
+					$data = array(
+						'eartag_id' => $tag_id,
+						'loss_caused' => $this->input->post("loss_caused", TRUE),
+						'loss_date' => $this->input->post("loss_date", TRUE),
+						'description' => $this->input->post("description", TRUE),
+						'user_id' => $this->session->userdata('user_id'),
+					);
+
+					return $this->db->insert('loss_record',$data);
+				}
+
+				return FALSE;
+
+			}
 		}
 
 	}

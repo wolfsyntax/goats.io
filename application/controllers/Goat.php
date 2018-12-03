@@ -244,6 +244,8 @@ class Goat extends CI_Controller {
 				)
 			);
 
+			$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
+
 			if($this->form_validation->run() === FALSE){
 
 				self::breeding_module();
@@ -298,18 +300,73 @@ class Goat extends CI_Controller {
 	}	
 
 	public function manage_loss(){
+		
 		if($this->session->userdata('username') != ''){
 			$data['body'] = 'goats/manage_loss';
 			$data['title'] = '';
-
+			$data['goat_record'] = $this->Goat_model->select_applet('goat_profile',"status = 'active'");
 
 			$this->load->view('layouts/application',$data);
 		}else{
-			redirect('dashboard');
+			show_404();
 		}
+
 	}
 
 	public function record_loss(){
 
+		$this->form_validation->set_rules('eartag_id', 'Tag ID', 'trim|required|numeric|is_exist[goat_profile.eartag_id]|xss_clean',array(
+			'is_exist' => '{field} do not exist',
+			'required' => '{field} is required',
+		));
+
+		$this->form_validation->set_rules('loss_caused', 'Caused of Loss', 'trim|required|xss_clean',array(
+			'required' => '{field} is required',
+		));
+
+		$this->form_validation->set_rules('loss_date', 'Date of Loss', 'trim|required|xss_clean',array(
+			'required' => '{field} is required',
+		));
+
+
+		$this->form_validation->set_rules('description', 'Notes / Description', 'trim|xss_clean|required',array(
+			'required' => '{field} is required',
+		));
+
+		$this->form_validation->set_error_delimiters('<small class="form-text text-danger">', '</small>');
+		
+		if($this->form_validation->run() === FALSE){
+
+			self::manage_loss();
+
+		}else{
+
+			$flag = 0;
+
+			if($this->Goat_model->manage_loss()){
+
+				$message = '<span class="fa fa-check-circle"></span>
+						Loss Details successfully added';
+				
+				$flag = 1;
+
+			}else{
+
+				$message = '<span class="fa fa-exclamation-circle"></span>
+						Failed to add Loss Details';
+
+			}
+
+
+			$content = '<div class="alert '.($flag === 1 ? 'alert-success' : 'alert-danger').' col-12" role="alert" style="height: 50px;">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+	<div class="row">
+		<p>'. $message . '</p>
+	</div>
+</div>';	
+
+			self::manage_loss();
+
+		}
 	}
 }

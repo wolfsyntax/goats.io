@@ -90,7 +90,7 @@ $route['breed/verify']['POST'] = 'goat/validate_breeding_info';
 
 $route['goats/purchase']['POST'] = 'financial/validate_purchase';
 
-//$route['manage/loss'] = 'goat/manage_loss';
+$route['manage/loss']['POST'] = 'goat/record_loss';
 
 // Financials
 //$route['purchases']['GET'] = 'financial/purchase';
